@@ -1,324 +1,152 @@
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
-      "@id": "https://www.scalezix.com/#organization",
-      "name": "Scalezix Ventures LLP",
-      "legalName": "Scalezix Ventures LLP",
-      "url": "https://www.scalezix.com/",
-      "logo": "https://www.scalezix.com/assets/scalezix_logo-BWn3im7H.png",
-      "image": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "description": "Go Digitally - Empowering Your Business Through Digital Innovation. Scalezix is a global IT services and digital technology company specializing in web development, AI-powered solutions, e-commerce development, and digital marketing services. We help businesses scale their online presence and transform ideas into scalable digital solutions.",
-      "telephone": "+91 82000 10241",
-      "email": "contact@scalezix.com",
-      "foundingDate": "2021",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "iHub Prajna Puram, KCG Campus, opp. PRL, Navrangpura",
-        "addressLocality": "Ahmedabad",
-        "addressRegion": "Gujarat",
-        "postalCode": "380015",
-        "addressCountry": "IN"
-      },
-      "areaServed": "Worldwide",
-      "sameAs": [
-        "https://www.linkedin.com/company/scalezixco/",
-        "https://www.instagram.com/scalezix/",
-        "https://www.scalezix.com/"
-      ],
-      "priceRange": "Custom",
-      "founders": [
-        {
-          "@type": "Person",
-          "@id": "https://www.scalezix.com/#person-utkarsh",
-          "name": "Utkarsh Makwana",
-          "jobTitle": "Founder & CEO",
-          "image": "https://www.scalezix.com/assets/placeholder_person_utkarsh.jpg",
-          "sameAs": "https://www.linkedin.com/in/utkarsh-makwana-29a0841a9/",
-          "description": "Tech entrepreneur focused on full-stack development, Blockchain, AI integration, and growth hacking."
-        },
-        {
-          "@type": "Person",
-          "@id": "https://www.scalezix.com/#person-harsh",
-          "name": "Harsh Kuhikar",
-          "jobTitle": "Co-Founder & Senior E-commerce Developer",
-          "image": "https://www.scalezix.com/assets/harsh_kuhikar-D2lQWKCs.jpg",
-          "sameAs": "https://www.linkedin.com/in/harsh-kuhikar/",
-          "description": "Shopify and WordPress customization expert specializing in high-conversion e-commerce solutions."
-        }
-      ],
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "telephone": "+91 82000 10241",
-          "contactType": "customer service",
-          "areaServed": "IN",
-          "availableLanguage": ["English", "Hindi", "Gujarati"]
-        },
-        {
-          "@type": "ContactPoint",
-          "telephone": "+91 85118 30227",
-          "contactType": "support",
-          "areaServed": "IN",
-          "availableLanguage": ["English"]
-        }
-      ]
-    },
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
-    {
-      "@type": "WebSite",
-      "@id": "https://www.scalezix.com/#website",
-      "url": "https://www.scalezix.com/",
-      "name": "Scalezix - Digital Technology Company",
-      "description": "Scalezix offers web development, AI-powered solutions, e-commerce development, and digital marketing to businesses worldwide.",
-      "publisher": {
-        "@id": "https://www.scalezix.com/#organization"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.scalezix.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
+  <!-- ✅ Homepage -->
+  <url>
+    <loc>https://www.scalezix.com/</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.scalezix.com/assets/scalezix_logo-BWn3im7H.png</image:loc>
+      <image:caption>Scalezix Technologies - Global Digital Agency</image:caption>
+    </image:image>
+  </url>
 
-    {
-      "@type": "WebPage",
-      "@id": "https://www.scalezix.com/#homepage",
-      "url": "https://www.scalezix.com/",
-      "name": "Scalezix - Go Digitally | Empowering Your Business Through Digital Innovation",
-      "description": "Scalezix Technologies helps businesses worldwide achieve digital excellence through cutting-edge web development, AI integration, and performance marketing. Trusted by 500+ clients, we transform ideas into scalable digital solutions.",
-      "isPartOf": {
-        "@id": "https://www.scalezix.com/#website"
-      },
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-        "width": 1200,
-        "height": 630
-      },
-      "breadcrumb": {
-        "@id": "https://www.scalezix.com/#breadcrumb"
-      }
-    },
+  <!-- ✅ Core Pages -->
+  <url>
+    <loc>https://www.scalezix.com/about</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-    {
-      "@type": "Service",
-      "@id": "https://www.scalezix.com/#service-webdev",
-      "name": "Web Design & Development",
-      "serviceType": "Web Development",
-      "description": "Custom websites, React applications, responsive design, performance optimization, and web application development tailored for startups and enterprises.",
-      "provider": {
-        "@id": "https://www.scalezix.com/#organization"
-      },
-      "areaServed": "Worldwide",
-      "availableChannel": {
-        "@type": "ServiceChannel",
-        "servicePhone": "+91 82000 10241",
-        "serviceUrl": "https://www.scalezix.com/services/web-development"
-      }
-    },
+  <url>
+    <loc>https://www.scalezix.com/services</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-    {
-      "@type": "Service",
-      "@id": "https://www.scalezix.com/#service-ai",
-      "name": "AI-Powered Solutions",
-      "serviceType": "AI Integration",
-      "description": "AI chatbots, automation, custom ML model integration, and smart workflows to automate business processes and improve conversions.",
-      "provider": {
-        "@id": "https://www.scalezix.com/#organization"
-      },
-      "areaServed": "Worldwide",
-      "availableChannel": {
-        "@type": "ServiceChannel",
-        "servicePhone": "+91 82000 10241",
-        "serviceUrl": "https://www.scalezix.com/services/ai-integration"
-      }
-    },
+  <url>
+    <loc>https://www.scalezix.com/contact</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-    {
-      "@type": "Service",
-      "@id": "https://www.scalezix.com/#service-ecom",
-      "name": "E-commerce Development",
-      "serviceType": "Shopify & WooCommerce Development",
-      "description": "Shopify store setup, custom theme development, performance optimization, and conversion-focused e-commerce engineering.",
-      "provider": {
-        "@id": "https://www.scalezix.com/#organization"
-      },
-      "areaServed": "Worldwide",
-      "availableChannel": {
-        "@type": "ServiceChannel",
-        "servicePhone": "+91 82000 10241",
-        "serviceUrl": "https://www.scalezix.com/services/shopify-development"
-      }
-    },
+  <url>
+    <loc>https://www.scalezix.com/portfolio</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-    {
-      "@type": "Product",
-      "@id": "https://www.scalezix.com/#product-suite",
-      "name": "Scalezix Web & AI Solutions Suite",
-      "description": "A combined offering of web development, AI integrations, e-commerce solutions, and marketing services built to scale modern businesses.",
-      "brand": {
-        "@id": "https://www.scalezix.com/#organization"
-      },
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "INR",
-        "price": "Custom Quote",
-        "url": "https://www.scalezix.com/contact"
-      }
-    },
+  <url>
+    <loc>https://www.scalezix.com/blog</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-    {
-      "@type": "CreativeWork",
-      "@id": "https://www.scalezix.com/#portfolio",
-      "name": "Scalezix Portfolio",
-      "description": "Selected case studies showcasing e-commerce stores, custom web apps, and AI integrations.",
-      "creator": {
-        "@id": "https://www.scalezix.com/#organization"
-      },
-      "hasPart": [
-        {
-          "@type": "CreativeWork",
-          "name": "Clicxia Web Application",
-          "url": "https://scalezix.com/portfolio/clicxia",
-          "description": "Custom web application built for clicxia.com with improved performance and dashboard analytics."
-        },
-        {
-          "@type": "CreativeWork",
-          "name": "EspoirPro E-commerce Store",
-          "url": "https://scalezix.com/portfolio/espoirpro",
-          "description": "Shopify store development and conversion optimization for espoirpro.shop resulting in improved sales."
-        }
-      ]
-    },
+  <!-- ✅ Individual Services -->
+  <url>
+    <loc>https://www.scalezix.com/services/web-development</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
-    {
-      "@type": "Review",
-      "@id": "https://www.scalezix.com/#review-1",
-      "itemReviewed": {
-        "@id": "https://www.scalezix.com/#organization"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Kalpesh Makwana"
-      },
-      "reviewBody": "Scalezix delivered an exceptional web application that exceeded our expectations. Their attention to detail and technical expertise is outstanding.",
-      "datePublished": "2024-10-01"
-    },
+  <url>
+    <loc>https://www.scalezix.com/services/shopify-development</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
-    {
-      "@type": "Review",
-      "@id": "https://www.scalezix.com/#review-2",
-      "itemReviewed": {
-        "@id": "https://www.scalezix.com/#organization"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Mayur Makwana"
-      },
-      "reviewBody": "The e-commerce platform they developed for us has significantly improved our sales. Highly recommend their services!",
-      "datePublished": "2024-10-05"
-    },
+  <url>
+    <loc>https://www.scalezix.com/services/ai-integration</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
-    {
-      "@type": "BlogPosting",
-      "@id": "https://www.scalezix.com/#blogpost-1",
-      "headline": "Latest Web Development & Digital Trends 2025",
-      "description": "Insights on AI, modern web development, and e-commerce optimization to boost your online presence in 2025.",
-      "author": {
-        "@id": "https://www.scalezix.com/#organization"
-      },
-      "publisher": {
-        "@id": "https://www.scalezix.com/#organization"
-      },
-      "mainEntityOfPage": "https://www.scalezix.com/blog/web-development-trends-2025",
-      "datePublished": "2025-01-10",
-      "dateModified": "2025-01-10"
-    },
+  <url>
+    <loc>https://www.scalezix.com/services/digital-marketing</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
 
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.scalezix.com/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What services does Scalezix offer?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Scalezix offers web design and development, WordPress and Shopify development, custom web applications, AI-powered integrations, digital marketing, SEO, UI/UX design, and e-commerce optimization."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does it take to build a website with Scalezix?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Project timelines vary by scope. Simple brochure websites typically take 2-4 weeks. Custom web applications and complex e-commerce solutions generally take 6-12 weeks depending on features and integrations. We provide a detailed timeline after project scoping."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you provide AI-powered solutions and chatbots?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Scalezix builds AI-powered chatbots, automation workflows, and custom ML integrations to automate business tasks, improve user experience, and increase conversions."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does a project with Scalezix cost?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Costs depend on project complexity. We offer customized quotes based on requirements. Contact us for a free consultation and a tailored proposal."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How can I get started with Scalezix for my project?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can reach out via email at contact@scalezix.com, call +91 82000 10241, or request a consultation on our contact page at https://www.scalezix.com/contact. We begin with a discovery call and provide a project proposal."
-          }
-        }
-      ]
-    },
+  <!-- ✅ Portfolio Pages -->
+  <url>
+    <loc>https://www.scalezix.com/portfolio/clicxia</loc>
+    <lastmod>2025-10-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.scalezix.com/assets/portfolio/clicxia.webp</image:loc>
+      <image:caption>Clicxia - Custom Web Application by Scalezix</image:caption>
+    </image:image>
+  </url>
 
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://www.scalezix.com/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.scalezix.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Services",
-          "item": "https://www.scalezix.com/services"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Contact",
-          "item": "https://www.scalezix.com/contact"
-        }
-      ]
-    }
-  ]
-}
-</script>
+  <url>
+    <loc>https://www.scalezix.com/portfolio/espoirpro</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.scalezix.com/assets/portfolio/espoirpro.webp</image:loc>
+      <image:caption>EspoirPro E-commerce Store by Scalezix</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ✅ Blog Articles -->
+  <url>
+    <loc>https://www.scalezix.com/blog/web-development-trends-2025</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.scalezix.com/blog/ai-integration-for-business</loc>
+    <lastmod>2025-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.scalezix.com/blog/choose-right-ecommerce-platform</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.scalezix.com/blog/ui-ux-design-principles</loc>
+    <lastmod>2025-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ✅ Policy and Legal Pages -->
+  <url>
+    <loc>https://www.scalezix.com/privacy-policy</loc>
+    <lastmod>2025-04-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.scalezix.com/terms-and-conditions</loc>
+    <lastmod>2025-04-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
