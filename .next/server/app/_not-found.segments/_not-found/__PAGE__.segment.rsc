@@ -1,6 +1,0 @@
-1:"$Sreact.fragment"
-2:I[22016,["/_next/static/chunks/0qkxc90udl0ch.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0ka051yepewro.js"],""]
-3:I[97367,["/_next/static/chunks/0qkxc90udl0ch.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
-4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"flex min-h-screen items-center justify-center px-4","children":["$","div",null,{"className":"panel max-w-xl p-10 text-center","children":[["$","p",null,{"className":"section-kicker","children":"404"}],["$","h1",null,{"className":"mt-6 text-4xl font-semibold","children":"This page drifted out of orbit."}],["$","p",null,{"className":"mt-4 text-base text-muted-foreground","children":"The page you are looking for is not available right now. Head back to the homepage and continue exploring Scalezix."}],["$","$L2",null,{"href":"/","className":"button-primary mt-8","children":"Return Home"}]]}]}],[["$","script","script-0",{"src":"/_next/static/chunks/0ka051yepewro.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"dZn8WLfTWbYbMslzYYtA5"}
-5:null
