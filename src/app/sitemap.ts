@@ -70,23 +70,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticPages, ...productPages];
 }
-import type { MetadataRoute } from "next";
-import { products, siteUrl } from "@/content/site";
-
-export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/privacy", "/terms"].map((route) => ({
-    url: `${siteUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: route === "" ? 1 : 0.7,
-  }));
-
-  const productRoutes = products.map((product) => ({
-    url: `${siteUrl}/products/${product.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
-
-  return [...routes, ...productRoutes];
-}
