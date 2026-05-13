@@ -24,7 +24,6 @@ import {
   contactInfo,
   faqs,
   features,
-  pricingPlans,
   processSteps,
   products,
   services,
@@ -76,7 +75,6 @@ export default function HomePage() {
         <ProductsSection />
         <ResultsSection />
         <TestimonialsSection />
-        <PricingSection />
         <AuthoritySection />
         <FaqSection />
         <ContactSection />
@@ -418,55 +416,6 @@ function TestimonialsSection() {
   );
 }
 
-function PricingSection() {
-  return (
-    <section id="pricing" className="py-16 md:py-24">
-      <div className="section-shell">
-        <SectionHeading
-          kicker="Pricing"
-          title="Choose the engagement model that fits your stage and automation ambition."
-          description="Designed for clarity: start with a focused win, expand based on proof, and scale into deeper AI infrastructure when the business case is clear."
-        />
-
-        <div className="mt-12 grid gap-5 xl:grid-cols-3">
-          {pricingPlans.map((plan, index) => (
-            <Reveal key={plan.name} delay={index * 70} direction={index === 1 ? "scale" : "up"}>
-              <div
-                className={`h-full rounded-[2rem] border p-7 ${
-                  plan.featured
-                    ? "border-primary/40 bg-gradient-to-b from-primary/15 via-slate-950/75 to-slate-950/95 shadow-[0_18px_60px_rgba(59,130,246,0.18)]"
-                    : "panel"
-                }`}
-              >
-                {plan.featured ? (
-                  <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                    Most Popular
-                  </span>
-                ) : null}
-                <h3 className="mt-5 text-2xl font-semibold">{plan.name}</h3>
-                <p className="mt-3 text-4xl font-semibold">{plan.price}</p>
-                <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                  {plan.description}
-                </p>
-                <ul className="mt-8 space-y-3">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2 text-sm text-foreground/90">
-                      <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Link href="#contact" className="button-primary mt-8 flex justify-center">
-                  {plan.cta}
-                </Link>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function AuthoritySection() {
   return (
@@ -556,9 +505,6 @@ function ContactSection() {
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link href="#contact-form" className="button-primary">
                   Book a Call
-                </Link>
-                <Link href="#pricing" className="button-secondary">
-                  Start Free
                 </Link>
               </div>
             </div>

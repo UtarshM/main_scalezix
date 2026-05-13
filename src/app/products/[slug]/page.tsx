@@ -74,9 +74,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 <Link href="/#contact" className="button-primary">
                   {company.primaryCta}
                 </Link>
-                <Link href="/#pricing" className="button-secondary">
-                  View Pricing
-                </Link>
+
               </div>
             </div>
 

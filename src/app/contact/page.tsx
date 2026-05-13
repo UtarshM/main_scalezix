@@ -38,11 +38,7 @@ export default function ContactPage() {
                     </a>
                   </div>
                 </div>
-                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                  <Link href="/pricing" className="button-secondary">
-                    View Pricing
-                  </Link>
-                </div>
+
               </div>
 
               <div className="rounded-[2rem] border border-white/10 bg-slate-950/60 p-6 md:p-8">
