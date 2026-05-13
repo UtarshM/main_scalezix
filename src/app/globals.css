@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 220 90% 56%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 260 60% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 220 90% 56%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 74% 52%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
+    --ring: 220 90% 56%;
+    --radius: 1rem;
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 220 90% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 14%;
+    --sidebar-ring: 220 90% 56%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background-image:
+      radial-gradient(circle at 18% 18%, rgba(59, 130, 246, 0.06), transparent 22%),
+      radial-gradient(circle at 82% 18%, rgba(139, 92, 246, 0.07), transparent 18%),
+      radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.02), transparent 24%),
+      linear-gradient(180deg, rgba(4, 4, 6, 1), rgba(3, 3, 5, 1));
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading tracking-tight text-foreground;
+  }
+
+  ::selection {
+    background: rgba(139, 92, 246, 0.35);
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-[1.75rem] border border-white/[0.06] bg-white/[0.02] shadow-[0_16px_60px_rgba(0,0,0,0.42)] backdrop-blur-xl;
+  }
+
+  .panel-light {
+    @apply rounded-[1.75rem] border border-white/[0.06] bg-white/[0.025] shadow-[0_24px_50px_rgba(0,0,0,0.38)] backdrop-blur-xl;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-[#3b67f2] px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_35px_rgba(59,103,242,0.28)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#4b75ff] hover:shadow-[0_18px_45px_rgba(59,103,242,0.4)];
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-white/[0.08] bg-transparent px-6 py-3 text-sm font-semibold text-foreground transition duration-300 hover:-translate-y-0.5 hover:border-white/[0.14] hover:bg-white/[0.025];
+  }
+
+  .contact-input {
+    @apply h-12 rounded-[1.1rem] border border-white/[0.08] bg-white/[0.03] px-4 text-sm text-foreground outline-none transition duration-300 placeholder:text-muted-foreground focus:border-primary/40 focus:bg-white/[0.05];
+  }
+
+  .section-shell {
+    @apply mx-auto max-w-7xl px-4 md:px-6 xl:px-8;
+  }
+
+  .section-kicker {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.02] px-4 py-2 text-xs font-medium tracking-[0.02em] text-muted-foreground;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, #b9c8ff 38%, #b984ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .mesh-card {
+    background:
+      radial-gradient(circle at top left, rgba(66, 120, 255, 0.12), transparent 34%),
+      radial-gradient(circle at bottom right, rgba(166, 90, 255, 0.1), transparent 26%),
+      rgba(7, 8, 12, 0.92);
+  }
+
+  .noise-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 0.8px, transparent 0.8px);
+    background-size: 22px 22px;
+    opacity: 0.12;
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+}
