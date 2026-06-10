@@ -49,6 +49,16 @@ export function SiteFooter() {
                 </a>
               </p>
               <p>
+                <a href="mailto:hr@scalezix.com" className="transition hover:text-foreground">
+                  hr@scalezix.com
+                </a>
+              </p>
+              <p>
+                <a href="mailto:career@scalezix.com" className="transition hover:text-foreground">
+                  career@scalezix.com
+                </a>
+              </p>
+              <p>
                 <a href={contactInfo.phoneHref} className="transition hover:text-foreground">
                   {contactInfo.phone}
                 </a>
