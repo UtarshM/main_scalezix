@@ -32,10 +32,21 @@ export default function ContactPage() {
                   <p className="font-medium text-foreground">Scalezix HQ</p>
                   <p className="mt-2">{contactInfo.addressLine1}</p>
                   <p>{contactInfo.addressLine2}</p>
-                  <div className="mt-3 flex flex-col gap-1 sm:flex-row sm:gap-5">
+                  <div className="mt-3 flex flex-col gap-2">
                     <a href={contactInfo.phoneHref} className="transition hover:text-foreground">
                       {contactInfo.phone}
                     </a>
+                    <div className="flex flex-col gap-1.5 pt-2 border-t border-white/10">
+                      <a href="mailto:contact@scalezix.com" className="transition hover:text-foreground">
+                        contact@scalezix.com (General)
+                      </a>
+                      <a href="mailto:hr@scalezix.com" className="transition hover:text-foreground">
+                        hr@scalezix.com (HR)
+                      </a>
+                      <a href="mailto:career@scalezix.com" className="transition hover:text-foreground">
+                        career@scalezix.com (Careers)
+                      </a>
+                    </div>
                   </div>
                 </div>
 
