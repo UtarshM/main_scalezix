@@ -27,7 +27,6 @@ const jobs = [
       "Collaborate with marketing and operations to refine internal and external products."
     ],
     requirements: [
-      "2+ years of experience with React, Next.js, TypeScript, and Node.js.",
       "Familiarity with OpenAI, Anthropic, or Gemini APIs.",
       "Experience setting up databases (PostgreSQL, Firestore, etc.).",
       "Familiarity with workflow builders like n8n or Make is a plus."
