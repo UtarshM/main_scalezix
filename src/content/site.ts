@@ -298,6 +298,7 @@ export const faqs = [
 export const footerLinks = {
   company: [
     { label: "Services", href: "/services" },
+    { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },
   ],
   products: products.map((product) => ({
