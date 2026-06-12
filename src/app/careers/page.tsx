@@ -68,7 +68,7 @@ const jobs = [
       "Manage community engagement, newsletter distributions, and website content updates."
     ],
     requirements: [
-      "2+ years of marketing experience, ideally in B2B SaaS, tech, or digital agencies.",
+      "Ideally in B2B SaaS, tech, or digital agencies.",
       "Excellent copywriting, communication, and visual design storytelling skills.",
       "Experience with LinkedIn organic growth and SEO strategies.",
       "Ability to understand technical concepts and present them as business outcomes (ROI, time saved)."
