@@ -38,7 +38,7 @@ export const contactInfo = {
   phoneHref: "tel:+918200010241",
   whatsappHref:
     "https://wa.me/918200010241?text=Hi%20Scalezix%2C%20I%20want%20to%20book%20a%20free%20AI%20strategy%20call.",
-  addressLine1: "Prajna Puram, KCG Campus, opp. PRL",
+  addressLine1: "i-Hub, Prajna Puram, KCG Campus, opp. PRL",
   addressLine2: "Navrangpura, Ahmedabad, Gujarat 380015, India",
   city: "Ahmedabad",
   region: "Gujarat",
