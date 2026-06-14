@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Cpu, Layers, ShieldCheck, Users, ArrowRight } from "lucide-react";
+import { Cpu, Layers, ShieldCheck, Users, ArrowRight, Megaphone } from "lucide-react";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { company, siteUrl } from "@/content/site";
@@ -53,6 +53,34 @@ export default function AboutPage() {
                 <h2 className="text-2xl font-semibold">Our Philosophy</h2>
                 <p className="mt-4 text-sm leading-7 text-muted-foreground">
                   Workflows first, models second. We focus on designing strong system architectures that bridge the gap between AI capability and operational reality. We ensure human supervision is placed exactly where it matters.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Tech & Marketing Pillars Section */}
+          <div className="mt-20">
+            <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">Our Core Pillars</h2>
+            <p className="mt-4 max-w-2xl text-muted-foreground text-sm md:text-base">
+              Scalezix operates at the intersection of robust backend engineering and data-driven client acquisition systems.
+            </p>
+            <div className="mt-12 grid gap-8 md:grid-cols-2">
+              <div className="panel p-8 relative overflow-hidden border border-primary/10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10 text-primary mb-6">
+                  <Cpu className="h-5 w-5" />
+                </div>
+                <h3 className="text-2xl font-semibold">Tech & AI Engineering</h3>
+                <p className="mt-4 text-sm leading-7 text-muted-foreground">
+                  We write optimized, type-safe code, deploy custom large language model agents, build automated data ingestion pipelines, and integrate complex APIs. We lay down the technological foundation that allows your business to automate repetitive work reliably.
+                </p>
+              </div>
+              <div className="panel p-8 relative overflow-hidden border border-secondary/10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-secondary/20 bg-secondary/10 text-secondary mb-6">
+                  <Megaphone className="h-5 w-5" />
+                </div>
+                <h3 className="text-2xl font-semibold">Growth & Marketing Automation</h3>
+                <p className="mt-4 text-sm leading-7 text-muted-foreground">
+                  An automation system is only as good as the revenue it drives. We design conversion-focused user journeys, launch automated WhatsApp broadcasts, build CRM nurturing sequences, and track analytics to scale customer acquisition and retention.
                 </p>
               </div>
             </div>
