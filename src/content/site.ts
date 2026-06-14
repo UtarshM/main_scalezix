@@ -51,6 +51,7 @@ export const contactInfo = {
 export const navLinks = [
   { label: "Services", href: "/services" },
   { label: "Process", href: "/process" },
+  { label: "About Us", href: "/about" },
   { label: "Results", href: "/results" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
@@ -299,6 +300,7 @@ export const footerLinks = {
   company: [
     { label: "Services", href: "/services" },
     { label: "Careers", href: "/careers" },
+    { label: "About Us", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
   products: products.map((product) => ({
