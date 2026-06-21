@@ -17,6 +17,9 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  verification: {
+    google: "OCBEWXD-6bUmMZI09ZqVvlCGkAjjc_tYUkjTeQhKtuU",
+  },
   title: {
     default: company.seoTitle,
     template: `%s | ${company.name}`,
