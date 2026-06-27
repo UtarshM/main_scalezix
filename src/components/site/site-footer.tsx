@@ -27,6 +27,9 @@ export function SiteFooter() {
                 {item.label}
               </Link>
             ))}
+            <Link href="/blog" className="transition hover:text-foreground">
+              Blog
+            </Link>
           </nav>
           <Link href="/contact" className="button-primary rounded-full px-6 py-3 text-sm">
             START A PROJECT

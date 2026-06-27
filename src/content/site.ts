@@ -297,6 +297,7 @@ export const faqs = [
 export const footerLinks = {
   company: [
     { label: "Services", href: "/services" },
+    { label: "Blog", href: "/blog" },
     { label: "Careers", href: "/careers" },
     { label: "About Us", href: "/about" },
     { label: "Contact", href: "/contact" },
