@@ -1,131 +1,33 @@
 import type { Metadata } from "next";
-import { Manrope, Space_Grotesk } from "next/font/google";
-import Script from "next/script";
-import { company, contactInfo, faqs, siteUrl } from "@/content/site";
-import { ThemeProvider } from "@/components/site/theme-provider";
+import { Inter } from "next/font/google";
+
+import { JsonLd } from "@/components/seo/json-ld";
+import { CursorOrb } from "@/components/site/cursor-orb";
+import { SiteFooter } from "@/components/site/site-footer";
+import { SiteHeader } from "@/components/site/site-header";
+import { companyInfo } from "@/content/prd-site";
+import { absoluteUrl, buildMetadata, siteName } from "@/lib/seo";
+
 import "./globals.css";
 
-const manrope = Manrope({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-sans",
+  display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-heading",
-});
-
-export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  verification: {
-    google: "OCBEWXD-6bUmMZI09ZqVvlCGkAjjc_tYUkjTeQhKtuU",
-  },
-  title: {
-    default: company.seoTitle,
-    template: `%s | ${company.name}`,
-  },
-  description: company.seoDescription,
-  keywords: company.keywords,
-  applicationName: company.name,
-  creator: company.name,
-  publisher: company.name,
-  category: "technology",
-  authors: [{ name: company.name }],
-  referrer: "origin-when-cross-origin",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-video-preview": -1,
-      "max-snippet": -1,
-    },
-  },
-  openGraph: {
-    title: company.seoTitle,
-    description: company.seoDescription,
-    url: siteUrl,
-    siteName: company.name,
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: company.seoTitle,
-    description: company.seoDescription,
-    creator: "@scalezixco",
-  },
-  alternates: {
-    canonical: siteUrl,
-  },
-  icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
-  },
-};
-
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: company.name,
-  url: siteUrl,
-  description: company.description,
-  slogan: company.tagline,
-  areaServed: "Worldwide",
-  knowsAbout: company.keywords,
-  sameAs: [contactInfo.linkedin],
-  contactPoint: [
-    {
-      "@type": "ContactPoint",
-      telephone: contactInfo.phone,
-      contactType: "sales",
-      areaServed: "Worldwide",
-      availableLanguage: ["English"],
-    },
+export const metadata: Metadata = buildMetadata({
+  title: "Scalezix | AI Automation, Software Development & Growth Systems",
+  description:
+    "Scalezix builds AI automation systems, software, agents, and growth infrastructure for modern businesses in India.",
+  path: "/",
+  keywords: [
+    "Scalezix",
+    "AI automation agency India",
+    "software development company Ahmedabad",
+    "WhatsApp automation India",
+    "AI agents for business",
   ],
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: `${contactInfo.addressLine1}, ${contactInfo.addressLine2}`,
-    addressLocality: contactInfo.city,
-    addressRegion: contactInfo.region,
-    postalCode: contactInfo.postalCode,
-    addressCountry: contactInfo.country,
-  },
-};
-
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  serviceType: "AI workflow automation and business automation services",
-  provider: {
-    "@type": "Organization",
-    name: company.name,
-    url: siteUrl,
-  },
-  areaServed: "Worldwide",
-  description: company.seoDescription,
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((item) => ({
-    "@type": "Question",
-    name: item.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer,
-    },
-  })),
-};
+});
 
 export default function RootLayout({
   children,
@@ -133,26 +35,39 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${manrope.variable} ${spaceGrotesk.variable} font-sans`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+    <html lang="en">
+      <body className={inter.className}>
+        <div className="min-h-screen bg-background text-foreground">
+          <JsonLd
+            data={[
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                name: siteName,
+                url: companyInfo.website,
+                telephone: companyInfo.phone,
+                email: companyInfo.email,
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: companyInfo.address,
+                  addressCountry: "IN",
+                },
+                sameAs: [companyInfo.whatsappHref],
+                logo: absoluteUrl("/scalezix-logo-white.png"),
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                name: siteName,
+                url: companyInfo.website,
+              },
+            ]}
+          />
+          <CursorOrb />
+          <SiteHeader />
           {children}
-        </ThemeProvider>
-        <Script
-          id="organization-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
-        <Script
-          id="service-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-        />
-        <Script
-          id="faq-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
+          <SiteFooter />
+        </div>
       </body>
     </html>
   );

@@ -1,67 +1,52 @@
 import type { MetadataRoute } from "next";
-import { products, siteUrl } from "@/content/site";
+
+import { blogPosts, caseStudies, products, serviceCards } from "@/content/prd-site";
+
+const siteUrl = "https://scalezix.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-
-  const staticPages: MetadataRoute.Sitemap = [
-    {
-      url: siteUrl,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${siteUrl}/services`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/process`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/results`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-
-    {
-      url: `${siteUrl}/faq`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/contact`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/privacy`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.4,
-    },
-    {
-      url: `${siteUrl}/terms`,
-      lastModified: now,
-      changeFrequency: "yearly",
-      priority: 0.4,
-    },
-  ];
-
-  const productPages: MetadataRoute.Sitemap = products.map((product) => ({
-    url: `${siteUrl}/products/${product.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.8,
+  const staticRoutes = [
+    "",
+    "/about",
+    "/blog",
+    "/careers",
+    "/case-studies",
+    "/contact",
+    "/faq",
+    "/privacy",
+    "/process",
+    "/products",
+    "/results",
+    "/services",
+    "/terms",
+  ].map((path) => ({
+    url: `${siteUrl}${path}`,
+    lastModified: new Date(),
   }));
 
-  return [...staticPages, ...productPages];
+  const serviceRoutes = serviceCards
+    .filter((service) =>
+      ["ai-automation", "software-development", "digital-marketing", "ai-agents", "crm-integrations", "ai-chatbots"].includes(service.slug),
+    )
+    .map((service) => ({
+      url: `${siteUrl}/services/${service.slug}`,
+      lastModified: new Date(),
+    }));
+
+  const productRoutes = products.map((product) => ({
+    url: `${siteUrl}/products/${product.slug}`,
+    lastModified: new Date(),
+  }));
+
+  const caseStudyRoutes = caseStudies.map((study) => ({
+    url: `${siteUrl}/case-studies/${study.slug}`,
+    lastModified: new Date(),
+  }));
+
+  const blogRoutes = blogPosts.map((post) => ({
+    url: `${siteUrl}/blog/${post.slug}`,
+    lastModified: new Date(),
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...productRoutes, ...caseStudyRoutes, ...blogRoutes];
 }

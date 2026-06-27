@@ -1,13 +1,22 @@
+import Image from "next/image";
 import Link from "next/link";
 import { company, contactInfo, footerLinks, navLinks } from "@/content/site";
 
 export function SiteFooter() {
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-black">
-      <div className="mx-auto max-w-7xl px-4 pb-8 pt-8 md:px-6 xl:px-8">
+      <div className="mx-auto max-w-7xl px-4 pb-8 pt-10 md:px-6 xl:px-8">
         <div className="flex flex-wrap items-center justify-between gap-5 border-b border-white/10 pb-5">
-          <Link href="/" className="font-heading text-3xl font-semibold tracking-tight text-foreground">
-            {company.name}
+          <Link href="/" className="flex items-center gap-3 font-heading text-3xl font-semibold tracking-tight text-foreground">
+            <span className="flex h-16 items-center px-2 py-2">
+              <Image
+                src="/scalezix-logo-white.png"
+                alt={`${company.name} logo`}
+                width={220}
+                height={70}
+                className="h-10 w-auto object-contain"
+              />
+            </span>
           </Link>
           <nav className="flex flex-wrap items-center gap-5 text-sm text-muted-foreground">
             <Link href="/" className="transition hover:text-foreground">
@@ -19,20 +28,20 @@ export function SiteFooter() {
               </Link>
             ))}
           </nav>
-          <Link href="/contact" className="button-primary rounded-md px-6 py-3 text-sm">
-            SCHEDULE A CALL
+          <Link href="/contact" className="button-primary rounded-full px-6 py-3 text-sm">
+            START A PROJECT
           </Link>
         </div>
 
         <div className="grid gap-12 py-10 lg:grid-cols-[1.4fr_0.7fr_0.9fr]">
           <div className="max-w-2xl">
-            <h2 className="text-4xl font-semibold uppercase leading-[0.92] tracking-[-0.02em] text-white sm:text-5xl md:text-7xl">
-              Your next AI
+            <h2 className="text-4xl font-semibold leading-[0.92] tracking-[-0.05em] text-white sm:text-5xl md:text-7xl">
+              Premium AI systems,
               <br />
-              scale starts here
+              sharper digital presence
             </h2>
             <p className="mt-6 max-w-md text-sm leading-7 text-muted-foreground sm:text-base">
-              We are ready to turn your workflow bottlenecks into growth systems with AI automation.
+              Built for businesses that want their services, products, and automation story to feel decisive and high-trust.
             </p>
           </div>
 
@@ -72,9 +81,6 @@ export function SiteFooter() {
             © {new Date().getFullYear()} {company.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
-            <Link href={contactInfo.linkedin} className="transition hover:text-foreground">
-              LinkedIn
-            </Link>
             <Link href={contactInfo.whatsappHref} className="transition hover:text-foreground">
               WhatsApp
             </Link>

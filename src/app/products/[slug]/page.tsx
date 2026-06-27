@@ -1,132 +1,98 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, ChevronRight } from "lucide-react";
-import { SiteFooter } from "@/components/site/site-footer";
-import { SiteHeader } from "@/components/site/site-header";
-import { Reveal } from "@/components/site/reveal";
-import { company, products, siteUrl } from "@/content/site";
 
-type ProductPageProps = {
-  params: Promise<{ slug: string }>;
-};
+import { JsonLd } from "@/components/seo/json-ld";
+import { products } from "@/content/prd-site";
+import { breadcrumbSchema, buildMetadata } from "@/lib/seo";
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: ProductPageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const product = products.find((item) => item.slug === slug);
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const product = products.find((entry) => entry.slug === params.slug);
 
   if (!product) {
     return {};
   }
 
-  const title = `${product.name} | ${company.name}`;
-  const description = `${product.description} ${product.outcomes.join(", ")}.`;
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: `${siteUrl}/products/${product.slug}`,
-    },
-    openGraph: {
-      title,
-      description,
-      url: `${siteUrl}/products/${product.slug}`,
-      type: "article",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-    },
-  };
+  return buildMetadata({
+    title: `${product.name} | Scalezix Products`,
+    description: product.description,
+    path: `/products/${product.slug}`,
+    keywords: [product.name, "Scalezix product", "AI product India"],
+  });
 }
 
-export default async function ProductPage({ params }: ProductPageProps) {
-  const { slug } = await params;
-  const product = products.find((item) => item.slug === slug);
+export default function ProductDetailPage({ params }: { params: { slug: string } }) {
+  const product = products.find((entry) => entry.slug === params.slug);
 
   if (!product) {
     notFound();
   }
 
   return (
-    <>
-      <SiteHeader />
-      <main className="pb-24 pt-32 md:pt-40">
-        <section className="section-shell">
-          <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-            <div>
-              <p className="section-kicker">{product.label}</p>
-              <h1 className="mt-6 text-5xl font-semibold leading-tight md:text-7xl">
-                {product.name}
-              </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-                {product.description}
-              </p>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Link href="/#contact" className="button-primary">
-                  {company.primaryCta}
-                </Link>
+    <main className="section-shell py-20 md:py-24">
+      <JsonLd
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: product.name,
+            description: product.description,
+            brand: {
+              "@type": "Brand",
+              name: "Scalezix",
+            },
+          },
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Products", path: "/products" },
+            { name: product.name, path: `/products/${product.slug}` },
+          ]),
+        ]}
+      />
 
-              </div>
-            </div>
-
-            <div className="panel p-6 md:p-8">
-              <p className="text-sm uppercase tracking-[0.22em] text-primary">
-                Expected outcomes
-              </p>
-              <ul className="mt-6 space-y-4">
-                {product.outcomes.map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-base text-foreground">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
-                      <ChevronRight className="h-4 w-4" />
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section className="section-shell mt-16 md:mt-20">
-          <div className="grid gap-5 lg:grid-cols-3">
-            {product.details.map((detail, index) => (
-              <Reveal key={detail} delay={index * 70}>
-                <div className="panel h-full p-6">
-                  <p className="text-sm font-medium text-primary">Capability 0{index + 1}</p>
-                  <p className="mt-3 text-lg leading-8 text-foreground/90">{detail}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </section>
-
-        <section className="section-shell mt-16 md:mt-20">
-          <div className="panel flex flex-col gap-5 p-8 md:flex-row md:items-center md:justify-between md:p-10">
-            <div className="max-w-2xl">
-              <p className="section-kicker">Next Step</p>
-              <h2 className="mt-5 text-3xl font-semibold md:text-5xl">
-                See how {product.name} fits into your AI growth plan.
-              </h2>
-              <p className="mt-4 text-base leading-8 text-muted-foreground">
-                We will map the fastest path from current workflow pain to a production-ready system.
-              </p>
-            </div>
-            <Link href="/#contact" className="button-primary">
-              Book Strategy Call <ArrowRight className="ml-2 h-4 w-4" />
+      <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+        <div>
+          <p className="section-kicker w-fit">{product.tag}</p>
+          <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-white md:text-6xl">
+            {product.name}
+          </h1>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300">{product.description}</p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link href="/contact" className="button-primary">
+              Get started
+            </Link>
+            <Link href="/contact" className="button-secondary">
+              Book a free call
             </Link>
           </div>
-        </section>
-      </main>
-      <SiteFooter />
-    </>
+        </div>
+
+        <div className="metal-panel rounded-[2rem] p-6">
+          <p className="text-sm uppercase tracking-[0.18em] text-slate-400">Key features</p>
+          <div className="mt-5 grid gap-3">
+            {product.features.map((feature) => (
+              <div key={feature} className="rounded-[1.2rem] border border-white/8 bg-white/[0.02] p-4">
+                <p className="text-sm font-medium text-white">{feature}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <section className="mt-10 grid gap-5 lg:grid-cols-3">
+        {["Starter", "Growth", "Enterprise"].map((tier) => (
+          <div key={tier} className="mesh-card rounded-[1.8rem] p-6">
+            <p className="text-sm font-medium text-white">{tier}</p>
+            <p className="mt-3 text-sm leading-7 text-slate-300">
+              Flexible packaging for businesses at different stages of adoption and scale.
+            </p>
+          </div>
+        ))}
+      </section>
+    </main>
   );
 }

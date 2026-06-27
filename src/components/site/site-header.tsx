@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
@@ -43,12 +44,21 @@ export function SiteHeader() {
           className={cn(
             "mx-auto flex max-w-7xl items-center justify-between transition-all duration-300",
             scrolled
-              ? "rounded-full border border-white/[0.07] bg-black/75 px-6 py-3 shadow-[0_20px_60px_rgba(0,0,0,0.55)] backdrop-blur-xl"
+              ? "rounded-full border border-white/[0.08] bg-black/70 px-6 py-3 shadow-[0_20px_60px_rgba(0,0,0,0.55)] backdrop-blur-2xl"
               : "px-4 py-5"
           )}
         >
-          <Link href="/" className="font-heading text-[1.7rem] font-semibold tracking-tight text-foreground">
-            {company.name}
+          <Link href="/" className="flex items-center gap-3 font-heading text-[1.15rem] font-semibold tracking-tight text-foreground">
+            <span className="flex h-12 items-center px-1 py-1">
+              <Image
+                src="/scalezix-logo-white.png"
+                alt={`${company.name} logo`}
+                width={180}
+                height={56}
+                className="h-9 w-auto object-contain"
+                priority
+              />
+            </span>
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">
@@ -93,11 +103,8 @@ export function SiteHeader() {
           </nav>
 
           <div className="hidden items-center gap-4 lg:flex">
-            <Link href="#" className="text-sm text-muted-foreground transition hover:text-foreground">
-              Log in
-            </Link>
             <Link href="/contact" className="button-primary px-7 py-3">
-              Get Started
+              Start a project
             </Link>
           </div>
 

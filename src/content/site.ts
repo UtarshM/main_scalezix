@@ -44,7 +44,6 @@ export const contactInfo = {
   region: "Gujarat",
   postalCode: "380015",
   country: "India",
-  linkedin: "https://in.linkedin.com/company/scalezixco",
   website: siteUrl,
 };
 
@@ -60,7 +59,6 @@ export const navLinks = [
 export const socialProof = {
   eyebrow: "Public brand proof",
   logos: [
-    "882 followers on LinkedIn",
     "GoodFirms company profile",
     "AWS Summit Mumbai 2025 attendee",
     "Ahmedabad, Gujarat",
@@ -215,7 +213,7 @@ export const testimonials = [
   {
     quote:
       "Scalezix.com specializes in scaling Direct-to-Consumer (D2C) brands through data-driven marketing strategies and revenue optimization.",
-    name: "LinkedIn company profile",
+    name: "Public company profile",
     company: "Scalezix",
   },
   {
@@ -227,7 +225,7 @@ export const testimonials = [
   {
     quote:
       "At Scalezix, we’re excited about the future AWS is unlocking — from generative AI to serverless architectures and data-driven innovation.",
-    name: "LinkedIn update",
+    name: "AWS event note",
     company: "Scalezix team",
   },
 ];
