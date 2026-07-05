@@ -54,8 +54,17 @@ export default function AboutPage() {
           </ul>
         </div>
         <div className="metal-panel rounded-[1.8rem] p-6">
-          <h2 className="text-2xl font-medium text-white">Office</h2>
-          <p className="mt-4 text-sm leading-7 text-slate-300">{companyInfo.address}</p>
+          <h2 className="text-2xl font-medium text-white">Offices</h2>
+          <div className="mt-4 space-y-3 text-sm leading-7 text-slate-300">
+            <div>
+              <p className="font-semibold text-white">Ahmedabad Office</p>
+              <p>{companyInfo.address}</p>
+            </div>
+            <div>
+              <p className="font-semibold text-white">Gandhinagar Office</p>
+              <p>{companyInfo.address2}</p>
+            </div>
+          </div>
         </div>
       </section>
     </main>

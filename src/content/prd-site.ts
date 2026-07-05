@@ -4,6 +4,7 @@ export const companyInfo = {
   phone: "+91 82000 10241",
   email: "hello@scalezix.com",
   address: "i-Hub, Prajna Puram, KCG Campus, Navrangpura, Ahmedabad, Gujarat 380015",
+  address2: "208, 2nd Floor, Shalin Centrum, Behind H.P. Petrol Pump, Sector-11, Gandhinagar - 382011",
   whatsappHref:
     "https://wa.me/918200010241?text=Hi%20Scalezix,%20I%20want%20to%20book%20a%20free%20AI%20strategy%20call.",
   calendlyHref: "https://calendly.com/scalezix/free-strategy-call",

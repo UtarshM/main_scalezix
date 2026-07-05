@@ -40,6 +40,8 @@ export const contactInfo = {
     "https://wa.me/918200010241?text=Hi%20Scalezix%2C%20I%20want%20to%20book%20a%20free%20AI%20strategy%20call.",
   addressLine1: "i-Hub, Prajna Puram, KCG Campus, opp. PRL",
   addressLine2: "Navrangpura, Ahmedabad, Gujarat 380015, India",
+  address2Line1: "208, 2nd Floor, Shalin Centrum, Behind H.P. Petrol Pump, Sector-11",
+  address2Line2: "Gandhinagar - 382011, Gujarat, India",
   city: "Ahmedabad",
   region: "Gujarat",
   postalCode: "380015",

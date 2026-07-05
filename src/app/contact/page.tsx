@@ -43,10 +43,19 @@ export default function ContactPage() {
             </Link>
           </div>
 
-          <div className="mt-10 space-y-2 text-sm leading-7 text-slate-300">
-            <p>{companyInfo.address}</p>
-            <p>{companyInfo.phone}</p>
-            <p>{companyInfo.email}</p>
+          <div className="mt-10 space-y-4 text-sm leading-7 text-slate-300">
+            <div>
+              <p className="font-semibold text-white">Ahmedabad Office</p>
+              <p>{companyInfo.address}</p>
+            </div>
+            <div>
+              <p className="font-semibold text-white">Gandhinagar Office</p>
+              <p>{companyInfo.address2}</p>
+            </div>
+            <div className="space-y-1 pt-2">
+              <p>{companyInfo.phone}</p>
+              <p>{companyInfo.email}</p>
+            </div>
           </div>
         </div>
 

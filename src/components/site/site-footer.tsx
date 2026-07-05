@@ -52,29 +52,39 @@ export function SiteFooter() {
 
           <div>
             <h3 className="text-xl font-semibold text-foreground">Address and contact</h3>
-            <div className="mt-4 space-y-1.5 text-sm text-muted-foreground">
-              <p>{contactInfo.addressLine1}</p>
-              <p>{contactInfo.addressLine2}</p>
-              <p className="pt-3">
-                <a href="mailto:contact@scalezix.com" className="transition hover:text-foreground">
-                  contact@scalezix.com
-                </a>
-              </p>
-              <p>
-                <a href="mailto:hr@scalezix.com" className="transition hover:text-foreground">
-                  hr@scalezix.com
-                </a>
-              </p>
-              <p>
-                <a href="mailto:career@scalezix.com" className="transition hover:text-foreground">
-                  career@scalezix.com
-                </a>
-              </p>
-              <p>
-                <a href={contactInfo.phoneHref} className="transition hover:text-foreground">
-                  {contactInfo.phone}
-                </a>
-              </p>
+            <div className="mt-4 space-y-4 text-sm text-muted-foreground">
+              <div>
+                <p className="font-medium text-foreground">Ahmedabad Office</p>
+                <p>{contactInfo.addressLine1}</p>
+                <p>{contactInfo.addressLine2}</p>
+              </div>
+              <div>
+                <p className="font-medium text-foreground">Gandhinagar Office</p>
+                <p>{contactInfo.address2Line1}</p>
+                <p>{contactInfo.address2Line2}</p>
+              </div>
+              <div className="space-y-1.5 pt-2">
+                <p>
+                  <a href="mailto:contact@scalezix.com" className="transition hover:text-foreground">
+                    contact@scalezix.com
+                  </a>
+                </p>
+                <p>
+                  <a href="mailto:hr@scalezix.com" className="transition hover:text-foreground">
+                    hr@scalezix.com
+                  </a>
+                </p>
+                <p>
+                  <a href="mailto:career@scalezix.com" className="transition hover:text-foreground">
+                    career@scalezix.com
+                  </a>
+                </p>
+                <p className="pt-1.5">
+                  <a href={contactInfo.phoneHref} className="transition hover:text-foreground">
+                    {contactInfo.phone}
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
