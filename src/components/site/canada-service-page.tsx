@@ -146,6 +146,59 @@ export function CanadaServicePage({ page }: { page: CanadaServiceCityPage }) {
           </div>
         </div>
       </section>
+
+      <section className="relative mt-16 overflow-hidden rounded-[2.4rem] border border-[#00f5ff]/16 bg-[#07101f]/75 p-8 shadow-[0_24px_80px_rgba(0,0,0,0.35)] md:p-12">
+        <div className="absolute left-0 top-0 h-px w-full bg-white/10" />
+        <div className="animate-float-slow absolute right-10 top-10 h-32 w-32 rounded-full bg-[#00f5ff]/14 blur-[100px]" />
+        
+        <div className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] z-10">
+          <div>
+            <p className="section-kicker w-fit">Get Started in {page.city.name}</p>
+            <h2 className="mt-5 text-3xl font-semibold tracking-[-0.05em] text-white md:text-5xl">
+              Let&apos;s Build Your {page.service.name} System
+            </h2>
+            <p className="mt-5 max-w-xl text-base leading-8 text-slate-300">
+              Ready to automate operations and drive revenue? Tell us where your workflow slows down in {page.city.name}, and we&apos;ll map your top three AI opportunities.
+            </p>
+            
+            <div className="mt-8 space-y-4 text-sm text-slate-300">
+              <p className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#00f5ff]" />
+                Custom {page.service.name.toLowerCase()} strategy for local operations
+              </p>
+              <p className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#00f5ff]" />
+                Integration with your existing CRMs, inboxes, and tools
+              </p>
+              <p className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#00f5ff]" />
+                24/7 automated support and lead qualification options
+              </p>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link href="https://calendly.com/scalezix/free-strategy-call" className="button-primary">
+                Book a Free call
+              </Link>
+              <Link href="https://wa.me/918200010241?text=Hi%20Scalezix" className="button-secondary">
+                WhatsApp Chat
+              </Link>
+            </div>
+          </div>
+
+          <div className="metal-panel rounded-2xl p-6 bg-black/40 backdrop-blur-md">
+            <h3 className="text-xl font-medium text-white mb-5">Inquire about {page.service.name}</h3>
+            <div className="grid gap-3.5">
+              <input className="contact-input" placeholder="Your Name" />
+              <input className="contact-input" placeholder="Work Email" />
+              <input className="contact-input" placeholder="Phone Number" />
+              <input className="contact-input" placeholder="Company Name" />
+              <textarea className="contact-input min-h-24 py-3" placeholder="Tell us about your automation or software needs..." />
+              <button className="button-primary w-full mt-2">Submit Inquiry</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
