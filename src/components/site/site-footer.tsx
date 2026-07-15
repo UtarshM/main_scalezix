@@ -36,8 +36,8 @@ export function SiteFooter() {
           </Link>
         </div>
 
-        <div className="grid gap-12 py-10 lg:grid-cols-[1.4fr_0.7fr_0.9fr]">
-          <div className="max-w-2xl">
+        <div className="grid gap-12 py-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1.4fr_0.6fr_0.6fr_0.9fr_1.1fr]">
+          <div className="col-span-2 md:col-span-3 lg:col-span-1 max-w-2xl">
             <h2 className="text-4xl font-semibold leading-[0.92] tracking-[-0.05em] text-white sm:text-5xl md:text-7xl">
               Premium AI systems,
               <br />
@@ -49,6 +49,21 @@ export function SiteFooter() {
           </div>
 
           <FooterColumn title="Pages" links={footerLinks.company} />
+
+          <FooterColumn title="Products" links={footerLinks.products} />
+
+          <div>
+            <h3 className="text-xl font-semibold text-foreground">Locations</h3>
+            <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2.5">
+              {footerLinks.locations.map((link) => (
+                <li key={link.href} className={link.label === "Canada AI Hub" ? "col-span-2 font-medium border-b border-white/10 pb-1.5 mb-1 text-white" : ""}>
+                  <Link href={link.href} className="text-sm text-muted-foreground transition hover:text-foreground">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div>
             <h3 className="text-xl font-semibold text-foreground">Address and contact</h3>

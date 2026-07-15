@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 
+import { canadaCitySlugs, canadaServiceCityPages } from "@/content/canada";
 import { blogPosts, caseStudies, products, serviceCards } from "@/content/prd-site";
 
 const siteUrl = "https://scalezix.com";
@@ -38,6 +39,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }));
 
+  const canadaRoutes = [
+    {
+      url: `${siteUrl}/ca`,
+      lastModified: new Date(),
+    },
+    ...canadaCitySlugs.map((city) => ({
+      url: `${siteUrl}/ca/${city}`,
+      lastModified: new Date(),
+    })),
+    ...canadaServiceCityPages.map((page) => ({
+      url: `${siteUrl}/ca/${page.city.slug}/${page.service.slug}`,
+      lastModified: new Date(),
+    })),
+  ];
+
   const caseStudyRoutes = caseStudies.map((study) => ({
     url: `${siteUrl}/case-studies/${study.slug}`,
     lastModified: new Date(),
@@ -48,5 +64,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...productRoutes, ...caseStudyRoutes, ...blogRoutes];
+  return [
+    ...staticRoutes,
+    ...serviceRoutes,
+    ...productRoutes,
+    ...caseStudyRoutes,
+    ...blogRoutes,
+    ...canadaRoutes,
+  ];
 }

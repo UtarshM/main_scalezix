@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import { ServiceIcon } from "@/components/site/service-icon";
+import ParticleField from "@/components/ParticleField";
 import {
   caseStudies,
   companyInfo,
@@ -91,10 +92,11 @@ export default function HomePage() {
               <div className="absolute inset-0 rounded-[2rem] border border-[#00f5ff]/14 bg-[#0a142c]/42" />
               <div className="animate-float-slow absolute left-6 top-6 h-24 w-24 rounded-full border border-[#00f5ff]/20 bg-[#00f5ff]/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-[2.2rem] border border-[#00f5ff]/16 bg-[#07101f]/72 p-6 backdrop-blur-2xl md:p-7">
+                <ParticleField />
                 <div className="absolute inset-x-0 top-0 h-px bg-white/12" />
-                <div className="animate-shimmer-band absolute inset-y-0 left-[-25%] w-[22%] bg-[linear-gradient(180deg,rgba(0,245,255,0),rgba(0,245,255,0.22),rgba(0,245,255,0))] opacity-70" />
+                <div className="animate-shimmer-band absolute inset-y-0 left-[-25%] z-0 w-[22%] bg-[linear-gradient(180deg,rgba(0,245,255,0),rgba(0,245,255,0.22),rgba(0,245,255,0))] opacity-70" />
 
-                <div className="flex items-center justify-between border-b border-white/8 pb-5">
+                <div className="relative flex items-center justify-between border-b border-white/8 pb-5 z-10">
                   <div>
                     <p className="text-xs uppercase tracking-[0.26em] text-slate-400">
                       Scalezix operating layer
@@ -106,9 +108,21 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                <div className="mt-6 grid gap-3">
-                  {trustStats.map((stat) => (
-                    <MetricRow key={stat.label} label={stat.label} value={stat.value} />
+                <div className="relative mt-6 grid grid-cols-2 gap-3.5 z-10">
+                  {trustStats.map((stat, index) => (
+                    <div
+                      key={stat.label}
+                      className={`group relative overflow-hidden rounded-2xl border border-white/8 bg-[#0a142c]/65 p-4 transition-all duration-300 hover:border-[#00f5ff]/35 hover:bg-white/[0.04] hover:shadow-[0_8px_30px_rgba(0,245,255,0.06)] ${
+                        index === 4 ? "col-span-2" : ""
+                      }`}
+                    >
+                      <p className="text-2xl font-bold tracking-tight text-white group-hover:text-[#00f5ff] transition-colors duration-300 sm:text-3xl">
+                        {stat.value}
+                      </p>
+                      <p className="mt-1 text-xs leading-5 text-slate-400">
+                        {stat.label}
+                      </p>
+                    </div>
                   ))}
                 </div>
               </div>

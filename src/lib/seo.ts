@@ -75,3 +75,89 @@ export function breadcrumbSchema(
     })),
   };
 }
+
+export function faqPageSchema(
+  faqs: Array<{
+    question: string;
+    answer: string;
+  }>,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+type ServiceSchemaInput = {
+  name: string;
+  description: string;
+  path: string;
+  areaServed?: string;
+  serviceType?: string;
+};
+
+export function serviceSchema({
+  name,
+  description,
+  path,
+  areaServed,
+  serviceType,
+}: ServiceSchemaInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url: absoluteUrl(path),
+    serviceType,
+    areaServed,
+    provider: {
+      "@type": "Organization",
+      name: siteName,
+      url: companyInfo.website,
+      telephone: companyInfo.phone,
+      email: companyInfo.email,
+    },
+  };
+}
+
+type ProfessionalServiceSchemaInput = {
+  name: string;
+  description: string;
+  path: string;
+  areaServed: string;
+  keywords?: string[];
+};
+
+export function professionalServiceSchema({
+  name,
+  description,
+  path,
+  areaServed,
+  keywords = [],
+}: ProfessionalServiceSchemaInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name,
+    description,
+    url: absoluteUrl(path),
+    areaServed,
+    keywords,
+    provider: {
+      "@type": "Organization",
+      name: siteName,
+      url: companyInfo.website,
+      telephone: companyInfo.phone,
+      email: companyInfo.email,
+    },
+  };
+}
