@@ -11,11 +11,11 @@ export function SiteFooter() {
             <Link href="/" className="flex items-center gap-3 font-heading text-3xl font-semibold tracking-tight text-white">
               <span className="flex h-12 items-center px-1">
                 <Image
-                  src="/scalezix-logo-white.png"
+                  src="/scalezix-logo-transparent-white.png"
                   alt={`${company.name} logo`}
                   width={220}
                   height={70}
-                  className="h-10 w-auto object-contain brightness-90 contrast-[200%] mix-blend-screen"
+                  className="h-10 w-auto object-contain"
                 />
               </span>
             </Link>

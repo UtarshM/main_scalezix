@@ -56,20 +56,20 @@ export function SiteHeader() {
           <Link href="/" className="block shrink-0">
             {/* Dark Mode Logo */}
             <Image
-              src="/scalezix-logo-white.png"
+              src="/scalezix-logo-transparent-white.png"
               alt={`${company.name} logo`}
               width={180}
               height={56}
-              className="hidden dark:block h-9 w-auto object-contain brightness-90 contrast-[200%] mix-blend-screen"
+              className="hidden dark:block h-9 w-auto object-contain"
               priority
             />
             {/* Light Mode Logo */}
             <Image
-              src="/scalezix-logo-white.png"
+              src="/scalezix-logo-transparent-dark.png"
               alt={`${company.name} logo`}
               width={180}
               height={56}
-              className="block dark:hidden h-9 w-auto object-contain invert brightness-110 contrast-[200%] mix-blend-multiply"
+              className="block dark:hidden h-9 w-auto object-contain"
               priority
             />
           </Link>
