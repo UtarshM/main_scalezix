@@ -4,121 +4,120 @@ import { company, contactInfo, footerLinks, navLinks } from "@/content/site";
 
 export function SiteFooter() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-black">
-      <div className="mx-auto max-w-7xl px-4 pb-8 pt-10 md:px-6 xl:px-8">
-        <div className="flex flex-wrap items-center justify-between gap-5 border-b border-white/10 pb-5">
-          <Link href="/" className="flex items-center gap-3 font-heading text-3xl font-semibold tracking-tight text-foreground">
-            <span className="flex h-16 items-center px-2 py-2">
-              <Image
-                src="/scalezix-logo-white.png"
-                alt={`${company.name} logo`}
-                width={220}
-                height={70}
-                className="h-10 w-auto object-contain"
-              />
-            </span>
-          </Link>
-          <nav className="flex flex-wrap items-center gap-5 text-sm text-muted-foreground">
-            <Link href="/" className="transition hover:text-foreground">
-              Home
+    <footer className="relative isolate overflow-hidden bg-transparent">
+      <div className="relative overflow-hidden bg-[#10222f] px-6 pb-16 pt-16 sm:px-10 lg:px-[76px] lg:pt-[80px] rounded-t-[48px] text-white">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-wrap items-center justify-between gap-5 border-b border-white/10 pb-8">
+            <Link href="/" className="flex items-center gap-3 font-heading text-3xl font-semibold tracking-tight text-white">
+              <span className="flex h-12 items-center px-1">
+                <Image
+                  src="/scalezix-logo-white.png"
+                  alt={`${company.name} logo`}
+                  width={220}
+                  height={70}
+                  className="h-10 w-auto object-contain brightness-90 contrast-[200%] mix-blend-screen"
+                />
+              </span>
             </Link>
-            {navLinks.slice(0, 4).map((item) => (
-              <Link key={item.href} href={item.href} className="transition hover:text-foreground">
-                {item.label}
+            <nav className="flex flex-wrap items-center gap-5 text-sm text-white/80">
+              <Link href="/" className="transition hover:text-white">
+                Home
               </Link>
-            ))}
-            <Link href="/blog" className="transition hover:text-foreground">
-              Blog
-            </Link>
-          </nav>
-          <Link href="/contact" className="button-primary rounded-full px-6 py-3 text-sm">
-            START A PROJECT
-          </Link>
-        </div>
-
-        <div className="grid gap-12 py-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1.4fr_0.6fr_0.6fr_0.9fr_1.1fr]">
-          <div className="col-span-2 md:col-span-3 lg:col-span-1 max-w-2xl">
-            <h2 className="text-4xl font-semibold leading-[0.92] tracking-[-0.05em] text-white sm:text-5xl md:text-7xl">
-              Premium AI systems,
-              <br />
-              sharper digital presence
-            </h2>
-            <p className="mt-6 max-w-md text-sm leading-7 text-muted-foreground sm:text-base">
-              Built for businesses that want their services, products, and automation story to feel decisive and high-trust.
-            </p>
-          </div>
-
-          <FooterColumn title="Pages" links={footerLinks.company} />
-
-          <FooterColumn title="Products" links={footerLinks.products} />
-
-          <div>
-            <h3 className="text-xl font-semibold text-foreground">Locations</h3>
-            <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2.5">
-              {footerLinks.locations.map((link) => (
-                <li key={link.href} className={link.label === "Canada AI Hub" ? "col-span-2 font-medium border-b border-white/10 pb-1.5 mb-1 text-white" : ""}>
-                  <Link href={link.href} className="text-sm text-muted-foreground transition hover:text-foreground">
-                    {link.label}
-                  </Link>
-                </li>
+              {navLinks.slice(0, 4).map((item) => (
+                <Link key={item.href} href={item.href} className="transition hover:text-white">
+                  {item.label}
+                </Link>
               ))}
-            </ul>
+              <Link href="/blog" className="transition hover:text-white">
+                Blog
+              </Link>
+            </nav>
+            <Link href="/contact" className="relative isolate inline-flex items-center justify-center overflow-hidden rounded-full border border-white/70 bg-[#1f77ff] px-6 py-2.5 text-[14px] font-medium leading-6 tracking-[-0.16px] text-[#05121b] transition-[color,border-color] duration-300 ease-in-out before:absolute before:inset-0 before:-z-[1] before:rounded-[inherit] before:bg-[linear-gradient(180deg,#ffffff_0%,#93bdff_100%)] before:transition-opacity before:duration-300 before:ease-in-out before:content-[''] hover:border-[#1f77ff] hover:text-white hover:before:opacity-0">
+              Talk to Us
+            </Link>
           </div>
 
-          <div>
-            <h3 className="text-xl font-semibold text-foreground">Address and contact</h3>
-            <div className="mt-4 space-y-4 text-sm text-muted-foreground">
-              <div>
-                <p className="font-medium text-foreground">Ahmedabad Office</p>
-                <p>{contactInfo.addressLine1}</p>
-                <p>{contactInfo.addressLine2}</p>
-              </div>
-              <div>
-                <p className="font-medium text-foreground">Gandhinagar Office</p>
-                <p>{contactInfo.address2Line1}</p>
-                <p>{contactInfo.address2Line2}</p>
-              </div>
-              <div className="space-y-1.5 pt-2">
-                <p>
-                  <a href="mailto:contact@scalezix.com" className="transition hover:text-foreground">
-                    contact@scalezix.com
-                  </a>
-                </p>
-                <p>
-                  <a href="mailto:hr@scalezix.com" className="transition hover:text-foreground">
-                    hr@scalezix.com
-                  </a>
-                </p>
-                <p>
-                  <a href="mailto:career@scalezix.com" className="transition hover:text-foreground">
-                    career@scalezix.com
-                  </a>
-                </p>
-                <p className="pt-1.5">
-                  <a href={contactInfo.phoneHref} className="transition hover:text-foreground">
-                    {contactInfo.phone}
-                  </a>
-                </p>
+          <div className="grid gap-12 py-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[1.4fr_0.6fr_0.6fr_0.9fr_1.1fr]">
+            <div className="col-span-2 md:col-span-3 lg:col-span-1 max-w-2xl">
+              <h2 className="text-4xl font-semibold leading-[1.0] tracking-[-0.05em] text-white sm:text-5xl md:text-6xl">
+                Premium AI systems,
+                <br />
+                sharper digital presence
+              </h2>
+              <p className="mt-6 max-w-md text-sm leading-7 text-white/70 sm:text-base">
+                Built for businesses that want their services, products, and automation story to feel decisive and high-trust.
+              </p>
+            </div>
+
+            <FooterColumn title="Pages" links={footerLinks.company} />
+            <FooterColumn title="Products" links={footerLinks.products} />
+
+            <div>
+              <h3 className="text-lg font-semibold text-white">Locations</h3>
+              <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2.5">
+                {footerLinks.locations.map((link) => (
+                  <li key={link.href} className={link.label === "Canada AI Hub" ? "col-span-2 font-medium border-b border-white/10 pb-1.5 mb-1 text-white" : ""}>
+                    <Link href={link.href} className="text-sm text-white/70 transition hover:text-white">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-white">Address and Contact</h3>
+              <div className="mt-4 space-y-4 text-sm text-white/70">
+                <div>
+                  <p className="font-medium text-white">Ahmedabad Office</p>
+                  <p>{contactInfo.addressLine1}</p>
+                  <p>{contactInfo.addressLine2}</p>
+                </div>
+                <div>
+                  <p className="font-medium text-white">Gandhinagar Office</p>
+                  <p>{contactInfo.address2Line1}</p>
+                  <p>{contactInfo.address2Line2}</p>
+                </div>
+                <div className="space-y-1.5 pt-2">
+                  <p>
+                    <a href="mailto:contact@scalezix.com" className="transition hover:text-white">
+                      contact@scalezix.com
+                    </a>
+                  </p>
+                  <p>
+                    <a href="mailto:hr@scalezix.com" className="transition hover:text-white">
+                      hr@scalezix.com
+                    </a>
+                  </p>
+                  <p>
+                    <a href="mailto:career@scalezix.com" className="transition hover:text-white">
+                      career@scalezix.com
+                    </a>
+                  </p>
+                  <p className="pt-1.5">
+                    <a href={contactInfo.phoneHref} className="transition hover:text-white">
+                      {contactInfo.phone}
+                    </a>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-muted-foreground">
-          <p>
-            © {new Date().getFullYear()} {company.name}. All rights reserved.
-          </p>
-          <div className="flex items-center gap-5">
-            <Link href={contactInfo.whatsappHref} className="transition hover:text-foreground">
-              WhatsApp
-            </Link>
-            <Link href="/privacy" className="transition hover:text-foreground">
-              Privacy
-            </Link>
-            <Link href="/terms" className="transition hover:text-foreground">
-              Terms
-            </Link>
-          </div>
+      <div className="flex flex-col items-center justify-between gap-4 bg-white dark:bg-ink px-6 py-8 text-sm text-[#83909a] sm:flex-row lg:px-[76px] mx-auto max-w-7xl transition-colors duration-300">
+        <p>© {new Date().getFullYear()} {company.name}. All rights reserved.</p>
+        <div className="flex items-center gap-5">
+          <Link href={contactInfo.whatsappHref} className="transition hover:text-[#05121b] dark:hover:text-white">
+            WhatsApp
+          </Link>
+          <Link href="/privacy" className="transition hover:text-[#05121b] dark:hover:text-white">
+            Privacy
+          </Link>
+          <Link href="/terms" className="transition hover:text-[#05121b] dark:hover:text-white">
+            Terms
+          </Link>
         </div>
       </div>
 
@@ -141,11 +140,11 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className="text-xl font-semibold text-foreground">{title}</h3>
+      <h3 className="text-lg font-semibold text-white">{title}</h3>
       <ul className="mt-4 space-y-2.5">
         {links.map((link) => (
           <li key={link.href}>
-            <Link href={link.href} className="text-sm text-muted-foreground transition hover:text-foreground">
+            <Link href={link.href} className="text-sm text-white/70 transition hover:text-white">
               {link.label}
             </Link>
           </li>

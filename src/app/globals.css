@@ -4,6 +4,39 @@
 
 @layer base {
   :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+    --primary: 215 100% 56%;
+    --primary-foreground: 0 0% 100%;
+    --font-sans: var(--font-sans);
+    --font-heading: var(--font-sans);
+    --secondary: 219 82% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 215 100% 56%;
+    --radius: 1rem;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 4%;
+    --sidebar-primary: 215 100% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96.1%;
+    --sidebar-accent-foreground: 222.2 47.4% 11.2%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 215 100% 56%;
+  }
+
+  .dark {
     --background: 0 0% 4%;
     --foreground: 0 0% 96%;
     --card: 0 0% 7%;
@@ -23,7 +56,6 @@
     --border: 0 0% 14%;
     --input: 0 0% 15%;
     --ring: 216 90% 62%;
-    --radius: 1rem;
     --sidebar-background: 0 0% 4%;
     --sidebar-foreground: 0 0% 96%;
     --sidebar-primary: 215 100% 62%;
@@ -43,13 +75,16 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-foreground antialiased transition-colors duration-300;
+    min-height: 100vh;
+  }
+
+  .dark body {
     background-image:
       radial-gradient(circle at 16% 12%, rgba(54, 118, 255, 0.16), transparent 18%),
       radial-gradient(circle at 82% 8%, rgba(17, 54, 134, 0.22), transparent 22%),
       radial-gradient(circle at 50% 100%, rgba(36, 92, 255, 0.12), transparent 30%),
       linear-gradient(180deg, rgba(3, 7, 18, 1), rgba(4, 8, 20, 1) 46%, rgba(2, 4, 10, 1));
-    min-height: 100vh;
   }
 
   h1,
@@ -289,10 +324,14 @@
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, #ffffff 0%, #8eb6ff 45%, #4474ff 100%);
+    background: linear-gradient(135deg, #10222f 0%, #1f77ff 50%, #146df7 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+  }
+
+  .dark .text-gradient {
+    background-image: linear-gradient(135deg, #ffffff 0%, #8eb6ff 45%, #4474ff 100%);
   }
 
   .mesh-card {

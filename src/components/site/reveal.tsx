@@ -49,7 +49,7 @@ export function Reveal({
     <div
       ref={ref}
       className={cn(
-        "will-change-transform transition-[opacity,transform,filter] duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]",
+        "will-change-transform transition-[opacity,transform,filter] duration-1000 ease-reveal-ease",
         visible
           ? "translate-y-0 translate-x-0 scale-100 opacity-100 blur-0"
           : `${transforms[direction]} opacity-0 blur-[10px]`,
