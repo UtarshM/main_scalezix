@@ -203,26 +203,46 @@ export default function HomePage() {
 
           {/* Rotating CSS Sphere/Orbit Graphic */}
           <div className="relative mx-auto flex w-full max-w-[520px] items-center justify-center py-8">
-            <div className="relative h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] flex items-center justify-center">
+            <div className="relative h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] flex items-center justify-center orbit-container">
               {/* Central Nucleus */}
               <div className="absolute h-24 w-24 rounded-full bg-[#1f77ff]/10 blur-2xl animate-pulse" />
               <div className="absolute h-16 w-16 rounded-full bg-white dark:bg-[#05121b] border-2 border-[#1f77ff] shadow-[0_0_35px_rgba(31,119,255,0.15)] dark:shadow-[0_0_35px_rgba(31,119,255,0.3)] flex items-center justify-center z-10 transition-colors duration-300">
                 <Workflow className="h-6 w-6 text-[#1f77ff]" />
               </div>
               {/* Outer Orbit Rings */}
-              <div className="absolute h-[220px] w-[220px] rounded-full border border-black/5 dark:border-white/5 animate-[spin_24s_linear_infinite] transition-colors" />
-              <div className="absolute h-[300px] w-[300px] rounded-full border border-dashed border-black/10 dark:border-white/10 animate-[spin_32s_linear_infinite_reverse] transition-colors" />
-              <div className="absolute h-[380px] w-[380px] rounded-full border border-black/5 dark:border-white/5 animate-[spin_45s_linear_infinite] transition-colors" />
-
-              {/* Orbiting Nodes */}
-              <div className="absolute top-[8%] left-[50%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white dark:bg-[#0a1c2e] border border-black/10 dark:border-white/10 px-3.5 py-1.5 text-xs text-[#05121b] dark:text-white shadow-lg transition-colors">
-                01. Discover
+              <div className="absolute h-[220px] w-[220px] rounded-full border border-black/5 dark:border-white/5 animate-[spin_24s_linear_infinite] transition-colors">
+                {/* 01. Discover */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="animate-[spin_24s_linear_infinite_reverse]">
+                    <div className="rounded-full bg-white dark:bg-[#0a1c2e] border border-black/10 dark:border-white/10 px-3.5 py-1.5 text-xs text-[#05121b] dark:text-white shadow-lg transition-colors whitespace-nowrap animate-pulse">
+                      01. Discover
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="absolute bottom-[20%] right-[2%] translate-x-1/4 rounded-full bg-white dark:bg-[#0a1c2e] border border-black/10 dark:border-white/10 px-3.5 py-1.5 text-xs text-[#05121b] dark:text-white shadow-lg transition-colors">
-                02. Build
+              <div className="absolute h-[300px] w-[300px] rounded-full border border-dashed border-black/10 dark:border-white/10 animate-[spin_32s_linear_infinite_reverse] transition-colors">
+                {/* 02. Build */}
+                <div className="absolute inset-0 rotate-[120deg]">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-120deg]">
+                    <div className="animate-[spin_32s_linear_infinite]">
+                      <div className="rounded-full bg-white dark:bg-[#0a1c2e] border border-black/10 dark:border-white/10 px-3.5 py-1.5 text-xs text-[#05121b] dark:text-white shadow-lg transition-colors whitespace-nowrap">
+                        02. Build
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="absolute bottom-[20%] left-[2%] -translate-x-1/4 rounded-full bg-white dark:bg-[#0a1c2e] border border-black/10 dark:border-white/10 px-3.5 py-1.5 text-xs text-[#05121b] dark:text-white shadow-lg transition-colors">
-                03. Scale
+              <div className="absolute h-[380px] w-[380px] rounded-full border border-black/5 dark:border-white/5 animate-[spin_45s_linear_infinite] transition-colors">
+                {/* 03. Scale */}
+                <div className="absolute inset-0 rotate-[240deg]">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-240deg]">
+                    <div className="animate-[spin_45s_linear_infinite_reverse]">
+                      <div className="rounded-full bg-white dark:bg-[#0a1c2e] border border-black/10 dark:border-white/10 px-3.5 py-1.5 text-xs text-[#05121b] dark:text-white shadow-lg transition-colors whitespace-nowrap">
+                        03. Scale
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -234,16 +254,42 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-[1290px] grid-cols-1 items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16">
           {/* Left Side: Connected Functions Visual */}
           <div className="relative order-2 mx-auto aspect-[444/383] w-full max-w-[470px] lg:order-1">
-            <div className="relative h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] flex items-center justify-center">
+            <div className="relative h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] flex items-center justify-center orbit-container">
               <div className="absolute h-20 w-20 rounded-full bg-[#e5f5ff] dark:bg-[#0a1c2e] border border-blue-200 dark:border-white/10 shadow-md flex items-center justify-center z-10 transition-colors">
                 <Layers className="h-7 w-7 text-[#1f77ff]" />
               </div>
-              <div className="absolute h-[240px] w-[240px] rounded-full border border-[#e1eaf0] dark:border-white/5 transition-colors" />
-              <div className="absolute h-[340px] w-[340px] rounded-full border border-dashed border-[#e1eaf0] dark:border-white/5 transition-colors" />
-
-              <span className="absolute top-[5%] left-[50%] -translate-x-1/2 rounded-full bg-[#10222f] dark:bg-[#0a1c2e] px-3.5 py-1.5 text-[12px] font-medium text-white shadow-sm transition-colors">Scalezix CRM</span>
-              <span className="absolute bottom-[25%] right-[2%] rounded-full bg-[#10222f] dark:bg-[#0a1c2e] px-3.5 py-1.5 text-[12px] font-medium text-white shadow-sm transition-colors">WhatsApp AI</span>
-              <span className="absolute bottom-[25%] left-[2%] rounded-full bg-[#10222f] dark:bg-[#0a1c2e] px-3.5 py-1.5 text-[12px] font-medium text-white shadow-sm transition-colors">Custom Agents</span>
+              <div className="absolute h-[240px] w-[240px] rounded-full border border-[#e1eaf0] dark:border-white/5 animate-[spin_28s_linear_infinite] transition-colors">
+                {/* Scalezix CRM */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="animate-[spin_28s_linear_infinite_reverse]">
+                    <span className="rounded-full bg-[#10222f] dark:bg-[#0a1c2e] border border-black/10 dark:border-white/10 px-3.5 py-1.5 text-[12px] font-medium text-white shadow-sm transition-colors whitespace-nowrap animate-pulse">
+                      Scalezix CRM
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute h-[340px] w-[340px] rounded-full border border-dashed border-[#e1eaf0] dark:border-white/5 animate-[spin_38s_linear_infinite_reverse] transition-colors">
+                {/* WhatsApp AI */}
+                <div className="absolute inset-0 rotate-[120deg]">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-120deg]">
+                    <div className="animate-[spin_38s_linear_infinite]">
+                      <span className="rounded-full bg-[#10222f] dark:bg-[#0a1c2e] border border-black/10 dark:border-white/10 px-3.5 py-1.5 text-[12px] font-medium text-white shadow-sm transition-colors whitespace-nowrap">
+                        WhatsApp AI
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                {/* Custom Agents */}
+                <div className="absolute inset-0 rotate-[240deg]">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[-240deg]">
+                    <div className="animate-[spin_38s_linear_infinite]">
+                      <span className="rounded-full bg-[#10222f] dark:bg-[#0a1c2e] border border-black/10 dark:border-white/10 px-3.5 py-1.5 text-[12px] font-medium text-white shadow-sm transition-colors whitespace-nowrap">
+                        Custom Agents
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 

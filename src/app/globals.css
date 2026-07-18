@@ -457,3 +457,9 @@
     opacity: 1;
   }
 }
+
+.orbit-container:hover,
+.orbit-container:hover * {
+  animation-play-state: paused !important;
+}
+
