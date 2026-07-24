@@ -30,6 +30,9 @@ export function buildMetadata({
     alternates: {
       canonical: url,
     },
+    verification: {
+      google: "OCBEWXD-6bUmMZI09ZqVvlCGkAjjc_tYUkjTeQhKtuU",
+    },
     openGraph: {
       title,
       description,

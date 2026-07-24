@@ -27,13 +27,13 @@ export default function ContactPage() {
       <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
         <div>
           <p className="section-kicker w-fit">Contact</p>
-          <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-white md:text-6xl">
+          <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-slate-900 dark:text-white md:text-6xl">
             Let&apos;s Build Something Together
           </h1>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300">
+          <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">
             Tell us about your business and we’ll map your fastest path to AI-powered growth.
           </p>
-
+ 
           <div className="mt-8 flex flex-wrap gap-4">
             <Link href={companyInfo.calendlyHref} className="button-primary">
               Book a Free Call
@@ -42,14 +42,14 @@ export default function ContactPage() {
               Chat on WhatsApp
             </Link>
           </div>
-
-          <div className="mt-10 space-y-4 text-sm leading-7 text-slate-300">
+ 
+          <div className="mt-10 space-y-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
             <div>
-              <p className="font-semibold text-white">Ahmedabad Office</p>
+              <p className="font-semibold text-slate-900 dark:text-white">Ahmedabad Office</p>
               <p>{companyInfo.address}</p>
             </div>
             <div>
-              <p className="font-semibold text-white">Gandhinagar Office</p>
+              <p className="font-semibold text-slate-900 dark:text-white">Gandhinagar Office</p>
               <p>{companyInfo.address2}</p>
             </div>
             <div className="space-y-1 pt-2">
@@ -58,9 +58,9 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-
+ 
         <div className="metal-panel rounded-[2rem] p-6">
-          <h2 className="text-2xl font-medium text-white">Project inquiry form</h2>
+          <h2 className="text-2xl font-medium text-slate-900 dark:text-white">Project inquiry form</h2>
           <div className="mt-6 grid gap-4">
             <input className="contact-input" placeholder="Name" />
             <input className="contact-input" placeholder="Email" />

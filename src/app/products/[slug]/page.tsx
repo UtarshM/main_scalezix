@@ -57,10 +57,10 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <p className="section-kicker w-fit">{product.tag}</p>
-          <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-white md:text-6xl">
+          <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-slate-900 dark:text-white md:text-6xl">
             {product.name}
           </h1>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300">{product.description}</p>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">{product.description}</p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link href="/contact" className="button-primary">
               Get started
@@ -72,11 +72,11 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
         </div>
 
         <div className="metal-panel rounded-[2rem] p-6">
-          <p className="text-sm uppercase tracking-[0.18em] text-slate-400">Key features</p>
+          <p className="text-sm uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">Key features</p>
           <div className="mt-5 grid gap-3">
             {product.features.map((feature) => (
-              <div key={feature} className="rounded-[1.2rem] border border-white/8 bg-white/[0.02] p-4">
-                <p className="text-sm font-medium text-white">{feature}</p>
+              <div key={feature} className="rounded-[1.2rem] border border-black/5 dark:border-white/8 bg-black/[0.015] dark:bg-white/[0.02] p-4">
+                <p className="text-sm font-medium text-slate-900 dark:text-white">{feature}</p>
               </div>
             ))}
           </div>
@@ -86,8 +86,8 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       <section className="mt-10 grid gap-5 lg:grid-cols-3">
         {["Starter", "Growth", "Enterprise"].map((tier) => (
           <div key={tier} className="mesh-card rounded-[1.8rem] p-6">
-            <p className="text-sm font-medium text-white">{tier}</p>
-            <p className="mt-3 text-sm leading-7 text-slate-300">
+            <p className="text-sm font-medium text-slate-900 dark:text-white">{tier}</p>
+            <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
               Flexible packaging for businesses at different stages of adoption and scale.
             </p>
           </div>

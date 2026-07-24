@@ -25,10 +25,10 @@ export default function ServicesPage() {
     <main className="section-shell py-20 md:py-24">
       <div className="max-w-4xl">
         <p className="section-kicker w-fit">Services</p>
-        <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-white md:text-6xl">
+        <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-slate-900 dark:text-white md:text-6xl">
           AI systems and growth services built for commercial execution
         </h1>
-        <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300">
+        <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">
           We combine automation, software, CRM execution, conversational systems, and search-led
           growth into one operating layer for ambitious teams.
         </p>
@@ -37,17 +37,17 @@ export default function ServicesPage() {
       <div className="mt-12 grid gap-5 lg:grid-cols-2">
         {services.map((service) => (
           <div key={service.slug} className="mesh-card rounded-[1.8rem] p-6">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#4a84ff]/20 bg-[#17356e]/16 text-[#a6c0ff]">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-100 dark:border-[#4a84ff]/20 bg-[#1f77ff]/5 dark:bg-[#17356e]/16 text-[#1f77ff] dark:text-[#a6c0ff]">
               <ServiceIcon icon={service.icon} />
             </div>
-            <h2 className="mt-5 text-2xl font-medium text-white">{service.name}</h2>
-            <p className="mt-3 text-sm leading-7 text-slate-300">{service.short}</p>
-            <ul className="mt-5 space-y-2 text-sm text-slate-300">
+            <h2 className="mt-5 text-2xl font-medium text-slate-900 dark:text-white">{service.name}</h2>
+            <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{service.short}</p>
+            <ul className="mt-5 space-y-2 text-sm text-slate-600 dark:text-slate-300">
               {service.deliverables.map((bullet) => (
                 <li key={bullet}>• {bullet}</li>
               ))}
             </ul>
-            <p className="mt-5 text-sm text-slate-400">
+            <p className="mt-5 text-sm text-slate-500 dark:text-slate-400">
               Who it&apos;s for: {service.audience.slice(0, 2).join(", ")}
             </p>
             <div className="mt-6">

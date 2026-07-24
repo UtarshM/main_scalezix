@@ -17,10 +17,10 @@ export default function ProductsPage() {
     <main className="section-shell py-20 md:py-24">
       <div className="max-w-4xl">
         <p className="section-kicker w-fit">Products</p>
-        <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-white md:text-6xl">
+        <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-slate-900 dark:text-white md:text-6xl">
           AI Products Built for Indian Businesses
         </h1>
-        <p className="mt-5 max-w-3xl text-base leading-8 text-slate-300">
+        <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">
           Deploy faster with productized AI solutions. No full custom build is required to get
           started.
         </p>
@@ -29,10 +29,10 @@ export default function ProductsPage() {
       <div className="mt-12 grid gap-5 lg:grid-cols-3">
         {products.map((product) => (
           <div key={product.slug} className="mesh-card rounded-[1.8rem] p-6">
-            <p className="text-xs uppercase tracking-[0.2em] text-slate-400">{product.tag}</p>
-            <h2 className="mt-4 text-2xl font-medium text-white">{product.name}</h2>
-            <p className="mt-4 text-sm leading-7 text-slate-300">{product.description}</p>
-            <ul className="mt-5 space-y-2 text-sm text-slate-300">
+            <p className="text-xs uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">{product.tag}</p>
+            <h2 className="mt-4 text-2xl font-medium text-slate-900 dark:text-white">{product.name}</h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">{product.description}</p>
+            <ul className="mt-5 space-y-2 text-sm text-slate-600 dark:text-slate-300">
               {product.features.map((feature) => (
                 <li key={feature}>• {feature}</li>
               ))}

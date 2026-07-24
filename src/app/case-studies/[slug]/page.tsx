@@ -44,23 +44,23 @@ export default function CaseStudyDetailPage({ params }: { params: { slug: string
 
       <div className="max-w-4xl">
         <p className="section-kicker w-fit">{study.industry}</p>
-        <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-white md:text-6xl">
+        <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-slate-900 dark:text-white md:text-6xl">
           {study.title}
         </h1>
       </div>
 
       <div className="mt-12 grid gap-5 lg:grid-cols-3">
         <section className="metal-panel rounded-[1.8rem] p-6">
-          <h2 className="text-xl font-medium text-white">Challenge</h2>
-          <p className="mt-4 text-sm leading-7 text-slate-300">{study.challenge}</p>
+          <h2 className="text-xl font-medium text-slate-900 dark:text-white">Challenge</h2>
+          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">{study.challenge}</p>
         </section>
         <section className="metal-panel rounded-[1.8rem] p-6">
-          <h2 className="text-xl font-medium text-white">Solution</h2>
-          <p className="mt-4 text-sm leading-7 text-slate-300">{study.solution}</p>
+          <h2 className="text-xl font-medium text-slate-900 dark:text-white">Solution</h2>
+          <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">{study.solution}</p>
         </section>
         <section className="metal-panel rounded-[1.8rem] p-6">
-          <h2 className="text-xl font-medium text-white">Results</h2>
-          <ul className="mt-4 space-y-2 text-sm leading-7 text-slate-300">
+          <h2 className="text-xl font-medium text-slate-900 dark:text-white">Results</h2>
+          <ul className="mt-4 space-y-2 text-sm leading-7 text-slate-600 dark:text-slate-300">
             {study.results.map((result) => (
               <li key={result}>• {result}</li>
             ))}

@@ -13,10 +13,10 @@ export default function TermsPage() {
     <main className="section-shell py-20 md:py-24">
       <div className="mx-auto max-w-4xl">
         <p className="section-kicker w-fit">Terms</p>
-        <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-white md:text-6xl">
+        <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-slate-900 dark:text-white md:text-6xl">
           Terms of Service
         </h1>
-        <p className="mt-6 text-base leading-8 text-slate-300">
+        <p className="mt-6 text-base leading-8 text-slate-600 dark:text-slate-300">
           This page can be replaced with finalized legal terms covering usage, engagement
           conditions, and service limitations.
         </p>
