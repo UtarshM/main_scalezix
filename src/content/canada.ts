@@ -154,7 +154,7 @@ export const canadaServices: Record<CanadaServiceSlug, CanadaService> = {
     ],
     keywords: ["AI automation agency Canada", "business automation services", "workflow automation"],
     relatedCaseStudySlug: "real-estate-lead-routing",
-    relatedBlogSlugs: ["what-is-ai-automation-2026", "top-business-processes-to-automate"],
+    relatedBlogSlugs: ["ai-automation-guide-canadian-businesses-2026", "top-business-processes-to-automate"],
   },
   "ai-agents": {
     slug: "ai-agents",
@@ -217,7 +217,7 @@ export const canadaServices: Record<CanadaServiceSlug, CanadaService> = {
     ],
     keywords: ["AI agents Canada", "custom AI agents", "AI systems partner"],
     relatedCaseStudySlug: "service-business-reporting",
-    relatedBlogSlugs: ["what-is-ai-automation-2026", "ai-chatbots-vs-human-support"],
+    relatedBlogSlugs: ["custom-ai-agents-vs-chatbots-canada", "ai-chatbots-vs-human-support"],
   },
   "software-development": {
     slug: "software-development",
@@ -280,7 +280,7 @@ export const canadaServices: Record<CanadaServiceSlug, CanadaService> = {
     ],
     keywords: ["software development Canada", "custom software company", "web app development"],
     relatedCaseStudySlug: "service-business-reporting",
-    relatedBlogSlugs: ["software-development-cost-india", "top-business-processes-to-automate"],
+    relatedBlogSlugs: ["custom-software-development-canada-cost-guide", "top-business-processes-to-automate"],
   },
   "crm-integrations": {
     slug: "crm-integrations",
