@@ -125,8 +125,8 @@ export default function CareersPage() {
 
           <div className="pt-4 border-t border-black/5 dark:border-white/5 text-xs text-slate-600 dark:text-slate-300">
             Don't see a matching position? Send your resume and a short description of what you build to{" "}
-            <a href="mailto:hello@scalezix.com" className="font-mono font-semibold text-[#1f77ff] hover:underline">
-              hello@scalezix.com
+            <a href="mailto:hr@scalezix.com" className="font-mono font-semibold text-[#1f77ff] hover:underline">
+              hr@scalezix.com
             </a>
           </div>
         </section>
