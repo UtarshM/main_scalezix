@@ -26,6 +26,13 @@ export default function CareersPage() {
       skills: ["React & TypeScript", "Next.js App Router", "Tailwind CSS", "Node.js & PostgreSQL"]
     },
     {
+      title: "Database Analyst",
+      type: "Full-time",
+      location: "Ahmedabad / Hybrid",
+      description: "Collect and document user requirements. Design and develop database architecture for information systems projects. Design, construct, modify, integrate, implement and test data models and database management systems. Conduct research and provide advice to other informatics professionals regarding the selection, application and implementation of database management tools. Operate database management systems to analyze data and perform data mining analysis. May lead, coordinate or supervise other workers in this group.",
+      skills: ["Database Architecture", "Data Modeling", "DBMS Integration", "Data Mining & Analysis", "Requirements Collection", "Team Coordination"]
+    },
+    {
       title: "SEO & Growth Marketer",
       type: "Full-time",
       location: "Ahmedabad",
