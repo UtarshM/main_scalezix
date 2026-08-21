@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import {
@@ -11,7 +12,6 @@ import {
   Megaphone,
   Bot,
   Network,
-  ShieldCheck,
   ChevronDown,
   Sparkles,
   BarChart3,
@@ -90,12 +90,12 @@ export default function HomePage() {
       <section className="relative pt-[160px] pb-20 sm:pt-[190px] lg:pt-[220px] lg:pb-28 overflow-hidden">
         {/* Glow overlay */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-[60vh] accent-glow pointer-events-none z-0" />
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 opacity-40 dark:opacity-100 grid-bg" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 opacity-30 dark:opacity-100 grid-bg" />
 
         <div className="relative z-10 mx-auto flex w-full max-w-[1140px] flex-col items-center px-5 text-center sm:px-8">
           
           {/* Tagline Badge */}
-          <div className="inline-flex items-center gap-2.5 rounded-full px-4 py-2 border border-black/10 dark:border-white/10 bg-white/60 dark:bg-card/40 backdrop-blur-md mb-8 text-xs font-mono text-[#473BFD] dark:text-[#D3FDB1] shadow-sm">
+          <div className="inline-flex items-center gap-2.5 rounded-full px-4 py-2 border border-slate-300 dark:border-white/10 bg-white/80 dark:bg-card/40 backdrop-blur-md mb-8 text-xs font-mono text-[#473BFD] dark:text-[#D3FDB1] shadow-sm font-semibold">
             <Sparkles className="h-3.5 w-3.5" />
             <span>AI Transformation & Workflow Automation</span>
           </div>
@@ -121,7 +121,7 @@ export default function HomePage() {
             </a>
             <Link
               href={companyInfo.calendlyHref}
-              className="inline-flex items-center justify-center gap-2 rounded-full font-semibold border border-black/15 dark:border-white/15 bg-white/40 dark:bg-card/25 hover:bg-white/70 dark:hover:bg-card/50 px-8 py-3.5 text-sm transition"
+              className="inline-flex items-center justify-center gap-2 rounded-full font-semibold border border-slate-300 dark:border-white/15 bg-white/70 dark:bg-card/25 hover:bg-white dark:hover:bg-card/50 text-slate-900 dark:text-white px-8 py-3.5 text-sm transition shadow-sm"
             >
               Book a Strategy Call
             </Link>
@@ -132,7 +132,7 @@ export default function HomePage() {
             {badges.map((badge, idx) => (
               <span
                 key={idx}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-black/5 dark:border-white/5 bg-white/30 dark:bg-card/20 font-mono text-[10px] tracking-wide text-slate-500 dark:text-muted-foreground"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-white/10 bg-white/80 dark:bg-card/20 font-mono text-[10px] font-semibold tracking-wide text-slate-700 dark:text-slate-300 shadow-xs"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-[#473BFD] dark:bg-[#D3FDB1]" />
                 {badge}
@@ -151,11 +151,11 @@ export default function HomePage() {
       </section>
 
       {/* 2. MARQUEE SIGNAL RUNNER */}
-      <section className="relative border-y border-black/10 dark:border-white/10 bg-white/80 dark:bg-card/20 py-5 transition-colors duration-300 z-10">
+      <section className="relative border-y border-slate-200 dark:border-white/10 bg-white dark:bg-card/20 py-5 transition-colors duration-300 z-10">
         <div className="mx-auto max-w-7xl px-4 overflow-hidden whitespace-nowrap text-sm text-[#83909a]">
           <div className="animate-marquee inline-flex min-w-full items-center gap-16 py-1">
             {homeTicker.concat(homeTicker).map((signal, index) => (
-              <span key={`${signal}-${index}`} className="inline-flex items-center gap-3 text-slate-800 dark:text-white/80 font-medium">
+              <span key={`${signal}-${index}`} className="inline-flex items-center gap-3 text-slate-800 dark:text-white/80 font-semibold">
                 <span className="h-2 w-2 rounded-full bg-[#473BFD] dark:bg-[#D3FDB1] shadow-[0_0_8px_#473BFD]" />
                 {signal}
               </span>
@@ -165,26 +165,26 @@ export default function HomePage() {
       </section>
 
       {/* 3. THE GAP COMPARISON GRID */}
-      <section className="relative py-24 z-10 bg-white">
+      <section className="relative py-24 z-10 bg-slate-50 dark:bg-background transition-colors duration-300">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <ComparisonGrid />
         </div>
       </section>
 
       {/* 4. THREE CAPABILITIES (HOW WE WORK) */}
-      <section id="process" className="relative py-24 bg-[#0C0D0F] text-white overflow-hidden">
+      <section id="process" className="relative py-24 bg-slate-100 dark:bg-[#0C0D0F] text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <div className="h-px w-full bg-white/10 mb-16" />
+          <div className="h-px w-full bg-slate-200 dark:bg-white/10 mb-16" />
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
             {/* Left Column Sticky Header */}
             <div className="lg:col-span-4 lg:sticky lg:top-28">
               <span className="eyebrow mb-5">Capabilities</span>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
                 How AI Transformation Works
               </h2>
-              <p className="text-sm text-slate-400 mt-4 leading-relaxed">
+              <p className="text-sm text-slate-600 dark:text-slate-400 mt-4 leading-relaxed">
                 We work side-by-side with your operators to audit, upskill, and deploy custom infrastructure. We ensure AI becomes a permanent corporate utility.
               </p>
               <div className="mt-8">
@@ -202,20 +202,20 @@ export default function HomePage() {
             <div className="lg:col-span-8 flex flex-col gap-6">
               
               {/* Bento Card 1 */}
-              <div className="rounded-2xl border border-white/10 bg-[#1C1C1E] p-6 md:p-8 relative overflow-hidden group hover:border-[#D3FDB1]/20 transition-all duration-300">
+              <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#141518] p-6 md:p-8 relative overflow-hidden group hover:border-[#473BFD]/30 dark:hover:border-[#D3FDB1]/30 transition-all duration-300 shadow-sm">
                 <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
                 <div className="flex flex-col md:flex-row gap-6">
-                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center text-[#D3FDB1]">
+                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center text-[#473BFD] dark:text-[#D3FDB1]">
                     <BarChart3 className="h-6 w-6" />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <span className="font-mono text-[9px] text-[#D3FDB1] uppercase tracking-wider font-semibold">
+                    <span className="font-mono text-[9px] text-[#473BFD] dark:text-[#D3FDB1] uppercase tracking-wider font-bold">
                       Phase 01 &bull; Audit & ROI Blueprint
                     </span>
-                    <h4 className="text-lg font-bold text-white leading-tight">
+                    <h4 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">
                       We measure before we build.
                     </h4>
-                    <p className="text-xs leading-relaxed text-slate-400 mt-1">
+                    <p className="text-xs leading-relaxed text-slate-600 dark:text-slate-300 mt-1">
                       We perform a deep audit on your current operational workflows and tools. We map data exchanges, detect bottlenecks, and benchmark where custom AI agents or workflow automation will deliver the highest bottom-line value.
                     </p>
                   </div>
@@ -223,20 +223,20 @@ export default function HomePage() {
               </div>
 
               {/* Bento Card 2 */}
-              <div className="rounded-2xl border border-white/10 bg-[#1C1C1E] p-6 md:p-8 relative overflow-hidden group hover:border-[#D3FDB1]/20 transition-all duration-300">
+              <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#141518] p-6 md:p-8 relative overflow-hidden group hover:border-[#473BFD]/30 dark:hover:border-[#D3FDB1]/30 transition-all duration-300 shadow-sm">
                 <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
                 <div className="flex flex-col md:flex-row gap-6">
-                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center text-[#D3FDB1]">
+                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center text-[#473BFD] dark:text-[#D3FDB1]">
                     <Users className="h-6 w-6" />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <span className="font-mono text-[9px] text-[#D3FDB1] uppercase tracking-wider font-semibold">
+                    <span className="font-mono text-[9px] text-[#473BFD] dark:text-[#D3FDB1] uppercase tracking-wider font-bold">
                       Phase 02 &bull; Workforce Enablement
                     </span>
-                    <h4 className="text-lg font-bold text-white leading-tight">
+                    <h4 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">
                       We activate teams before we automate systems.
                     </h4>
-                    <p className="text-xs leading-relaxed text-slate-400 mt-1">
+                    <p className="text-xs leading-relaxed text-slate-600 dark:text-slate-300 mt-1">
                       AI is a human system. We build custom manuals, workflow templates, and lead active hands-on workshops. We train your operators to leverage tools (ChatGPT, Claude, and custom dashboards) inside their daily roles to compound productivity.
                     </p>
                   </div>
@@ -244,20 +244,20 @@ export default function HomePage() {
               </div>
 
               {/* Bento Card 3 */}
-              <div className="rounded-2xl border border-white/10 bg-[#1C1C1E] p-6 md:p-8 relative overflow-hidden group hover:border-[#D3FDB1]/20 transition-all duration-300">
+              <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#141518] p-6 md:p-8 relative overflow-hidden group hover:border-[#473BFD]/30 dark:hover:border-[#D3FDB1]/30 transition-all duration-300 shadow-sm">
                 <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
                 <div className="flex flex-col md:flex-row gap-6">
-                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center text-[#D3FDB1]">
+                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center text-[#473BFD] dark:text-[#D3FDB1]">
                     <Bot className="h-6 w-6" />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <span className="font-mono text-[9px] text-[#D3FDB1] uppercase tracking-wider font-semibold">
+                    <span className="font-mono text-[9px] text-[#473BFD] dark:text-[#D3FDB1] uppercase tracking-wider font-bold">
                       Phase 03 &bull; AI Infrastructure
                     </span>
-                    <h4 className="text-lg font-bold text-white leading-tight">
+                    <h4 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">
                       Deploy custom AI systems.
                     </h4>
-                    <p className="text-xs leading-relaxed text-slate-400 mt-1">
+                    <p className="text-xs leading-relaxed text-slate-600 dark:text-slate-300 mt-1">
                       We write code, integrate APIs, deploy custom agents, and connect LLM models securely into your business pipelines. We build custom middleware, dashboards, and automated flows that act 24/7 without manual supervision.
                     </p>
                   </div>
@@ -271,23 +271,84 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. INTERACTIVE CALCULATOR SECTION */}
-      <section id="calculator" className="relative py-24 bg-[#0C0D0F] text-white overflow-hidden">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-[60vh] accent-glow opacity-60 pointer-events-none z-0" />
+      {/* 5. EDITORIAL REAL-LIFE AI PODS SECTION (Altrdtech style) */}
+      <section className="relative py-24 bg-white dark:bg-[#08090A] text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          
+          <div className="flex flex-col items-start mb-10">
+            <div className="flex items-center gap-2.5 mb-3">
+              <span className="h-2.5 w-2.5 rounded-full bg-[#473BFD] dark:bg-[#D3FDB1]" />
+              <span className="font-mono text-xs uppercase tracking-widest text-[#473BFD] dark:text-[#D3FDB1] font-bold">
+                Why Enterprises Build With Us
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight max-w-3xl">
+              Applied AI Engineers Working Directly With Your Leadership.
+            </h2>
+          </div>
+
+          {/* Authentic Real Life Photography Container */}
+          <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-2xl mb-12">
+            <Image
+              src="/images/scalezix-team-session.jpg"
+              alt="Scalezix AI engineering pod and enterprise leadership in a live strategy session"
+              width={1600}
+              height={900}
+              className="w-full h-auto object-cover aspect-[16/9]"
+              priority
+            />
+          </div>
+
+          {/* 3-Column Commitment Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-6 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#121316]">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                We see what is coming first.
+              </h3>
+              <p className="mt-3 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
+                We build directly on frontier models (OpenAI, Anthropic Claude, and Google Gemini), translating technical breakthroughs into immediate operating leverage before your competitors adapt.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#121316]">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                Senior engineers on site.
+              </h3>
+              <p className="mt-3 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
+                You get dedicated pods of senior Indian AI engineers in Ahmedabad and Gandhinagar who scope the work, write the custom code, and stay until your systems run autonomously.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#121316]">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-snug">
+                Built for your daily reality.
+              </h3>
+              <p className="mt-3 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
+                We do not sell theoretical slide decks or generic SaaS subscriptions. Every system is engineered around your proprietary data, existing CRM, and daily operations.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* 6. INTERACTIVE CALCULATOR SECTION */}
+      <section id="calculator" className="relative py-24 bg-slate-50 dark:bg-[#0C0D0F] text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-[60vh] accent-glow opacity-40 dark:opacity-60 pointer-events-none z-0" />
         <div className="mx-auto max-w-6xl px-5 sm:px-8 relative z-10">
-          <div className="h-px w-full bg-white/10 mb-16" />
+          <div className="h-px w-full bg-slate-200 dark:bg-white/10 mb-16" />
           <AIOpportunityCalculator />
         </div>
       </section>
 
-      {/* 6. SERVICES OVERVIEW BENTO GRID */}
-      <section id="services" className="relative py-24 bg-white text-slate-900 overflow-hidden">
+      {/* 7. SERVICES OVERVIEW BENTO GRID */}
+      <section id="services" className="relative py-24 bg-slate-100 dark:bg-background text-slate-900 dark:text-foreground transition-colors duration-300 overflow-hidden">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <div className="h-px w-full bg-slate-200 mb-16" />
+          <div className="h-px w-full bg-slate-200 dark:bg-white/10 mb-16" />
           
           <div className="flex flex-col items-center gap-4 text-center mb-16">
             <span className="eyebrow">Our Solutions</span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 leading-tight max-w-2xl">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight max-w-2xl">
               From Strategy to Custom Deployment, We Handle It All.
             </h2>
           </div>
@@ -296,23 +357,23 @@ export default function HomePage() {
             {products.map((product) => (
               <div
                 key={product.slug}
-                className="flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-6 group hover:border-[#473BFD]/30 transition-all duration-300"
+                className="flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#141518] p-6 group hover:border-[#473BFD]/30 transition-all duration-300 shadow-sm"
               >
                 <div className="flex flex-col gap-4">
                   <div className="h-10 w-10 rounded-xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center">
                     {getServiceIcon(product.slug)}
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 leading-tight">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">
                     {product.name}
                   </h3>
-                  <p className="text-xs leading-relaxed text-slate-600">
+                  <p className="text-xs leading-relaxed text-slate-600 dark:text-slate-300">
                     {product.description}
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div className="mt-6 pt-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between">
                   <Link
                     href={`/products/${product.slug}`}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#473BFD] hover:underline"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#473BFD] dark:text-[#D3FDB1] hover:underline"
                   >
                     View system specs
                     <ChevronRight className="h-3 w-3" />
@@ -325,14 +386,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. CASE STUDIES SECTION */}
-      <section id="results" className="relative py-24 bg-white text-slate-900 overflow-hidden">
+      {/* 8. CASE STUDIES SECTION */}
+      <section id="results" className="relative py-24 bg-white dark:bg-background text-slate-900 dark:text-foreground transition-colors duration-300 overflow-hidden">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <div className="h-px w-full bg-slate-200 mb-16" />
+          <div className="h-px w-full bg-slate-200 dark:bg-white/10 mb-16" />
           
           <div className="flex flex-col items-center gap-4 text-center mb-16">
             <span className="eyebrow">Measurable ROI</span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
               Case Studies with Measurable Outcomes
             </h2>
           </div>
@@ -341,26 +402,26 @@ export default function HomePage() {
             {caseStudies.map((study) => (
               <div
                 key={study.slug}
-                className="flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-6 group hover:border-[#473BFD]/30 transition-all duration-300"
+                className="flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#141518] p-6 group hover:border-[#473BFD]/30 transition-all duration-300 shadow-sm"
               >
                 <div className="flex flex-col gap-3">
-                  <span className="text-[9px] font-mono uppercase tracking-wider text-slate-400">
+                  <span className="text-[9px] font-mono font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                     {study.industry}
                   </span>
-                  <h3 className="text-lg font-bold text-slate-900 tracking-tight leading-snug mt-1">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight leading-snug mt-1">
                     {study.title}
                   </h3>
-                  <p className="text-xs leading-relaxed text-slate-600 mt-2">
+                  <p className="text-xs leading-relaxed text-slate-600 dark:text-slate-300 mt-2">
                     {study.challenge}
                   </p>
                 </div>
-                <div className="mt-6 border-t border-slate-100 pt-4">
-                  <p className="text-[11px] text-slate-800 font-medium italic">
+                <div className="mt-6 border-t border-slate-200 dark:border-white/10 pt-4">
+                  <p className="text-[11px] text-slate-800 dark:text-slate-200 font-medium italic">
                     Solution: {study.solution}
                   </p>
                   <Link
                     href={`/case-studies/${study.slug}`}
-                    className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#473BFD] hover:underline"
+                    className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#473BFD] dark:text-[#D3FDB1] hover:underline"
                   >
                     Read case study
                     <ChevronRight className="h-3.5 w-3.5" />
@@ -373,19 +434,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. QUOTE BLOCK */}
-      <section className="relative py-16 bg-[#0C0D0F] text-white overflow-hidden">
+      {/* 9. QUOTE BLOCK */}
+      <section className="relative py-16 bg-slate-100 dark:bg-[#0C0D0F] text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
         <div className="mx-auto max-w-4xl px-5 sm:px-8">
-          <figure className="relative flex flex-col items-center text-center rounded-3xl border border-white/10 bg-[#1C1C1E] p-8 md:p-12 z-10 shadow-lg">
+          <figure className="relative flex flex-col items-center text-center rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#141518] p-8 md:p-12 z-10 shadow-lg">
             <div className="absolute top-0 left-0 w-24 h-24 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
-            <blockquote className="text-lg md:text-xl font-medium leading-relaxed text-white tracking-tight">
+            <blockquote className="text-lg md:text-xl font-medium leading-relaxed text-slate-900 dark:text-white tracking-tight">
               &ldquo;Most companies do not fail at AI because the models are weak. They fail because the workflows are unclear, disconnected, or unmanaged. Scalezix focuses on operational leverage first.&rdquo;
             </blockquote>
             <figcaption className="mt-6 flex flex-col items-center">
-              <span className="font-semibold text-xs text-white">
+              <span className="font-semibold text-xs text-slate-900 dark:text-white">
                 Scalezix Operations & Systems Team
               </span>
-              <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider mt-1">
+              <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold mt-1">
                 Applied AI Engineers
               </span>
             </figcaption>
@@ -393,29 +454,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 9. STRATEGIC FAQS SECTION */}
-      <section id="faq" className="relative py-24 bg-white text-slate-900 overflow-hidden">
+      {/* 10. STRATEGIC FAQS SECTION */}
+      <section id="faq" className="relative py-24 bg-slate-50 dark:bg-background text-slate-900 dark:text-foreground transition-colors duration-300 overflow-hidden">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <div className="h-px w-full bg-slate-200 mb-16" />
+          <div className="h-px w-full bg-slate-200 dark:bg-white/10 mb-16" />
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
             {/* Left column sticky header */}
             <div className="lg:col-span-4 lg:sticky lg:top-28">
               <span className="eyebrow mb-5">FAQ</span>
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900 leading-tight">
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
                 Questions Every Leader Asks
               </h2>
-              <p className="text-xs text-slate-500 mt-4 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-400 mt-4 leading-relaxed">
                 Understand how we audit your systems, calculate automation value, and secure your proprietary data.
               </p>
               <div className="mt-6 flex flex-col gap-2">
-                <span className="text-xs text-slate-600">
+                <span className="text-xs text-slate-600 dark:text-slate-400">
                   Prefer email?
                 </span>
                 <a
                   href={`mailto:${companyInfo.email}`}
-                  className="text-xs font-mono font-semibold text-[#473BFD] hover:underline"
+                  className="text-xs font-mono font-semibold text-[#473BFD] dark:text-[#D3FDB1] hover:underline"
                 >
                   {companyInfo.email}
                 </a>
@@ -423,21 +484,21 @@ export default function HomePage() {
             </div>
 
             {/* Right column Accordions */}
-            <div className="lg:col-span-8 flex flex-col border-t border-slate-200">
+            <div className="lg:col-span-8 flex flex-col border-t border-slate-200 dark:border-white/10">
               {faqs.map((faq, idx) => {
                 const isOpen = activeFaq === idx;
                 return (
-                  <div key={idx} className="border-b border-slate-200">
+                  <div key={idx} className="border-b border-slate-200 dark:border-white/10">
                     <button
                       onClick={() => toggleFaq(idx)}
-                      className="w-full flex items-center justify-between text-left py-5 font-semibold text-sm text-slate-800 hover:text-[#473BFD] transition-colors gap-4"
+                      className="w-full flex items-center justify-between text-left py-5 font-semibold text-sm text-slate-900 dark:text-slate-100 hover:text-[#473BFD] dark:hover:text-[#D3FDB1] transition-colors gap-4"
                     >
                       <span>{faq.q}</span>
-                      <ChevronDown className={cn("h-4 w-4 shrink-0 transition-transform duration-300 text-slate-400", isOpen ? "rotate-180 text-[#473BFD]" : "")} />
+                      <ChevronDown className={cn("h-4 w-4 shrink-0 transition-transform duration-300 text-slate-400 dark:text-slate-500", isOpen ? "rotate-180 text-[#473BFD] dark:text-[#D3FDB1]" : "")} />
                     </button>
                     
                     {/* Collapsible Panel */}
-                    <div className={cn("grid transition-all duration-300 ease-in-out overflow-hidden text-xs text-slate-500 leading-relaxed", isOpen ? "grid-rows-[1fr] pb-5 opacity-100" : "grid-rows-[0fr] opacity-0")}>
+                    <div className={cn("grid transition-all duration-300 ease-in-out overflow-hidden text-xs text-slate-600 dark:text-slate-300 leading-relaxed", isOpen ? "grid-rows-[1fr] pb-5 opacity-100" : "grid-rows-[0fr] opacity-0")}>
                       <div className="overflow-hidden">
                         <p>{faq.a}</p>
                       </div>
@@ -452,22 +513,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 10. ACTION CTA SECTION */}
-      <section className="relative py-24 bg-[#0C0D0F] text-white overflow-hidden">
+      {/* 11. ACTION CTA SECTION */}
+      <section className="relative py-24 bg-slate-100 dark:bg-[#0C0D0F] text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
         <div className="mx-auto max-w-[1140px] px-5 sm:px-8 z-10 relative">
-          <div className="h-px w-full bg-white/10 mb-16" />
-          <div className="relative overflow-hidden rounded-[32px] bg-[#1C1C1E] border border-white/10 px-6 py-12 md:py-16 md:px-16 text-white shadow-2xl">
+          <div className="h-px w-full bg-slate-200 dark:bg-white/10 mb-16" />
+          <div className="relative overflow-hidden rounded-[32px] bg-white dark:bg-[#141518] border border-slate-200 dark:border-white/10 px-6 py-12 md:py-16 md:px-16 text-slate-900 dark:text-white shadow-xl">
             <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-[#473BFD]/10 blur-[80px] pointer-events-none" />
             
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10">
               <div className="flex flex-col gap-4">
-                <span className="inline-flex w-fit items-center justify-center rounded-full bg-[#D3FDB1]/10 border border-[#D3FDB1]/20 px-3.5 py-1 text-[11px] uppercase font-bold tracking-wider leading-none text-[#D3FDB1]">
+                <span className="inline-flex w-fit items-center justify-center rounded-full bg-[#473BFD]/10 dark:bg-[#D3FDB1]/10 border border-[#473BFD]/20 dark:border-[#D3FDB1]/20 px-3.5 py-1 text-[11px] uppercase font-bold tracking-wider leading-none text-[#473BFD] dark:text-[#D3FDB1]">
                   Get Started
                 </span>
-                <h2 className="mt-2 font-semibold text-white text-[34px] leading-[1.08] tracking-[-0.5px] sm:text-[42px] lg:text-[48px]">
+                <h2 className="mt-2 font-semibold text-slate-900 dark:text-white text-[34px] leading-[1.08] tracking-[-0.5px] sm:text-[42px] lg:text-[48px]">
                   Book a free 30-minute<br />strategy call.
                 </h2>
-                <p className="max-w-[480px] text-sm leading-relaxed text-slate-300 mt-2">
+                <p className="max-w-[480px] text-sm leading-relaxed text-slate-600 dark:text-slate-300 mt-2">
                   We'll map your top three automation opportunities and show where the highest ROI sits first.
                 </p>
               </div>
@@ -482,7 +543,7 @@ export default function HomePage() {
                 </Link>
                 <Link
                   href={companyInfo.whatsappHref}
-                  className="button-secondary border-white/20 text-white hover:border-white/40 hover:bg-white/5"
+                  className="button-secondary border-slate-300 dark:border-white/20 text-slate-900 dark:text-white hover:border-slate-400 dark:hover:border-white/40 hover:bg-slate-50 dark:hover:bg-white/5"
                 >
                   Chat on WhatsApp
                 </Link>
@@ -499,12 +560,12 @@ export default function HomePage() {
 function StatsCard({ value, label }: { value: string; label: string }) {
   return (
     <li>
-      <div className="relative flex h-[120px] flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl p-4 text-center sm:h-[140px] lg:h-[160px] border border-white/10 bg-[#1C1C1E] backdrop-blur-xl shadow-sm hover:border-[#D3FDB1]/20 transition-all duration-300">
+      <div className="relative flex h-[120px] flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl p-4 text-center sm:h-[140px] lg:h-[160px] border border-slate-200 dark:border-white/10 bg-white dark:bg-[#141518] shadow-sm hover:border-[#473BFD]/30 dark:hover:border-[#D3FDB1]/20 transition-all duration-300">
         <div className="relative flex flex-col items-center gap-2">
-          <span className="font-bold leading-none tracking-tight text-white text-[32px] sm:text-[42px] lg:text-[48px]">
+          <span className="font-bold leading-none tracking-tight text-slate-900 dark:text-white text-[32px] sm:text-[42px] lg:text-[48px]">
             {value}
           </span>
-          <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">
+          <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">
             {label}
           </span>
         </div>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ResultsPage() {
   return (
-    <main className="w-full bg-[#0C0D0F]">
+    <main className="w-full bg-slate-50 dark:bg-background text-slate-900 dark:text-foreground transition-colors duration-300">
       
       {/* Hero Section */}
       <section className="w-full bg-[#0C0D0F] text-white pt-32 pb-20 md:pt-40 md:pb-24">
@@ -29,17 +29,17 @@ export default function ResultsPage() {
       </section>
 
       {/* Content Grid Section */}
-      <section className="w-full bg-white text-slate-900 py-20 md:py-24">
+      <section className="w-full bg-white dark:bg-background text-slate-900 dark:text-foreground py-20 md:py-24 transition-colors duration-300">
         <div className="mx-auto max-w-7xl px-4 md:px-6 xl:px-8">
           <div className="grid gap-6 lg:grid-cols-3">
             {caseStudies.map((study) => (
-              <article key={study.title} className="rounded-[1.8rem] border border-slate-200 bg-slate-50 p-6 flex flex-col justify-between">
+              <article key={study.title} className="rounded-[1.8rem] border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-card/40 p-6 flex flex-col justify-between">
                 <div>
-                  <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#473BFD]">
+                  <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#473BFD] dark:text-[#D3FDB1]">
                     {study.outcome}
                   </span>
-                  <h2 className="mt-3 text-xl font-bold text-slate-900">{study.title}</h2>
-                  <p className="mt-4 text-xs leading-relaxed text-slate-600">{study.description}</p>
+                  <h2 className="mt-3 text-xl font-bold text-slate-900 dark:text-white">{study.title}</h2>
+                  <p className="mt-4 text-xs leading-relaxed text-slate-600 dark:text-slate-300">{study.description}</p>
                 </div>
               </article>
             ))}

@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, Moon, Sun, X } from "lucide-react";
+import { useTheme } from "next-themes";
 import { company, navLinks, products } from "@/content/site";
 import { cn } from "@/lib/utils";
 
@@ -12,9 +13,12 @@ export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const dropdownRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
+    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll);
@@ -32,6 +36,12 @@ export function SiteHeader() {
     return () => document.removeEventListener("mousedown", onPointerDown);
   }, []);
 
+  const isDark = mounted && (resolvedTheme === "dark" || theme === "dark");
+
+  const logoSrc = isDark
+    ? "/scalezix-logo-transparent-white.png"
+    : "/scalezix-logo-transparent-dark.png";
+
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-50 w-full flex flex-col">
@@ -47,17 +57,23 @@ export function SiteHeader() {
         <nav
           aria-label="Primary"
           className={cn(
-            "w-full border-b transition-all duration-300 py-4 px-6 md:px-10 lg:px-[76px] flex items-center justify-between z-40 bg-[#0C0D0F]/90 backdrop-blur-md",
-            scrolled ? "border-white/10 bg-[#0C0D0F]/95 shadow-md" : "border-white/5"
+            "w-full border-b transition-all duration-300 py-4 px-6 md:px-10 lg:px-[76px] flex items-center justify-between z-40 backdrop-blur-md",
+            isDark
+              ? scrolled
+                ? "border-white/10 bg-[#0C0D0F]/95 shadow-md text-white"
+                : "border-white/5 bg-[#0C0D0F]/90 text-white"
+              : scrolled
+                ? "border-black/10 bg-white/95 shadow-sm text-slate-900"
+                : "border-black/5 bg-white/90 text-slate-900"
           )}
         >
           <Link href="/" className="block shrink-0">
             <Image
-              src="/scalezix-logo-transparent-white.png"
+              src={logoSrc}
               alt={`${company.name} logo`}
               width={160}
               height={50}
-              className="h-8 w-auto object-contain"
+              className="h-8 w-auto object-contain transition-opacity duration-300"
               priority
             />
           </Link>
@@ -69,25 +85,48 @@ export function SiteHeader() {
                 <button
                   type="button"
                   onClick={() => setProductsOpen((value) => !value)}
-                  className="flex items-center gap-1 font-mono text-[10px] tracking-widest uppercase text-slate-400 hover:text-white transition-colors px-3 py-2"
+                  className={cn(
+                    "flex items-center gap-1 font-mono text-[10px] tracking-widest uppercase transition-colors px-3 py-2",
+                    isDark
+                      ? "text-slate-400 hover:text-white"
+                      : "text-slate-600 hover:text-slate-900 font-medium"
+                  )}
                 >
                   Products
                   <ChevronDown
-                    className={cn("h-3 w-3 transition-transform text-slate-500", productsOpen ? "rotate-180" : "")}
+                    className={cn(
+                      "h-3 w-3 transition-transform",
+                      isDark ? "text-slate-500" : "text-slate-400",
+                      productsOpen ? "rotate-180" : ""
+                    )}
                   />
                 </button>
 
                 {productsOpen && (
-                  <div className="absolute left-1/2 top-full mt-2 w-[22rem] -translate-x-1/2 rounded-2xl border border-white/[0.07] bg-[#0C0D0F]/95 p-3 shadow-2xl backdrop-blur-2xl">
+                  <div
+                    className={cn(
+                      "absolute left-1/2 top-full mt-2 w-[22rem] -translate-x-1/2 rounded-2xl p-3 shadow-2xl backdrop-blur-2xl border",
+                      isDark
+                        ? "border-white/[0.07] bg-[#0C0D0F]/95 text-white"
+                        : "border-black/[0.08] bg-white/95 text-slate-900"
+                    )}
+                  >
                     {products.map((product) => (
                       <Link
                         key={product.slug}
                         href={`/products/${product.slug}`}
                         onClick={() => setProductsOpen(false)}
-                        className="block rounded-xl border border-transparent px-4 py-3 transition hover:border-white/10 hover:bg-white/[0.04]"
+                        className={cn(
+                          "block rounded-xl border border-transparent px-4 py-3 transition",
+                          isDark
+                            ? "hover:border-white/10 hover:bg-white/[0.04]"
+                            : "hover:border-black/10 hover:bg-slate-50"
+                        )}
                       >
-                        <p className="text-sm font-semibold text-white">{product.name}</p>
-                        <p className="mt-1 text-xs leading-5 text-slate-400">
+                        <p className={cn("text-sm font-semibold", isDark ? "text-white" : "text-slate-900")}>
+                          {product.name}
+                        </p>
+                        <p className={cn("mt-1 text-xs leading-5", isDark ? "text-slate-400" : "text-slate-500")}>
                           {product.label}
                         </p>
                       </Link>
@@ -100,7 +139,12 @@ export function SiteHeader() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="font-mono text-[10px] tracking-widest uppercase text-slate-400 hover:text-white transition-colors px-3 py-2"
+                    className={cn(
+                      "font-mono text-[10px] tracking-widest uppercase transition-colors px-3 py-2",
+                      isDark
+                        ? "text-slate-400 hover:text-white"
+                        : "text-slate-600 hover:text-slate-900 font-medium"
+                    )}
                   >
                     {item.label}
                   </Link>
@@ -108,10 +152,35 @@ export function SiteHeader() {
               ))}
             </ul>
 
-            <div className="flex items-center">
+            <div className="flex items-center gap-3">
+              {/* Theme Toggle Button */}
+              <button
+                type="button"
+                onClick={() => setTheme(isDark ? "light" : "dark")}
+                className={cn(
+                  "flex h-9 w-9 items-center justify-center rounded-full border transition-colors",
+                  isDark
+                    ? "border-white/15 bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white"
+                    : "border-black/15 bg-black/5 text-slate-700 hover:bg-black/10 hover:text-slate-900"
+                )}
+                aria-label="Toggle theme"
+                title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+              >
+                {mounted ? (
+                  isDark ? <Sun className="h-4 w-4 text-amber-300" /> : <Moon className="h-4 w-4 text-slate-700" />
+                ) : (
+                  <div className="h-4 w-4" />
+                )}
+              </button>
+
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-transparent px-5 py-2 text-xs font-semibold text-white hover:bg-white/5 transition-all duration-300 gap-1"
+                className={cn(
+                  "inline-flex items-center justify-center rounded-full border px-5 py-2 text-xs font-semibold transition-all duration-300 gap-1",
+                  isDark
+                    ? "border-white/15 bg-transparent text-white hover:bg-white/5"
+                    : "border-black/15 bg-slate-900 text-white hover:bg-slate-800"
+                )}
               >
                 Talk to Us
                 <span className="text-[10px]">↗</span>
@@ -119,12 +188,33 @@ export function SiteHeader() {
             </div>
           </div>
 
-          {/* Mobile Toggle */}
-          <div className="flex items-center lg:hidden">
+          {/* Mobile Toggle + Theme Switcher */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              type="button"
+              onClick={() => setTheme(isDark ? "light" : "dark")}
+              className={cn(
+                "flex h-9 w-9 items-center justify-center rounded-full border transition-colors",
+                isDark
+                  ? "border-white/15 bg-white/5 text-slate-300"
+                  : "border-black/15 bg-black/5 text-slate-700"
+              )}
+              aria-label="Toggle theme"
+            >
+              {mounted ? (
+                isDark ? <Sun className="h-4 w-4 text-amber-300" /> : <Moon className="h-4 w-4 text-slate-700" />
+              ) : (
+                <div className="h-4 w-4" />
+              )}
+            </button>
+
             <button
               type="button"
               onClick={() => setMobileOpen((value) => !value)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-white outline-none"
+              className={cn(
+                "inline-flex h-10 w-10 items-center justify-center rounded-full outline-none",
+                isDark ? "text-white" : "text-slate-900"
+              )}
               aria-label="Toggle navigation"
             >
               {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -135,17 +225,38 @@ export function SiteHeader() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="fixed inset-x-0 inset-y-0 z-40 bg-[#0C0D0F] pt-[120px] pb-8 px-6 overflow-y-auto flex flex-col justify-between lg:hidden text-white">
+        <div
+          className={cn(
+            "fixed inset-x-0 inset-y-0 z-40 pt-[120px] pb-8 px-6 overflow-y-auto flex flex-col justify-between lg:hidden transition-colors duration-300",
+            isDark ? "bg-[#0C0D0F] text-white" : "bg-white text-slate-900"
+          )}
+        >
           <div className="space-y-4">
-            <div className="text-[10px] font-mono uppercase tracking-widest text-slate-500 border-b border-white/5 pb-2 mb-4">
-              Navigation
+            <div
+              className={cn(
+                "text-[10px] font-mono uppercase tracking-widest border-b pb-2 mb-4 flex items-center justify-between",
+                isDark ? "text-slate-500 border-white/5" : "text-slate-500 border-black/5"
+              )}
+            >
+              <span>Navigation</span>
+              <button
+                type="button"
+                onClick={() => setTheme(isDark ? "light" : "dark")}
+                className="flex items-center gap-1.5 text-xs text-[#473BFD]"
+              >
+                {isDark ? <Sun className="h-3.5 w-3.5 text-amber-300" /> : <Moon className="h-3.5 w-3.5" />}
+                <span>{isDark ? "Light Mode" : "Dark Mode"}</span>
+              </button>
             </div>
             
             <div className="flex flex-col gap-2">
               <button
                 type="button"
                 onClick={() => setMobileProductsOpen((value) => !value)}
-                className="flex w-full items-center justify-between py-2 text-sm text-slate-300 font-medium hover:text-white"
+                className={cn(
+                  "flex w-full items-center justify-between py-2 text-sm font-medium",
+                  isDark ? "text-slate-300 hover:text-white" : "text-slate-700 hover:text-slate-900"
+                )}
               >
                 Products
                 <ChevronDown
@@ -153,13 +264,16 @@ export function SiteHeader() {
                 />
               </button>
               {mobileProductsOpen && (
-                <div className="space-y-2 pl-4 border-l border-white/5 mt-1">
+                <div className={cn("space-y-2 pl-4 border-l mt-1", isDark ? "border-white/5" : "border-black/5")}>
                   {products.map((product) => (
                     <Link
                       key={product.slug}
                       href={`/products/${product.slug}`}
                       onClick={() => setMobileOpen(false)}
-                      className="block py-1.5 text-xs text-slate-400 hover:text-white transition-colors"
+                      className={cn(
+                        "block py-1.5 text-xs transition-colors",
+                        isDark ? "text-slate-400 hover:text-white" : "text-slate-600 hover:text-slate-900"
+                      )}
                     >
                       {product.name}
                     </Link>
@@ -173,18 +287,21 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
-                className="block py-2 text-sm text-slate-300 font-medium hover:text-white transition-colors"
+                className={cn(
+                  "block py-2 text-sm font-medium transition-colors",
+                  isDark ? "text-slate-300 hover:text-white" : "text-slate-700 hover:text-slate-900"
+                )}
               >
                 {item.label}
               </Link>
             ))}
           </div>
 
-          <div className="pt-6 border-t border-white/5 mt-auto">
+          <div className={cn("pt-6 border-t mt-auto", isDark ? "border-white/5" : "border-black/5")}>
             <Link
               href="/contact"
               onClick={() => setMobileOpen(false)}
-              className="inline-flex w-full items-center justify-center rounded-full bg-[#D3FDB1] border border-[#D3FDB1] px-5 py-3 text-sm font-semibold text-[#0C0D0F] hover:bg-[#c3fca0] transition-colors"
+              className="inline-flex w-full items-center justify-center rounded-full bg-[#473BFD] border border-[#473BFD] px-5 py-3 text-sm font-semibold text-white hover:bg-[#756CFE] transition-colors"
             >
               Talk to Us
             </Link>

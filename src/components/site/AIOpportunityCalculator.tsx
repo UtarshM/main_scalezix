@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Check, AlertCircle, ArrowRight, Sparkles, TrendingUp, ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -43,11 +43,11 @@ export function AIOpportunityCalculator() {
 
   // Default state before calculation
   const [deptScores, setDeptScores] = useState<DeptScore[]>([
-    { name: "Marketing & Ads", score: 72, status: "ACTIVATE NOW", statusColor: "text-emerald-400 border-emerald-400/30 bg-emerald-400/5" },
-    { name: "Sales Outreach", score: 61, status: "ACTIVATE NOW", statusColor: "text-emerald-400 border-emerald-400/30 bg-emerald-400/5" },
-    { name: "Customer Operations", score: 55, status: "MONITOR", statusColor: "text-amber-400 border-amber-400/30 bg-amber-400/5" },
-    { name: "Finance & Analytics", score: 48, status: "MONITOR", statusColor: "text-amber-400 border-amber-400/30 bg-amber-400/5" },
-    { name: "Operations & HR", score: 39, status: "BUILD REQUIRED", statusColor: "text-[#473BFD] border-[#473BFD]/30 bg-[#473BFD]/5" }
+    { name: "Marketing & Ads", score: 72, status: "ACTIVATE NOW", statusColor: "text-emerald-600 dark:text-emerald-400 border-emerald-500/30 bg-emerald-500/10" },
+    { name: "Sales Outreach", score: 61, status: "ACTIVATE NOW", statusColor: "text-emerald-600 dark:text-emerald-400 border-emerald-500/30 bg-emerald-500/10" },
+    { name: "Customer Operations", score: 55, status: "MONITOR", statusColor: "text-amber-600 dark:text-amber-400 border-amber-500/30 bg-amber-500/10" },
+    { name: "Finance & Analytics", score: 48, status: "MONITOR", statusColor: "text-amber-600 dark:text-amber-400 border-amber-500/30 bg-amber-500/10" },
+    { name: "Operations & HR", score: 39, status: "BUILD REQUIRED", statusColor: "text-[#473BFD] dark:text-[#D3FDB1] border-[#473BFD]/30 bg-[#473BFD]/10" }
   ]);
 
   const [roiEstimate, setRoiEstimate] = useState("Rs. 3.2 Crore");
@@ -148,19 +148,19 @@ export function AIOpportunityCalculator() {
           return {
             ...dept,
             status: "ACTIVATE NOW",
-            statusColor: "text-emerald-400 border-emerald-400/30 bg-emerald-400/5"
+            statusColor: "text-emerald-600 dark:text-emerald-400 border-emerald-500/30 bg-emerald-500/10"
           };
         } else if (dept.score >= 50) {
           return {
             ...dept,
             status: "MONITOR",
-            statusColor: "text-amber-400 border-amber-400/30 bg-amber-400/5"
+            statusColor: "text-amber-600 dark:text-amber-400 border-amber-500/30 bg-amber-500/10"
           };
         } else {
           return {
             ...dept,
             status: "BUILD REQUIRED",
-            statusColor: "text-[#473BFD] border-[#473BFD]/30 bg-[#473BFD]/5"
+            statusColor: "text-[#473BFD] dark:text-[#D3FDB1] border-[#473BFD]/30 bg-[#473BFD]/10"
           };
         }
       });
@@ -196,25 +196,25 @@ export function AIOpportunityCalculator() {
     <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-20">
       {/* Left side: Visual Scoreboard Card */}
       <div className="lg:col-span-6 flex flex-col gap-4">
-        <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/50 dark:bg-card/40 backdrop-blur-xl overflow-hidden shadow-2xl transition-all duration-500">
+        <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#141518] shadow-xl overflow-hidden transition-all duration-300">
           
           {/* Header */}
-          <div className="px-6 py-5 border-b border-black/10 dark:border-white/10 flex items-center justify-between">
+          <div className="px-6 py-5 border-b border-slate-200 dark:border-white/10 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <div className="h-2 w-2 rounded-full bg-[#473BFD] animate-pulse shadow-[0_0_8px_#473BFD]" />
-              <span className="font-mono text-[10px] text-slate-500 dark:text-muted-foreground uppercase tracking-widest">
+              <div className="h-2 w-2 rounded-full bg-[#473BFD] dark:bg-[#D3FDB1] animate-pulse shadow-[0_0_8px_#473BFD]" />
+              <span className="font-mono text-[10px] text-slate-600 dark:text-slate-400 uppercase tracking-widest font-semibold">
                 AI Opportunity Index Preview
               </span>
             </div>
-            <span className="font-mono text-[9px] text-[#473BFD] border border-[#473BFD]/20 bg-[#473BFD]/5 px-2 py-0.5 rounded-full uppercase tracking-wider">
+            <span className="font-mono text-[9px] text-[#473BFD] dark:text-[#D3FDB1] border border-[#473BFD]/20 dark:border-white/20 bg-[#473BFD]/10 dark:bg-white/10 px-2 py-0.5 rounded-full uppercase tracking-wider font-bold">
               Simulation
             </span>
           </div>
 
           {/* Overall Score */}
-          <div className="px-6 py-6 border-b border-black/10 dark:border-white/10 flex items-center justify-between">
+          <div className="px-6 py-6 border-b border-slate-200 dark:border-white/10 flex items-center justify-between">
             <div>
-              <p className="font-mono text-[10px] text-slate-500 dark:text-muted-foreground uppercase tracking-wider mb-1">
+              <p className="font-mono text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1 font-semibold">
                 Overall Automation Score
               </p>
               <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
@@ -222,10 +222,10 @@ export function AIOpportunityCalculator() {
               </h3>
             </div>
             <div className="flex flex-col items-end">
-              <span className="font-mono text-[10px] text-slate-500 dark:text-muted-foreground uppercase tracking-wider mb-1">
+              <span className="font-mono text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1 font-semibold">
                 Maturity Tier
               </span>
-              <span className="font-semibold text-xs tracking-wide text-slate-700 dark:text-slate-300">
+              <span className="font-semibold text-xs tracking-wide text-slate-800 dark:text-slate-200">
                 {overallScore >= 70 ? "AI-Integrated" : overallScore >= 50 ? "AI-Active" : "AI-Aware"}
               </span>
             </div>
@@ -233,7 +233,7 @@ export function AIOpportunityCalculator() {
 
           {/* Department Breakdown */}
           <div className="px-6 py-6 flex flex-col gap-4">
-            <p className="font-mono text-[9px] text-slate-500 dark:text-muted-foreground uppercase tracking-widest">
+            <p className="font-mono text-[9px] text-slate-500 dark:text-slate-400 uppercase tracking-widest font-semibold">
               Department Breakdown & Status
             </p>
 
@@ -247,12 +247,12 @@ export function AIOpportunityCalculator() {
 
                 return (
                   <div key={idx} className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-4">
-                    <span className="font-mono text-[11px] text-slate-600 dark:text-muted-foreground w-36 flex-shrink-0 truncate">
+                    <span className="font-mono text-[11px] text-slate-700 dark:text-slate-300 w-36 flex-shrink-0 truncate font-medium">
                       {dept.name}
                     </span>
                     
                     {/* Progress Bar Container */}
-                    <div className="relative h-2 rounded-full flex-1 bg-black/5 dark:bg-white/5 overflow-hidden">
+                    <div className="relative h-2 rounded-full flex-1 bg-slate-200 dark:bg-white/10 overflow-hidden">
                       <div
                         className="absolute inset-y-0 left-0 rounded-full transition-all duration-1000 ease-out"
                         style={{
@@ -267,7 +267,7 @@ export function AIOpportunityCalculator() {
                       <span className="font-mono text-[11px] font-bold" style={{ color: colorHex }}>
                         {dept.score}%
                       </span>
-                      <span className={cn("font-mono text-[8px] tracking-wider px-2 py-0.5 rounded border flex-shrink-0", dept.statusColor)}>
+                      <span className={cn("font-mono text-[8px] font-bold tracking-wider px-2 py-0.5 rounded border flex-shrink-0", dept.statusColor)}>
                         {dept.status}
                       </span>
                     </div>
@@ -278,8 +278,8 @@ export function AIOpportunityCalculator() {
           </div>
 
           {/* Estimated Value Unlocked */}
-          <div className="px-6 py-4 bg-slate-50 dark:bg-black/40 border-t border-black/10 dark:border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-            <span className="font-mono text-[10px] text-slate-500 dark:text-muted-foreground">
+          <div className="px-6 py-4 bg-slate-100/80 dark:bg-black/40 border-t border-slate-200 dark:border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <span className="font-mono text-[10px] text-slate-600 dark:text-slate-400 font-semibold">
               Estimated annual value unlocked through AI:
             </span>
             <span className="font-mono text-sm font-bold text-[#473BFD] dark:text-[#D3FDB1] flex items-center gap-1.5 animate-pulse">
@@ -293,26 +293,26 @@ export function AIOpportunityCalculator() {
 
       {/* Right side: Interactive Audit Form */}
       <div className="lg:col-span-6">
-        <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-card/20 p-6 md:p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden h-full flex flex-col justify-between">
+        <div className="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#141518] p-6 md:p-8 shadow-xl relative overflow-hidden h-full flex flex-col justify-between transition-all duration-300">
           <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
 
           {submitted ? (
             <div className="flex flex-col items-center justify-center text-center py-12 flex-1 gap-6">
-              <div className="h-16 w-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shadow-[0_0_24px_rgba(16,185,129,0.2)]">
+              <div className="h-16 w-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shadow-[0_0_24px_rgba(16,185,129,0.2)]">
                 <Check className="h-8 w-8" />
               </div>
               <div className="flex flex-col gap-2">
                 <h3 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
                   Audit Simulation Complete
                 </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-400 max-w-sm mx-auto leading-relaxed">
-                  Your custom AI Opportunity roadmap has been calculated. We have sent a detailed breakdown to <strong className="text-slate-800 dark:text-slate-200">{formData.email}</strong>.
+                <p className="text-sm text-slate-600 dark:text-slate-300 max-w-sm mx-auto leading-relaxed">
+                  Your custom AI Opportunity roadmap has been calculated. We have sent a detailed breakdown to <strong className="text-slate-900 dark:text-white">{formData.email}</strong>.
                 </p>
               </div>
               <button
                 type="button"
                 onClick={() => setSubmitted(false)}
-                className="mt-4 text-xs font-mono text-[#473BFD] hover:underline flex items-center gap-1"
+                className="mt-4 text-xs font-mono text-[#473BFD] dark:text-[#D3FDB1] hover:underline flex items-center gap-1 font-semibold"
               >
                 Run another diagnosis
               </button>
@@ -320,7 +320,7 @@ export function AIOpportunityCalculator() {
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-2 text-[#473BFD]">
+                <div className="flex items-center gap-2 text-[#473BFD] dark:text-[#D3FDB1]">
                   <Sparkles className="h-4 w-4" />
                   <span className="font-mono text-xs uppercase tracking-wider font-semibold">
                     Instant Assessment
@@ -329,13 +329,13 @@ export function AIOpportunityCalculator() {
                 <h3 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
                   Calculate Your AI ROI
                 </h3>
-                <p className="text-xs text-slate-500 dark:text-muted-foreground">
+                <p className="text-xs text-slate-600 dark:text-slate-300">
                   Find out how much manual operational work can be automated and what your estimated annual returns could look like.
                 </p>
               </div>
 
               {errorMsg && (
-                <div className="rounded-lg border border-red-500/20 bg-red-500/5 p-3 flex items-start gap-2.5 text-xs text-red-500">
+                <div className="rounded-lg border border-red-500/30 bg-red-50 dark:bg-red-950/20 p-3 flex items-start gap-2.5 text-xs text-red-600 dark:text-red-400">
                   <AlertCircle className="h-4 w-4 shrink-0 mt-0.5" />
                   <span>{errorMsg}</span>
                 </div>
@@ -351,7 +351,7 @@ export function AIOpportunityCalculator() {
                     placeholder="Work Email Address"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full bg-black/5 dark:bg-black/25 border border-black/10 dark:border-white/10 rounded-md px-3.5 py-2.5 text-xs text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-muted-foreground focus:outline-none focus:border-[#473BFD] transition-colors"
+                    className="w-full bg-slate-50 dark:bg-black/40 border border-slate-300 dark:border-white/10 rounded-lg px-3.5 py-2.5 text-xs font-medium text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:outline-none focus:border-[#473BFD] dark:focus:border-[#D3FDB1] transition-colors"
                   />
                   <input
                     type="url"
@@ -360,7 +360,7 @@ export function AIOpportunityCalculator() {
                     placeholder="Company Website URL"
                     value={formData.website}
                     onChange={handleInputChange}
-                    className="w-full bg-black/5 dark:bg-black/25 border border-black/10 dark:border-white/10 rounded-md px-3.5 py-2.5 text-xs text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-muted-foreground focus:outline-none focus:border-[#473BFD] transition-colors"
+                    className="w-full bg-slate-50 dark:bg-black/40 border border-slate-300 dark:border-white/10 rounded-lg px-3.5 py-2.5 text-xs font-medium text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-slate-400 focus:outline-none focus:border-[#473BFD] dark:focus:border-[#D3FDB1] transition-colors"
                   />
                 </div>
 
@@ -371,14 +371,14 @@ export function AIOpportunityCalculator() {
                     required
                     value={formData.role}
                     onChange={handleInputChange}
-                    className="w-full bg-black/5 dark:bg-black/25 border border-black/10 dark:border-white/10 rounded-md px-3.5 py-2.5 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-[#473BFD] transition-colors appearance-none cursor-pointer"
+                    className="w-full bg-slate-50 dark:bg-black/40 border border-slate-300 dark:border-white/10 rounded-lg px-3.5 py-2.5 text-xs font-medium text-slate-900 dark:text-white focus:outline-none focus:border-[#473BFD] dark:focus:border-[#D3FDB1] transition-colors appearance-none cursor-pointer"
                   >
-                    <option value="" disabled className="dark:bg-slate-900">Your Role</option>
-                    <option value="Founder/CEO" className="dark:bg-slate-900 text-slate-800 dark:text-white">Founder/CEO</option>
-                    <option value="CXO/Leadership" className="dark:bg-slate-900 text-slate-800 dark:text-white">CXO/Leadership</option>
-                    <option value="Head of Department" className="dark:bg-slate-900 text-slate-800 dark:text-white">Head of Department</option>
-                    <option value="Individual Contributor" className="dark:bg-slate-900 text-slate-800 dark:text-white">Individual Contributor</option>
-                    <option value="Other" className="dark:bg-slate-900 text-slate-800 dark:text-white">Other</option>
+                    <option value="" disabled className="bg-white text-slate-700 dark:bg-slate-900 dark:text-slate-300">Your Role</option>
+                    <option value="Founder/CEO" className="bg-white text-slate-900 dark:bg-slate-900 dark:text-white">Founder/CEO</option>
+                    <option value="CXO/Leadership" className="bg-white text-slate-900 dark:bg-slate-900 dark:text-white">CXO/Leadership</option>
+                    <option value="Head of Department" className="bg-white text-slate-900 dark:bg-slate-900 dark:text-white">Head of Department</option>
+                    <option value="Individual Contributor" className="bg-white text-slate-900 dark:bg-slate-900 dark:text-white">Individual Contributor</option>
+                    <option value="Other" className="bg-white text-slate-900 dark:bg-slate-900 dark:text-white">Other</option>
                   </select>
 
                   <select
@@ -386,13 +386,13 @@ export function AIOpportunityCalculator() {
                     required
                     value={formData.companySize}
                     onChange={handleInputChange}
-                    className="w-full bg-black/5 dark:bg-black/25 border border-black/10 dark:border-white/10 rounded-md px-3.5 py-2.5 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-[#473BFD] transition-colors appearance-none cursor-pointer"
+                    className="w-full bg-slate-50 dark:bg-black/40 border border-slate-300 dark:border-white/10 rounded-lg px-3.5 py-2.5 text-xs font-medium text-slate-900 dark:text-white focus:outline-none focus:border-[#473BFD] dark:focus:border-[#D3FDB1] transition-colors appearance-none cursor-pointer"
                   >
-                    <option value="" disabled className="dark:bg-slate-900">Company Size</option>
-                    <option value="1-99" className="dark:bg-slate-900 text-slate-800 dark:text-white">1-99 employees</option>
-                    <option value="100-499" className="dark:bg-slate-900 text-slate-800 dark:text-white">100-499 employees</option>
-                    <option value="500-999" className="dark:bg-slate-900 text-slate-800 dark:text-white">500-999 employees</option>
-                    <option value="1000+" className="dark:bg-slate-900 text-slate-800 dark:text-white">1000+ employees</option>
+                    <option value="" disabled className="bg-white text-slate-700 dark:bg-slate-900 dark:text-slate-300">Company Size</option>
+                    <option value="1-99" className="bg-white text-slate-900 dark:bg-slate-900 dark:text-white">1-99 employees</option>
+                    <option value="100-499" className="bg-white text-slate-900 dark:bg-slate-900 dark:text-white">100-499 employees</option>
+                    <option value="500-999" className="bg-white text-slate-900 dark:bg-slate-900 dark:text-white">500-999 employees</option>
+                    <option value="1000+" className="bg-white text-slate-900 dark:bg-slate-900 dark:text-white">1000+ employees</option>
                   </select>
                 </div>
 
@@ -401,17 +401,17 @@ export function AIOpportunityCalculator() {
                   required
                   value={formData.timeline}
                   onChange={handleInputChange}
-                  className="w-full bg-black/5 dark:bg-black/25 border border-black/10 dark:border-white/10 rounded-md px-3.5 py-2.5 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-[#473BFD] transition-colors appearance-none cursor-pointer"
+                  className="w-full bg-slate-50 dark:bg-black/40 border border-slate-300 dark:border-white/10 rounded-lg px-3.5 py-2.5 text-xs font-medium text-slate-900 dark:text-white focus:outline-none focus:border-[#473BFD] dark:focus:border-[#D3FDB1] transition-colors appearance-none cursor-pointer"
                 >
-                  <option value="" disabled className="dark:bg-slate-900">Automation Timeline</option>
-                  <option value="Immediately (0–30 days)" className="dark:bg-slate-900 text-slate-800 dark:text-white">Immediately (0–30 days)</option>
-                  <option value="1–3 months" className="dark:bg-slate-900 text-slate-800 dark:text-white">1–3 months</option>
-                  <option value="Exploring / not sure yet" className="dark:bg-slate-900 text-slate-800 dark:text-white">Exploring / not sure yet</option>
+                  <option value="" disabled className="bg-white text-slate-700 dark:bg-slate-900 dark:text-slate-300">Automation Timeline</option>
+                  <option value="Immediately (0–30 days)" className="bg-white text-slate-900 dark:bg-slate-900 dark:text-white">Immediately (0–30 days)</option>
+                  <option value="1–3 months" className="bg-white text-slate-900 dark:bg-slate-900 dark:text-white">1–3 months</option>
+                  <option value="Exploring / not sure yet" className="bg-white text-slate-900 dark:bg-slate-900 dark:text-white">Exploring / not sure yet</option>
                 </select>
 
                 {/* Multiselect Capabilities */}
                 <div className="flex flex-col gap-2.5">
-                  <label className="font-mono text-[9px] text-slate-500 dark:text-muted-foreground uppercase tracking-widest">
+                  <label className="font-mono text-[9px] text-slate-600 dark:text-slate-400 uppercase tracking-widest font-semibold">
                     What are you looking to solve?
                   </label>
                   <div className="flex flex-col gap-2">
@@ -429,18 +429,18 @@ export function AIOpportunityCalculator() {
                           type="button"
                           onClick={() => handleCheckboxChange(option)}
                           className={cn(
-                            "w-full text-left px-3.5 py-2.5 rounded-lg border text-[11px] leading-relaxed transition-all flex items-center justify-between gap-3 bg-black/5 dark:bg-[#05121b]/40 border-black/10 dark:border-white/5",
+                            "w-full text-left px-3.5 py-2.5 rounded-lg border text-[11px] leading-relaxed transition-all flex items-center justify-between gap-3 bg-slate-50 dark:bg-black/30 border-slate-200 dark:border-white/10",
                             isSelected
-                              ? "border-[#473BFD] text-[#473BFD] bg-[#473BFD]/5 font-semibold"
-                              : "text-slate-700 dark:text-slate-300 hover:border-black/20 dark:hover:border-white/10"
+                              ? "border-[#473BFD] dark:border-[#D3FDB1] text-[#473BFD] dark:text-[#D3FDB1] bg-[#473BFD]/10 dark:bg-[#D3FDB1]/10 font-bold"
+                              : "text-slate-800 dark:text-slate-200 hover:border-slate-400 dark:hover:border-white/20"
                           )}
                         >
                           <span>{option}</span>
                           <span className={cn(
                             "w-4 h-4 shrink-0 rounded border flex items-center justify-center transition-colors duration-150",
                             isSelected
-                              ? "border-[#473BFD] bg-[#473BFD] text-white"
-                              : "border-black/20 dark:border-white/20"
+                              ? "border-[#473BFD] bg-[#473BFD] dark:border-[#D3FDB1] dark:bg-[#D3FDB1] text-white dark:text-black"
+                              : "border-slate-400 dark:border-white/20"
                           )}>
                             {isSelected && <Check className="w-2.5 h-2.5" />}
                           </span>
@@ -473,7 +473,7 @@ export function AIOpportunityCalculator() {
           )}
 
           {/* Secure indicator */}
-          <div className="mt-4 pt-3 border-t border-black/5 dark:border-white/5 flex items-center justify-center gap-2 text-[10px] text-slate-400 dark:text-muted-foreground font-mono">
+          <div className="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-center gap-2 text-[10px] text-slate-500 dark:text-slate-400 font-mono">
             <ShieldCheck className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
             <span>GDPR compliant. Work emails strictly validated.</span>
           </div>

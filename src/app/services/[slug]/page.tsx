@@ -27,8 +27,13 @@ export function generateStaticParams() {
   return canadaServiceSlugs.map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const service = getCanadaService(params.slug);
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const service = getCanadaService(slug);
 
   if (!service) {
     return {};
@@ -42,12 +47,14 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   });
 }
 
-export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
-  if (!isCanadaServiceSlug(params.slug)) {
+export default async function ServiceDetailPage({ params }: PageProps) {
+  const { slug } = await params;
+
+  if (!isCanadaServiceSlug(slug)) {
     notFound();
   }
 
-  const service = canadaServices[params.slug];
+  const service = canadaServices[slug];
   const relatedCaseStudy = caseStudies.find((study) => study.slug === service.relatedCaseStudySlug);
   const relatedPosts = blogPosts.filter((post) => service.relatedBlogSlugs.includes(post.slug));
   const cityPages = getCanadaServiceCityPages(service.slug);

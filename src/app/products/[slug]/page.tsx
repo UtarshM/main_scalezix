@@ -1,39 +1,46 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ArrowRight, CheckCircle2, ChevronRight, Sparkles } from "lucide-react";
 
 import { JsonLd } from "@/components/seo/json-ld";
-import { products } from "@/content/prd-site";
+import { products, pricingPlans } from "@/content/site";
 import { breadcrumbSchema, buildMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const product = products.find((entry) => entry.slug === params.slug);
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const product = products.find((entry) => entry.slug === slug);
 
   if (!product) {
     return {};
   }
 
   return buildMetadata({
-    title: `${product.name} | Scalezix Products`,
+    title: `${product.name} | AI Platform & Enterprise Systems | Scalezix`,
     description: product.description,
     path: `/products/${product.slug}`,
-    keywords: [product.name, "Scalezix product", "AI product India"],
+    keywords: [product.name, product.label, "Scalezix product", "AI SaaS India", "Enterprise AI tool"],
   });
 }
 
-export default function ProductDetailPage({ params }: { params: { slug: string } }) {
-  const product = products.find((entry) => entry.slug === params.slug);
+export default async function ProductDetailPage({ params }: PageProps) {
+  const { slug } = await params;
+  const product = products.find((entry) => entry.slug === slug);
 
   if (!product) {
     notFound();
   }
 
   return (
-    <main className="section-shell py-20 md:py-24">
+    <main className="relative overflow-hidden font-sans bg-slate-50 dark:bg-[#0A0B0D] text-slate-900 dark:text-white transition-colors duration-300">
       <JsonLd
         data={[
           {
@@ -54,45 +61,142 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
         ]}
       />
 
-      <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-        <div>
-          <p className="section-kicker w-fit">{product.tag}</p>
-          <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-slate-900 dark:text-white md:text-6xl">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-24 border-b border-slate-200 dark:border-white/10">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="flex items-center gap-2 mb-6">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-[#473BFD]/20 bg-[#473BFD]/10 text-xs font-mono font-semibold text-[#473BFD] dark:text-[#D3FDB1]">
+              <Sparkles className="h-3.5 w-3.5" />
+              {product.label}
+            </span>
+          </div>
+
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.08] max-w-3xl">
             {product.name}
           </h1>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">{product.description}</p>
+          <p className="mt-6 text-base md:text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
+            {product.description}
+          </p>
+
           <div className="mt-8 flex flex-wrap gap-4">
             <Link href="/contact" className="button-primary">
-              Get started
+              Request Platform Demo
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
-            <Link href="/contact" className="button-secondary">
-              Book a free call
-            </Link>
+            <a href="#pricing" className="button-secondary border-slate-300 dark:border-white/20 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-white/5">
+              View Pricing Tiers
+            </a>
           </div>
         </div>
-
-        <div className="metal-panel rounded-[2rem] p-6">
-          <p className="text-sm uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">Key features</p>
-          <div className="mt-5 grid gap-3">
-            {product.features.map((feature) => (
-              <div key={feature} className="rounded-[1.2rem] border border-black/5 dark:border-white/8 bg-black/[0.015] dark:bg-white/[0.02] p-4">
-                <p className="text-sm font-medium text-slate-900 dark:text-white">{feature}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <section className="mt-10 grid gap-5 lg:grid-cols-3">
-        {["Starter", "Growth", "Enterprise"].map((tier) => (
-          <div key={tier} className="mesh-card rounded-[1.8rem] p-6">
-            <p className="text-sm font-medium text-slate-900 dark:text-white">{tier}</p>
-            <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
-              Flexible packaging for businesses at different stages of adoption and scale.
-            </p>
-          </div>
-        ))}
       </section>
+
+      {/* Features & Architecture Grid */}
+      <section className="py-20 md:py-24">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            {/* System Architecture Details */}
+            <div className="rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#121316] p-8 md:p-10 shadow-sm">
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+                Core Capabilities & Architecture
+              </h2>
+              <ul className="mt-6 space-y-4">
+                {product.details.map((detail, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                    <CheckCircle2 className="h-5 w-5 text-[#473BFD] dark:text-[#D3FDB1] shrink-0 mt-0.5" />
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Expected Commercial Outcomes */}
+            <div className="rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#121316] p-8 md:p-10 shadow-sm">
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+                Expected Business Outcomes
+              </h2>
+              <div className="mt-6 grid gap-4">
+                {product.outcomes.map((outcome, idx) => (
+                  <div key={idx} className="p-4 rounded-2xl border border-slate-100 dark:border-white/5 bg-slate-50 dark:bg-white/[0.02]">
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-[#473BFD] dark:text-[#D3FDB1] font-bold">
+                      Outcome 0{idx + 1}
+                    </span>
+                    <p className="text-sm font-semibold text-slate-900 dark:text-white mt-1">
+                      {outcome}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+          {/* Pricing Section */}
+          <div id="pricing" className="mt-20 pt-16 border-t border-slate-200 dark:border-white/10">
+            <div className="text-center max-w-xl mx-auto mb-12">
+              <span className="font-mono text-xs uppercase tracking-widest text-[#473BFD] dark:text-[#D3FDB1] font-bold">
+                Deployment Packages
+              </span>
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mt-2">
+                Flexible Tiers for Every Adoption Stage
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {pricingPlans.map((tier) => (
+                <div
+                  key={tier.name}
+                  className={`rounded-3xl p-8 border transition-all duration-300 shadow-sm flex flex-col justify-between ${
+                    tier.featured
+                      ? "border-[#473BFD] dark:border-[#D3FDB1] bg-white dark:bg-[#15171C] ring-1 ring-[#473BFD]/20 shadow-md"
+                      : "border-slate-200 dark:border-white/10 bg-white dark:bg-[#121316]"
+                  }`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-white">{tier.name}</h3>
+                      {tier.featured && (
+                        <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#473BFD]/10 text-[#473BFD] dark:bg-[#D3FDB1]/20 dark:text-[#D3FDB1] uppercase">
+                          Popular
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-2xl font-bold text-slate-900 dark:text-white mt-4">{tier.price}</p>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 mt-2">{tier.description}</p>
+                    
+                    <ul className="mt-6 space-y-3 border-t border-slate-100 dark:border-white/5 pt-6">
+                      {tier.features.map((feat) => (
+                        <li key={feat} className="text-xs text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#473BFD] dark:bg-[#D3FDB1]" />
+                          {feat}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-8 pt-6 border-t border-slate-100 dark:border-white/5">
+                    <Link
+                      href="/contact"
+                      className={`inline-flex w-full items-center justify-center rounded-full py-3 text-xs font-semibold transition ${
+                        tier.featured
+                          ? "bg-[#473BFD] text-white hover:bg-[#756CFE]"
+                          : "border border-slate-300 dark:border-white/20 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/5"
+                      }`}
+                    >
+                      {tier.cta}
+                      <ChevronRight className="ml-1 h-3.5 w-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
     </main>
   );
 }
