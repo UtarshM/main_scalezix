@@ -6,8 +6,6 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { company, navLinks, products } from "@/content/site";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "./theme-toggle";
-import { useTheme } from "next-themes";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -15,9 +13,7 @@ export function SiteHeader() {
   const [productsOpen, setProductsOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
-  
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -26,9 +22,7 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+
 
   useEffect(() => {
     const onPointerDown = (event: MouseEvent) => {
@@ -41,35 +35,20 @@ export function SiteHeader() {
     return () => document.removeEventListener("mousedown", onPointerDown);
   }, []);
 
-  const logoSrc = mounted && resolvedTheme === "light" ? "/Scalezix Logo.png" : "/scalezix-logo-white.png";
-  const logoClass = mounted && resolvedTheme === "light"
-    ? "h-9 w-auto object-contain invert mix-blend-multiply"
-    : "h-9 w-auto object-contain mix-blend-screen";
-
   return (
     <>
       <header className="fixed inset-x-0 top-6 z-50 px-4 lg:top-[43px]">
         <nav
           aria-label="Primary"
-          className="mx-auto flex w-full items-center justify-between gap-4 rounded-[88px] border border-black/10 dark:border-white/10 pl-5 backdrop-blur-[19px] max-w-[902px] bg-white/60 dark:bg-[#05050545] py-2.5 pr-2.5 shadow-[0_20px_60px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.55)] transition-colors duration-300"
+          className="mx-auto flex w-full items-center justify-between gap-4 rounded-[88px] border border-white/10 pl-5 backdrop-blur-[19px] max-w-[902px] bg-[#0c0d0f45] py-2.5 pr-2.5 shadow-[0_20px_60px_rgba(0,0,0,0.55)]"
         >
           <Link href="/" className="block shrink-0">
-            {/* Dark Mode Logo */}
             <Image
               src="/scalezix-logo-transparent-white.png"
               alt={`${company.name} logo`}
               width={180}
               height={56}
-              className="hidden dark:block h-9 w-auto object-contain"
-              priority
-            />
-            {/* Light Mode Logo */}
-            <Image
-              src="/scalezix-logo-transparent-dark.png"
-              alt={`${company.name} logo`}
-              width={180}
-              height={56}
-              className="block dark:hidden h-9 w-auto object-contain"
+              className="h-9 w-auto object-contain"
               priority
             />
           </Link>
@@ -120,7 +99,6 @@ export function SiteHeader() {
             </ul>
 
             <div className="flex items-center gap-3">
-              <ThemeToggle />
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-full bg-[#D3FDB1] border border-[#D3FDB1] px-5 py-1.5 text-[14px] font-semibold text-[#0C0D0F] hover:bg-[#c3fca0] hover:border-[#c3fca0] transition-colors duration-300"
@@ -131,11 +109,10 @@ export function SiteHeader() {
           </div>
 
           <div className="flex items-center gap-3 lg:hidden">
-            <ThemeToggle />
             <button
               type="button"
               onClick={() => setMobileOpen((value) => !value)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-[#05121b] dark:text-white outline-none lg:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-white outline-none lg:hidden"
               aria-label="Toggle navigation"
             >
               {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -145,13 +122,13 @@ export function SiteHeader() {
       </header>
 
       {mobileOpen && (
-        <div className="fixed inset-x-4 top-24 z-40 rounded-3xl border border-black/[0.07] dark:border-white/[0.07] bg-white/95 dark:bg-[#05121b]/95 p-5 shadow-2xl backdrop-blur-xl lg:hidden text-[#05121b] dark:text-white">
-          <div className="mb-4 text-sm font-medium border-b border-black/10 dark:border-white/10 pb-2">Navigation</div>
+        <div className="fixed inset-x-4 top-24 z-40 rounded-3xl border border-white/[0.07] bg-[#0C0D0F]/95 p-5 shadow-2xl backdrop-blur-xl lg:hidden text-white">
+          <div className="mb-4 text-sm font-medium border-b border-white/10 pb-2">Navigation</div>
           <div className="space-y-2">
             <button
               type="button"
               onClick={() => setMobileProductsOpen((value) => !value)}
-              className="flex w-full items-center justify-between rounded-2xl border border-transparent px-4 py-3 text-sm text-[#0a1c2e] dark:text-[#f7f7f7] transition hover:border-black/5 dark:hover:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 hover:text-[#473BFD] dark:hover:text-white"
+              className="flex w-full items-center justify-between rounded-2xl border border-transparent px-4 py-3 text-sm text-slate-300 transition hover:border-white/10 hover:bg-white/5 hover:text-white"
             >
               Products
               <ChevronDown
@@ -165,7 +142,7 @@ export function SiteHeader() {
                     key={product.slug}
                     href={`/products/${product.slug}`}
                     onClick={() => setMobileOpen(false)}
-                    className="block rounded-2xl border border-transparent px-4 py-3 text-sm text-[#83909a] transition hover:border-black/5 dark:hover:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 hover:text-[#473BFD] dark:hover:text-white"
+                    className="block rounded-2xl border border-transparent px-4 py-3 text-sm text-[#83909a] transition hover:border-white/10 hover:bg-white/5 hover:text-white"
                   >
                     {product.name}
                   </Link>
@@ -177,7 +154,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
-                className="block rounded-2xl border border-transparent px-4 py-3 text-sm text-[#0a1c2e] dark:text-[#f7f7f7] transition hover:border-black/5 dark:hover:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 hover:text-[#473BFD] dark:hover:text-white"
+                className="block rounded-2xl border border-transparent px-4 py-3 text-sm text-slate-300 transition hover:border-white/10 hover:bg-white/5 hover:text-white"
               >
                 {item.label}
               </Link>
