@@ -6,6 +6,8 @@ import {
   CanadaFaq,
   CanadaInternalLink,
   CanadaService,
+  CanadaCitySlug,
+  CanadaServiceSlug,
 } from "@/content/canada";
 
 export type SeoLocationPageRaw = {
@@ -189,15 +191,27 @@ const getCityData = (cityName: string): CanadaCity => {
   const slug = cityName.toLowerCase().trim();
 
   if (slug in canadaCities) {
-    return canadaCities[slug as any];
+    return canadaCities[slug as CanadaCitySlug];
   }
 
   if (slug in seoCitiesData) {
-    return seoCitiesData[slug] as any;
+    const data = seoCitiesData[slug];
+    return {
+      slug: data.slug as CanadaCitySlug,
+      name: data.name,
+      province: data.province,
+      intro: data.intro,
+      marketFocus: data.marketFocus,
+      regionalProofHook: data.regionalProofHook,
+      industries: data.industries,
+      nearbyAreas: data.nearbyAreas,
+      painPoints: data.painPoints,
+      keywords: data.keywords,
+    };
   }
 
   return {
-    slug: slug as any,
+    slug: slug as CanadaCitySlug,
     name: cityName,
     province: "Ontario",
     intro: `${cityName} teams usually need stronger lead handling, cleaner CRM visibility, and faster cross-team execution as growth creates operational complexity.`,
@@ -217,7 +231,7 @@ const getCityData = (cityName: string): CanadaCity => {
 const getServiceData = (serviceName: string, category: string, slug: string): CanadaService => {
   const serviceSlug = slug.replace(/^\//, "").replace(/-[^-]+$/, "");
   return {
-    slug: serviceSlug as any,
+    slug: serviceSlug as CanadaServiceSlug,
     name: serviceName,
     icon: "workflow",
     short: `${serviceName} systems that remove manual bottlenecks and keep work moving.`,
@@ -343,10 +357,22 @@ export function getSeoCities(): CanadaCity[] {
 export function getSeoCity(citySlug: string): CanadaCity | null {
   const slug = citySlug.toLowerCase().trim();
   if (slug in canadaCities) {
-    return canadaCities[slug as any];
+    return canadaCities[slug as CanadaCitySlug];
   }
   if (slug in seoCitiesData) {
-    return seoCitiesData[slug] as any;
+    const data = seoCitiesData[slug];
+    return {
+      slug: data.slug as CanadaCitySlug,
+      name: data.name,
+      province: data.province,
+      intro: data.intro,
+      marketFocus: data.marketFocus,
+      regionalProofHook: data.regionalProofHook,
+      industries: data.industries,
+      nearbyAreas: data.nearbyAreas,
+      painPoints: data.painPoints,
+      keywords: data.keywords,
+    };
   }
   return null;
 }

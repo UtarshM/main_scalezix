@@ -16,6 +16,7 @@ export interface CertificateRecord {
 export function sanitizeCertificateId(rawId: string): string {
   if (!rawId) return "";
   // Strip control characters, spaces, and make uppercase
+  // eslint-disable-next-line no-control-regex
   return rawId.trim().replace(/[\s\u0000-\u001F\u007F-\u009F]/g, "").toUpperCase();
 }
 
