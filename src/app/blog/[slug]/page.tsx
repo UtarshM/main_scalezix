@@ -121,7 +121,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               </div>
             </section>
 
-            <section className="mt-8 rounded-[2rem] border border-[#00f5ff]/20 bg-blue-50/50 dark:bg-[#08111f] p-6 md:p-8">
+            <section className="mt-8 rounded-[2rem] border border-[#D3FDB1]/20 bg-blue-50/50 dark:bg-[#1C1C1E] p-6 md:p-8">
               <h2 className="text-2xl font-medium text-slate-900 dark:text-white">
                 Want to automate your business?
               </h2>
@@ -154,7 +154,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   <Link
                     key={entry.slug}
                     href={`/blog/${entry.slug}`}
-                    className="block rounded-[1.3rem] border border-black/5 dark:border-white/8 bg-black/[0.015] dark:bg-white/[0.02] p-4 transition hover:border-[#00f5ff]/20 hover:bg-black/[0.03] dark:hover:bg-white/[0.04]"
+                    className="block rounded-[1.3rem] border border-black/5 dark:border-white/8 bg-black/[0.015] dark:bg-white/[0.02] p-4 transition hover:border-[#D3FDB1]/20 hover:bg-black/[0.03] dark:hover:bg-white/[0.04]"
                   >
                     <p className="text-xs uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
                       {entry.category}

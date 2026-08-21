@@ -78,7 +78,7 @@ export function CertificateVerificationView({
     <div className="w-full max-w-4xl mx-auto space-y-8">
       {/* Header section */}
       <div className="text-left space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#00f5ff]/30 bg-[#00f5ff]/5 text-[#00f5ff] text-xs font-mono tracking-wider uppercase">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#D3FDB1]/30 bg-[#D3FDB1]/5 text-[#D3FDB1] text-xs font-mono tracking-wider uppercase">
           <ShieldCheck className="w-3.5 h-3.5" />
           Scalezix Credential Verification
         </div>
@@ -92,7 +92,7 @@ export function CertificateVerificationView({
 
       {/* Search Input Box */}
       <div className="mesh-card rounded-[1.8rem] p-6 md:p-8 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-[#00f5ff]/5 blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-[#D3FDB1]/5 blur-3xl pointer-events-none" />
 
         <form onSubmit={handleSearch} className="space-y-4">
           <label htmlFor="certificateIdInput" className="block text-sm font-medium text-slate-900 dark:text-white">
@@ -107,7 +107,7 @@ export function CertificateVerificationView({
                 value={inputVal}
                 onChange={(e) => setInputVal(e.target.value)}
                 placeholder="e.g. SZX-AIML-26-001 or SZX-FSD-26-001"
-                className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-black/10 dark:border-white/10 bg-white/80 dark:bg-black/50 text-slate-900 dark:text-white placeholder:text-slate-400 font-mono text-sm uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-[#00f5ff] transition-all"
+                className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-black/10 dark:border-white/10 bg-white/80 dark:bg-black/50 text-slate-900 dark:text-white placeholder:text-slate-400 font-mono text-sm uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-[#D3FDB1] transition-all"
                 autoComplete="off"
                 spellCheck={false}
               />
@@ -146,7 +146,7 @@ export function CertificateVerificationView({
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white pt-2">
                     {certificate.studentName}
                   </h2>
-                  <div className="text-base sm:text-lg font-medium text-[#00f5ff]">
+                  <div className="text-base sm:text-lg font-medium text-[#D3FDB1]">
                     {certificate.program} &bull; {certificate.credential}
                   </div>
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-xl">
@@ -158,7 +158,7 @@ export function CertificateVerificationView({
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-left">
                   <div className="p-4 rounded-xl border border-black/5 dark:border-white/5 bg-white/50 dark:bg-white/[0.02]">
                     <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-1">
-                      <Award className="w-4 h-4 text-[#00f5ff]" />
+                      <Award className="w-4 h-4 text-[#D3FDB1]" />
                       <span>Certificate ID</span>
                     </div>
                     <div className="font-mono text-sm font-semibold text-slate-900 dark:text-white">
@@ -168,7 +168,7 @@ export function CertificateVerificationView({
 
                   <div className="p-4 rounded-xl border border-black/5 dark:border-white/5 bg-white/50 dark:bg-white/[0.02]">
                     <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-1">
-                      <Calendar className="w-4 h-4 text-[#00f5ff]" />
+                      <Calendar className="w-4 h-4 text-[#D3FDB1]" />
                       <span>Internship Period</span>
                     </div>
                     <div className="text-xs sm:text-sm font-medium text-slate-900 dark:text-white">
@@ -178,7 +178,7 @@ export function CertificateVerificationView({
 
                   <div className="p-4 rounded-xl border border-black/5 dark:border-white/5 bg-white/50 dark:bg-white/[0.02]">
                     <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-1">
-                      <Calendar className="w-4 h-4 text-[#00f5ff]" />
+                      <Calendar className="w-4 h-4 text-[#D3FDB1]" />
                       <span>Issue Date</span>
                     </div>
                     <div className="text-xs sm:text-sm font-medium text-slate-900 dark:text-white">
@@ -188,7 +188,7 @@ export function CertificateVerificationView({
 
                   <div className="p-4 rounded-xl border border-black/5 dark:border-white/5 bg-white/50 dark:bg-white/[0.02]">
                     <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-1">
-                      <Building2 className="w-4 h-4 text-[#00f5ff]" />
+                      <Building2 className="w-4 h-4 text-[#D3FDB1]" />
                       <span>Status / Issuer</span>
                     </div>
                     <div className="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">

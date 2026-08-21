@@ -25,7 +25,7 @@ export function ComparisonGrid() {
       {/* Intro Sub-Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-black/10 dark:border-white/10">
         <div className="flex flex-col gap-2 max-w-xl">
-          <div className="flex items-center gap-2 text-[#1f77ff]">
+          <div className="flex items-center gap-2 text-[#473BFD]">
             <Sparkles className="h-4 w-4" />
             <span className="font-mono text-xs uppercase tracking-wider font-semibold">
               The Automation Gap
@@ -88,19 +88,19 @@ export function ComparisonGrid() {
         </div>
 
         {/* Scalezix Column */}
-        <div className="rounded-2xl border border-[#1f77ff]/20 bg-white/40 dark:bg-card/35 p-6 md:p-8 backdrop-blur-xl relative overflow-hidden flex flex-col justify-between shadow-xl">
-          <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-[#1f77ff]/10 blur-2xl pointer-events-none" />
+        <div className="rounded-2xl border border-[#473BFD]/20 bg-white/40 dark:bg-card/35 p-6 md:p-8 backdrop-blur-xl relative overflow-hidden flex flex-col justify-between shadow-xl">
+          <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-[#473BFD]/10 blur-2xl pointer-events-none" />
           
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3 border-b border-black/5 dark:border-white/5 pb-4">
-              <div className="h-8 w-8 rounded-lg bg-[#1f77ff]/10 border border-[#1f77ff]/20 flex items-center justify-center text-[#1f77ff] dark:text-[#00f5ff]">
+              <div className="h-8 w-8 rounded-lg bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center text-[#473BFD] dark:text-[#D3FDB1]">
                 <Sparkles className="h-4 w-4" />
               </div>
               <div>
                 <h4 className="font-semibold text-base text-slate-900 dark:text-white">
                   The Scalezix AI-Native Model
                 </h4>
-                <p className="text-[10px] font-mono uppercase tracking-wider text-[#1f77ff] dark:text-[#00f5ff] mt-0.5">
+                <p className="text-[10px] font-mono uppercase tracking-wider text-[#473BFD] dark:text-[#D3FDB1] mt-0.5">
                   Integrated & Automated
                 </p>
               </div>
@@ -109,7 +109,7 @@ export function ComparisonGrid() {
             <div className="flex flex-col gap-6">
               {scalezixPoints.map((item, idx) => (
                 <div key={idx} className="flex gap-4 items-start">
-                  <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-[#00f5ff] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="h-5 w-5 text-emerald-500 dark:text-[#D3FDB1] shrink-0 mt-0.5" />
                   <div className="flex flex-col gap-1">
                     <h5 className="text-xs font-semibold text-slate-800 dark:text-slate-100">
                       {item.title}
@@ -123,7 +123,7 @@ export function ComparisonGrid() {
             </div>
           </div>
 
-          <div className="mt-8 pt-4 border-t border-black/5 dark:border-white/5 text-[10px] font-mono text-emerald-500 dark:text-[#00f5ff]">
+          <div className="mt-8 pt-4 border-t border-black/5 dark:border-white/5 text-[10px] font-mono text-emerald-500 dark:text-[#D3FDB1]">
             Result: Scalable infrastructure yielding compound productivity gains.
           </div>
         </div>

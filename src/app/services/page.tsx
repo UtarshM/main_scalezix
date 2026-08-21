@@ -37,7 +37,7 @@ export default function ServicesPage() {
       <div className="mt-12 grid gap-5 lg:grid-cols-2">
         {services.map((service) => (
           <div key={service.slug} className="mesh-card rounded-[1.8rem] p-6">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-100 dark:border-[#4a84ff]/20 bg-[#1f77ff]/5 dark:bg-[#17356e]/16 text-[#1f77ff] dark:text-[#a6c0ff]">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-100 dark:border-[#756CFE]/20 bg-[#473BFD]/5 dark:bg-[#17356e]/16 text-[#473BFD] dark:text-[#a6c0ff]">
               <ServiceIcon icon={service.icon} />
             </div>
             <h2 className="mt-5 text-2xl font-medium text-slate-900 dark:text-white">{service.name}</h2>

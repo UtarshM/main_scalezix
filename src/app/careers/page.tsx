@@ -63,21 +63,21 @@ export default function CareersPage() {
             </p>
             <ul className="mt-6 space-y-4 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
               <li className="flex gap-2">
-                <span className="text-[#1f77ff] font-bold">&bull;</span>
+                <span className="text-[#473BFD] font-bold">&bull;</span>
                 <div>
                   <strong className="text-slate-800 dark:text-white block">AI-First Culture</strong>
                   Prompting, automation, and model integrations are at the core of everything we do.
                 </div>
               </li>
               <li className="flex gap-2">
-                <span className="text-[#1f77ff] font-bold">&bull;</span>
+                <span className="text-[#473BFD] font-bold">&bull;</span>
                 <div>
                   <strong className="text-slate-800 dark:text-white block">High Speed & Zero Bureaucracy</strong>
                   We ship modular code and live automations in weeks, not quarters. No red tape.
                 </div>
               </li>
               <li className="flex gap-2">
-                <span className="text-[#1f77ff] font-bold">&bull;</span>
+                <span className="text-[#473BFD] font-bold">&bull;</span>
                 <div>
                   <strong className="text-slate-800 dark:text-white block">Real Commercial Impact</strong>
                   Your work will qualify real leads, route millions in revenue, and save thousands of manual hours.
@@ -114,7 +114,7 @@ export default function CareersPage() {
                 </p>
                 <div className="flex flex-wrap gap-1.5 mt-1">
                   {pos.skills.map((skill, sIdx) => (
-                    <span key={sIdx} className="text-[9px] font-mono px-2 py-0.5 rounded bg-[#1f77ff]/5 text-[#1f77ff] dark:text-[#00f5ff] border border-[#1f77ff]/10">
+                    <span key={sIdx} className="text-[9px] font-mono px-2 py-0.5 rounded bg-[#473BFD]/5 text-[#473BFD] dark:text-[#D3FDB1] border border-[#473BFD]/10">
                       {skill}
                     </span>
                   ))}
@@ -125,7 +125,7 @@ export default function CareersPage() {
 
           <div className="pt-4 border-t border-black/5 dark:border-white/5 text-xs text-slate-600 dark:text-slate-300">
             Don't see a matching position? Send your resume and a short description of what you build to{" "}
-            <a href="mailto:hr@scalezix.com" className="font-mono font-semibold text-[#1f77ff] hover:underline">
+            <a href="mailto:hr@scalezix.com" className="font-mono font-semibold text-[#473BFD] hover:underline">
               hr@scalezix.com
             </a>
           </div>

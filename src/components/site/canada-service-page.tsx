@@ -46,7 +46,7 @@ export function CanadaServicePage({ page }: { page: CanadaServiceCityPage }) {
           <p className="mt-5 text-base leading-8 text-slate-300">{page.solutionAngle}</p>
           <div className="mt-6 grid gap-3">
             {page.outcomes.map((outcome) => (
-              <div key={outcome} className="rounded-[1.3rem] border border-[#00f5ff]/14 bg-[#08111f] p-4">
+              <div key={outcome} className="rounded-[1.3rem] border border-[#D3FDB1]/14 bg-[#1C1C1E] p-4">
                 <p className="text-sm font-medium text-white">{outcome}</p>
               </div>
             ))}
@@ -94,7 +94,7 @@ export function CanadaServicePage({ page }: { page: CanadaServiceCityPage }) {
         <div className="mesh-card rounded-[2rem] p-6 md:p-8">
           <h2 className="text-2xl font-medium text-white">{page.proofTitle}</h2>
           <p className="mt-5 text-base leading-8 text-slate-300">{page.proofBody}</p>
-          <div className="mt-8 rounded-[1.4rem] border border-[#00f5ff]/14 bg-[#08111f] p-5">
+          <div className="mt-8 rounded-[1.4rem] border border-[#D3FDB1]/14 bg-[#1C1C1E] p-5">
             <p className="text-sm uppercase tracking-[0.18em] text-slate-400">Best nearby fit</p>
             <p className="mt-3 text-sm leading-7 text-slate-200">
               Teams in {page.city.nearbyAreas.join(", ")} often face similar growth and coordination
@@ -124,7 +124,7 @@ export function CanadaServicePage({ page }: { page: CanadaServiceCityPage }) {
               <Link
                 key={link.href}
                 href={link.href}
-                className="flex items-center justify-between rounded-[1.3rem] border border-white/8 bg-white/[0.02] p-4 transition hover:border-[#00f5ff]/20 hover:bg-white/[0.04]"
+                className="flex items-center justify-between rounded-[1.3rem] border border-white/8 bg-white/[0.02] p-4 transition hover:border-[#D3FDB1]/20 hover:bg-white/[0.04]"
               >
                 <span className="text-sm text-slate-200">{link.label}</span>
                 <ChevronRight className="h-4 w-4 text-slate-400" />
@@ -132,7 +132,7 @@ export function CanadaServicePage({ page }: { page: CanadaServiceCityPage }) {
             ))}
           </div>
 
-          <div className="mt-8 rounded-[1.4rem] border border-[#00f5ff]/14 bg-[#08111f] p-5">
+          <div className="mt-8 rounded-[1.4rem] border border-[#D3FDB1]/14 bg-[#1C1C1E] p-5">
             <h3 className="text-lg font-medium text-white">Need a Canada growth system, not just a bot?</h3>
             <p className="mt-3 text-sm leading-7 text-slate-300">
               Scalezix blends AI systems, software, CRM integration, and revenue operations so
@@ -147,9 +147,9 @@ export function CanadaServicePage({ page }: { page: CanadaServiceCityPage }) {
         </div>
       </section>
 
-      <section className="relative mt-16 overflow-hidden rounded-[2.4rem] border border-[#00f5ff]/16 bg-[#07101f]/75 p-8 shadow-[0_24px_80px_rgba(0,0,0,0.35)] md:p-12">
+      <section className="relative mt-16 overflow-hidden rounded-[2.4rem] border border-[#D3FDB1]/16 bg-[#0C0D0F]/75 p-8 shadow-[0_24px_80px_rgba(0,0,0,0.35)] md:p-12">
         <div className="absolute left-0 top-0 h-px w-full bg-white/10" />
-        <div className="animate-float-slow absolute right-10 top-10 h-32 w-32 rounded-full bg-[#00f5ff]/14 blur-[100px]" />
+        <div className="animate-float-slow absolute right-10 top-10 h-32 w-32 rounded-full bg-[#D3FDB1]/14 blur-[100px]" />
         
         <div className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] z-10">
           <div>
@@ -163,15 +163,15 @@ export function CanadaServicePage({ page }: { page: CanadaServiceCityPage }) {
             
             <div className="mt-8 space-y-4 text-sm text-slate-300">
               <p className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#00f5ff]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#D3FDB1]" />
                 Custom {page.service.name.toLowerCase()} strategy for local operations
               </p>
               <p className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#00f5ff]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#D3FDB1]" />
                 Integration with your existing CRMs, inboxes, and tools
               </p>
               <p className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#00f5ff]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#D3FDB1]" />
                 24/7 automated support and lead qualification options
               </p>
             </div>

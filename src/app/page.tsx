@@ -38,17 +38,17 @@ export default function HomePage() {
   const getServiceIcon = (slug: string) => {
     switch (slug) {
       case "ai-automation":
-        return <Workflow className="h-6 w-6 text-[#1f77ff] dark:text-[#00f5ff]" />;
+        return <Workflow className="h-6 w-6 text-[#473BFD] dark:text-[#D3FDB1]" />;
       case "software-development":
-        return <Code className="h-6 w-6 text-[#1f77ff] dark:text-[#00f5ff]" />;
+        return <Code className="h-6 w-6 text-[#473BFD] dark:text-[#D3FDB1]" />;
       case "digital-marketing":
-        return <Megaphone className="h-6 w-6 text-[#1f77ff] dark:text-[#00f5ff]" />;
+        return <Megaphone className="h-6 w-6 text-[#473BFD] dark:text-[#D3FDB1]" />;
       case "ai-agents":
-        return <Bot className="h-6 w-6 text-[#1f77ff] dark:text-[#00f5ff]" />;
+        return <Bot className="h-6 w-6 text-[#473BFD] dark:text-[#D3FDB1]" />;
       case "crm-integrations":
-        return <Network className="h-6 w-6 text-[#1f77ff] dark:text-[#00f5ff]" />;
+        return <Network className="h-6 w-6 text-[#473BFD] dark:text-[#D3FDB1]" />;
       default:
-        return <Zap className="h-6 w-6 text-[#1f77ff] dark:text-[#00f5ff]" />;
+        return <Zap className="h-6 w-6 text-[#473BFD] dark:text-[#D3FDB1]" />;
     }
   };
 
@@ -95,7 +95,7 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto flex w-full max-w-[1140px] flex-col items-center px-5 text-center sm:px-8">
           
           {/* Tagline Badge */}
-          <div className="inline-flex items-center gap-2.5 rounded-full px-4 py-2 border border-black/10 dark:border-white/10 bg-white/60 dark:bg-card/40 backdrop-blur-md mb-8 text-xs font-mono text-[#1f77ff] dark:text-[#00f5ff] shadow-sm">
+          <div className="inline-flex items-center gap-2.5 rounded-full px-4 py-2 border border-black/10 dark:border-white/10 bg-white/60 dark:bg-card/40 backdrop-blur-md mb-8 text-xs font-mono text-[#473BFD] dark:text-[#D3FDB1] shadow-sm">
             <Sparkles className="h-3.5 w-3.5" />
             <span>AI Transformation & Workflow Automation</span>
           </div>
@@ -114,7 +114,7 @@ export default function HomePage() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <a
               href="#calculator"
-              className="inline-flex items-center justify-center gap-2 rounded-full font-semibold bg-[#1f77ff] hover:bg-[#146df7] dark:hover:brightness-110 text-white px-8 py-3.5 text-sm transition shadow-[0_4px_20px_rgba(31,119,255,0.25)]"
+              className="inline-flex items-center justify-center gap-2 rounded-full font-semibold bg-[#473BFD] hover:bg-[#756CFE] dark:hover:brightness-110 text-white px-8 py-3.5 text-sm transition shadow-[0_4px_20px_rgba(31,119,255,0.25)]"
             >
               Start with a Diagnosis
               <ArrowRight className="h-4 w-4" />
@@ -134,7 +134,7 @@ export default function HomePage() {
                 key={idx}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-black/5 dark:border-white/5 bg-white/30 dark:bg-card/20 font-mono text-[10px] tracking-wide text-slate-500 dark:text-muted-foreground"
               >
-                <span className="h-1.5 w-1.5 rounded-full bg-[#1f77ff] dark:bg-[#00f5ff]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#473BFD] dark:bg-[#D3FDB1]" />
                 {badge}
               </span>
             ))}
@@ -156,7 +156,7 @@ export default function HomePage() {
           <div className="animate-marquee inline-flex min-w-full items-center gap-16 py-1">
             {homeTicker.concat(homeTicker).map((signal, index) => (
               <span key={`${signal}-${index}`} className="inline-flex items-center gap-3 text-slate-800 dark:text-white/80 font-medium">
-                <span className="h-2 w-2 rounded-full bg-[#1f77ff] dark:bg-[#00f5ff] shadow-[0_0_8px_#1f77ff]" />
+                <span className="h-2 w-2 rounded-full bg-[#473BFD] dark:bg-[#D3FDB1] shadow-[0_0_8px_#473BFD]" />
                 {signal}
               </span>
             ))}
@@ -190,7 +190,7 @@ export default function HomePage() {
               <div className="mt-8">
                 <a
                   href="#calculator"
-                  className="inline-flex items-center gap-2 rounded-full font-semibold bg-[#1f77ff] hover:bg-[#146df7] dark:hover:brightness-110 text-white px-6 py-3 text-xs transition shadow-md"
+                  className="inline-flex items-center gap-2 rounded-full font-semibold bg-[#473BFD] hover:bg-[#756CFE] dark:hover:brightness-110 text-white px-6 py-3 text-xs transition shadow-md"
                 >
                   Start with a Diagnosis
                   <ChevronRight className="h-4 w-4" />
@@ -202,14 +202,14 @@ export default function HomePage() {
             <div className="lg:col-span-8 flex flex-col gap-6">
               
               {/* Bento Card 1 */}
-              <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-card/20 p-6 md:p-8 backdrop-blur-sm relative overflow-hidden group hover:border-[#1f77ff]/30 dark:hover:border-[#1f77ff]/40 transition-all duration-300">
-                <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#1f77ff]/5 blur-2xl pointer-events-none" />
+              <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-card/20 p-6 md:p-8 backdrop-blur-sm relative overflow-hidden group hover:border-[#473BFD]/30 dark:hover:border-[#473BFD]/40 transition-all duration-300">
+                <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
                 <div className="flex flex-col md:flex-row gap-6">
-                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#1f77ff]/10 border border-[#1f77ff]/20 flex items-center justify-center text-[#1f77ff]">
+                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center text-[#473BFD]">
                     <BarChart3 className="h-6 w-6" />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <span className="font-mono text-[9px] text-[#1f77ff] uppercase tracking-wider font-semibold">
+                    <span className="font-mono text-[9px] text-[#473BFD] uppercase tracking-wider font-semibold">
                       Phase 01 &bull; Audit & ROI Blueprint
                     </span>
                     <h4 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">
@@ -223,14 +223,14 @@ export default function HomePage() {
               </div>
 
               {/* Bento Card 2 */}
-              <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-card/20 p-6 md:p-8 backdrop-blur-sm relative overflow-hidden group hover:border-[#1f77ff]/30 dark:hover:border-[#1f77ff]/40 transition-all duration-300">
-                <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#1f77ff]/5 blur-2xl pointer-events-none" />
+              <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-card/20 p-6 md:p-8 backdrop-blur-sm relative overflow-hidden group hover:border-[#473BFD]/30 dark:hover:border-[#473BFD]/40 transition-all duration-300">
+                <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
                 <div className="flex flex-col md:flex-row gap-6">
-                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#1f77ff]/10 border border-[#1f77ff]/20 flex items-center justify-center text-[#1f77ff]">
+                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center text-[#473BFD]">
                     <Users className="h-6 w-6" />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <span className="font-mono text-[9px] text-[#1f77ff] uppercase tracking-wider font-semibold">
+                    <span className="font-mono text-[9px] text-[#473BFD] uppercase tracking-wider font-semibold">
                       Phase 02 &bull; Workforce Enablement
                     </span>
                     <h4 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">
@@ -244,14 +244,14 @@ export default function HomePage() {
               </div>
 
               {/* Bento Card 3 */}
-              <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-card/20 p-6 md:p-8 backdrop-blur-sm relative overflow-hidden group hover:border-[#1f77ff]/30 dark:hover:border-[#1f77ff]/40 transition-all duration-300">
-                <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#1f77ff]/5 blur-2xl pointer-events-none" />
+              <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-card/20 p-6 md:p-8 backdrop-blur-sm relative overflow-hidden group hover:border-[#473BFD]/30 dark:hover:border-[#473BFD]/40 transition-all duration-300">
+                <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
                 <div className="flex flex-col md:flex-row gap-6">
-                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#1f77ff]/10 border border-[#1f77ff]/20 flex items-center justify-center text-[#1f77ff]">
+                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center text-[#473BFD]">
                     <Bot className="h-6 w-6" />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <span className="font-mono text-[9px] text-[#1f77ff] uppercase tracking-wider font-semibold">
+                    <span className="font-mono text-[9px] text-[#473BFD] uppercase tracking-wider font-semibold">
                       Phase 03 &bull; AI Infrastructure
                     </span>
                     <h4 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">
@@ -296,10 +296,10 @@ export default function HomePage() {
             {products.map((product) => (
               <div
                 key={product.slug}
-                className="flex flex-col justify-between overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-card/20 p-6 backdrop-blur-sm group hover:border-[#1f77ff]/30 dark:hover:border-[#1f77ff]/40 transition-all duration-300"
+                className="flex flex-col justify-between overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-card/20 p-6 backdrop-blur-sm group hover:border-[#473BFD]/30 dark:hover:border-[#473BFD]/40 transition-all duration-300"
               >
                 <div className="flex flex-col gap-4">
-                  <div className="h-10 w-10 rounded-xl bg-[#1f77ff]/10 border border-[#1f77ff]/20 flex items-center justify-center">
+                  <div className="h-10 w-10 rounded-xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center">
                     {getServiceIcon(product.slug)}
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">
@@ -312,7 +312,7 @@ export default function HomePage() {
                 <div className="mt-6 pt-4 border-t border-black/5 dark:border-white/5 flex items-center justify-between">
                   <Link
                     href={`/products/${product.slug}`}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#1f77ff] dark:text-[#00f5ff] hover:underline"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#473BFD] dark:text-[#D3FDB1] hover:underline"
                   >
                     View system specs
                     <ChevronRight className="h-3 w-3" />
@@ -341,7 +341,7 @@ export default function HomePage() {
             {caseStudies.map((study) => (
               <div
                 key={study.slug}
-                className="flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-card/20 p-6 backdrop-blur-sm hover:border-[#1f77ff]/30 dark:hover:border-[#1f77ff]/40 transition-all duration-300"
+                className="flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-card/20 p-6 backdrop-blur-sm hover:border-[#473BFD]/30 dark:hover:border-[#473BFD]/40 transition-all duration-300"
               >
                 <div className="flex flex-col gap-3">
                   <span className="text-[9px] font-mono uppercase tracking-wider text-slate-400 dark:text-muted-foreground">
@@ -360,7 +360,7 @@ export default function HomePage() {
                   </p>
                   <Link
                     href={`/case-studies/${study.slug}`}
-                    className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#1f77ff] dark:text-[#00f5ff] hover:underline"
+                    className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#473BFD] dark:text-[#D3FDB1] hover:underline"
                   >
                     Read case study
                     <ChevronRight className="h-3.5 w-3.5" />
@@ -377,7 +377,7 @@ export default function HomePage() {
       <section className="relative py-16 bg-slate-50 dark:bg-background overflow-hidden">
         <div className="mx-auto max-w-4xl px-5 sm:px-8">
           <figure className="relative flex flex-col items-center text-center rounded-3xl border border-black/10 dark:border-white/10 bg-white/30 dark:bg-card/20 p-8 md:p-12 backdrop-blur-sm z-10 shadow-lg">
-            <div className="absolute top-0 left-0 w-24 h-24 rounded-full bg-[#1f77ff]/5 blur-2xl pointer-events-none" />
+            <div className="absolute top-0 left-0 w-24 h-24 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
             <blockquote className="text-lg md:text-xl font-medium leading-relaxed text-slate-800 dark:text-white tracking-tight">
               &ldquo;Most companies do not fail at AI because the models are weak. They fail because the workflows are unclear, disconnected, or unmanaged. Scalezix focuses on operational leverage first.&rdquo;
             </blockquote>
@@ -415,7 +415,7 @@ export default function HomePage() {
                 </span>
                 <a
                   href={`mailto:${companyInfo.email}`}
-                  className="text-xs font-mono font-semibold text-[#1f77ff] hover:underline"
+                  className="text-xs font-mono font-semibold text-[#473BFD] hover:underline"
                 >
                   {companyInfo.email}
                 </a>
@@ -430,10 +430,10 @@ export default function HomePage() {
                   <div key={idx} className="border-b border-black/10 dark:border-white/10">
                     <button
                       onClick={() => toggleFaq(idx)}
-                      className="w-full flex items-center justify-between text-left py-5 font-semibold text-sm text-slate-800 dark:text-white hover:text-[#1f77ff] dark:hover:text-[#00f5ff] transition-colors gap-4"
+                      className="w-full flex items-center justify-between text-left py-5 font-semibold text-sm text-slate-800 dark:text-white hover:text-[#473BFD] dark:hover:text-[#D3FDB1] transition-colors gap-4"
                     >
                       <span>{faq.q}</span>
-                      <ChevronDown className={cn("h-4 w-4 shrink-0 transition-transform duration-300 text-slate-400", isOpen ? "rotate-180 text-[#1f77ff] dark:text-[#00f5ff]" : "")} />
+                      <ChevronDown className={cn("h-4 w-4 shrink-0 transition-transform duration-300 text-slate-400", isOpen ? "rotate-180 text-[#473BFD] dark:text-[#D3FDB1]" : "")} />
                     </button>
                     
                     {/* Collapsible Panel */}
@@ -457,11 +457,11 @@ export default function HomePage() {
         <div className="mx-auto max-w-[1140px] px-5 sm:px-8 z-10 relative">
           <div className="section-rule mb-16" />
           <div className="relative overflow-hidden rounded-[32px] bg-[#10222f] dark:bg-card/40 border border-white/5 px-6 py-12 md:py-16 md:px-16 text-white shadow-2xl">
-            <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-[#1f77ff]/10 blur-[80px] pointer-events-none" />
+            <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-[#473BFD]/10 blur-[80px] pointer-events-none" />
             
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10">
               <div className="flex flex-col gap-4">
-                <span className="inline-flex w-fit items-center justify-center rounded-full bg-white/10 border border-white/20 px-3.5 py-1 text-[11px] uppercase font-bold tracking-wider leading-none text-[#1f77ff] dark:text-[#00f5ff]">
+                <span className="inline-flex w-fit items-center justify-center rounded-full bg-white/10 border border-white/20 px-3.5 py-1 text-[11px] uppercase font-bold tracking-wider leading-none text-[#473BFD] dark:text-[#D3FDB1]">
                   Get Started
                 </span>
                 <h2 className="mt-2 font-semibold text-white text-[34px] leading-[1.08] tracking-[-0.5px] sm:text-[42px] lg:text-[48px]">
@@ -475,7 +475,7 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4 shrink-0">
                 <Link
                   href={companyInfo.calendlyHref}
-                  className="inline-flex items-center justify-center gap-2 rounded-full font-semibold bg-white text-[#10222f] hover:bg-[#1f77ff] hover:text-white transition px-8 py-3.5 text-sm"
+                  className="inline-flex items-center justify-center gap-2 rounded-full font-semibold bg-white text-[#10222f] hover:bg-[#473BFD] hover:text-white transition px-8 py-3.5 text-sm"
                 >
                   Book a Free Call
                   <ArrowRight className="h-4 w-4" />
@@ -499,7 +499,7 @@ export default function HomePage() {
 function StatsCard({ value, label }: { value: string; label: string }) {
   return (
     <li>
-      <div className="relative flex h-[120px] flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl p-4 text-center sm:h-[140px] lg:h-[160px] border border-black/10 dark:border-white/10 bg-white/50 dark:bg-card/30 backdrop-blur-xl shadow-sm hover:border-[#1f77ff]/30 dark:hover:border-[#1f77ff]/40 transition-all duration-300">
+      <div className="relative flex h-[120px] flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl p-4 text-center sm:h-[140px] lg:h-[160px] border border-black/10 dark:border-white/10 bg-white/50 dark:bg-card/30 backdrop-blur-xl shadow-sm hover:border-[#473BFD]/30 dark:hover:border-[#473BFD]/40 transition-all duration-300">
         <div className="relative flex flex-col items-center gap-2">
           <span className="font-bold leading-none tracking-tight text-slate-900 dark:text-white text-[32px] sm:text-[42px] lg:text-[48px]">
             {value}

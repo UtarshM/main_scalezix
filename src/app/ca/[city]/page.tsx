@@ -136,7 +136,7 @@ export default async function CanadaCityPage({
                   <Link
                     key={svcIdx}
                     href={`/${svc.slug}`}
-                    className="flex flex-col justify-between p-5 rounded-2xl border border-black/5 dark:border-white/8 bg-white/50 dark:bg-slate-900/50 hover:border-[#00f5ff]/20 hover:bg-black/[0.02] dark:hover:bg-white/[0.04] transition"
+                    className="flex flex-col justify-between p-5 rounded-2xl border border-black/5 dark:border-white/8 bg-white/50 dark:bg-slate-900/50 hover:border-[#D3FDB1]/20 hover:bg-black/[0.02] dark:hover:bg-white/[0.04] transition"
                   >
                     <div>
                       <h4 className="font-semibold text-base text-slate-900 dark:text-white">{svc.name}</h4>
@@ -144,7 +144,7 @@ export default async function CanadaCityPage({
                         {svc.description}
                       </p>
                     </div>
-                    <span className="mt-4 flex items-center text-xs font-semibold text-[#1f77ff] dark:text-[#00f5ff]">
+                    <span className="mt-4 flex items-center text-xs font-semibold text-[#473BFD] dark:text-[#D3FDB1]">
                       View Page &rarr;
                     </span>
                   </Link>

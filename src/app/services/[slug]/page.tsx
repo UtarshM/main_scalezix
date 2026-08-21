@@ -180,7 +180,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           {relatedCaseStudy ? (
             <Link
               href={`/case-studies/${relatedCaseStudy.slug}`}
-              className="mt-6 inline-flex items-center text-sm text-[#1f77ff] dark:text-[#9ab9ff] transition hover:text-[#00f5ff] dark:hover:text-white"
+              className="mt-6 inline-flex items-center text-sm text-[#473BFD] dark:text-[#9ab9ff] transition hover:text-[#D3FDB1] dark:hover:text-white"
             >
               Read related case study
               <ChevronRight className="ml-1 h-4 w-4" />
@@ -195,7 +195,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="block rounded-[1.3rem] border border-black/5 dark:border-white/8 bg-black/[0.015] dark:bg-white/[0.02] p-4 transition hover:border-[#00f5ff]/20 hover:bg-black/[0.02] dark:hover:bg-white/[0.04]"
+                className="block rounded-[1.3rem] border border-black/5 dark:border-white/8 bg-black/[0.015] dark:bg-white/[0.02] p-4 transition hover:border-[#D3FDB1]/20 hover:bg-black/[0.02] dark:hover:bg-white/[0.04]"
               >
                 <p className="text-xs uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">{post.category}</p>
                 <p className="mt-2 text-sm font-medium leading-6 text-slate-900 dark:text-white">{post.title}</p>
@@ -215,7 +215,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
             <Link
               key={href}
               href={href}
-              className="mesh-card rounded-[1.8rem] p-6 transition hover:border-[#00f5ff]/20 hover:bg-black/[0.02] dark:hover:bg-white/[0.04]"
+              className="mesh-card rounded-[1.8rem] p-6 transition hover:border-[#D3FDB1]/20 hover:bg-black/[0.02] dark:hover:bg-white/[0.04]"
             >
               <p className="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">{city.province}</p>
               <h3 className="mt-3 text-2xl font-medium text-slate-900 dark:text-white">{service.name} in {city.name}</h3>

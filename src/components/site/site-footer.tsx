@@ -32,7 +32,10 @@ export function SiteFooter() {
                 Blog
               </Link>
             </nav>
-            <Link href="/contact" className="relative isolate inline-flex items-center justify-center overflow-hidden rounded-full border border-white/70 bg-[#1f77ff] px-6 py-2.5 text-[14px] font-medium leading-6 tracking-[-0.16px] text-[#05121b] transition-[color,border-color] duration-300 ease-in-out before:absolute before:inset-0 before:-z-[1] before:rounded-[inherit] before:bg-[linear-gradient(180deg,#ffffff_0%,#93bdff_100%)] before:transition-opacity before:duration-300 before:ease-in-out before:content-[''] hover:border-[#1f77ff] hover:text-white hover:before:opacity-0">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-full bg-[#D3FDB1] border border-[#D3FDB1] px-5 py-1.5 text-[14px] font-semibold text-[#0C0D0F] hover:bg-[#c3fca0] hover:border-[#c3fca0] transition-colors duration-300"
+            >
               Talk to Us
             </Link>
           </div>

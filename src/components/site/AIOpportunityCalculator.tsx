@@ -47,7 +47,7 @@ export function AIOpportunityCalculator() {
     { name: "Sales Outreach", score: 61, status: "ACTIVATE NOW", statusColor: "text-emerald-400 border-emerald-400/30 bg-emerald-400/5" },
     { name: "Customer Operations", score: 55, status: "MONITOR", statusColor: "text-amber-400 border-amber-400/30 bg-amber-400/5" },
     { name: "Finance & Analytics", score: 48, status: "MONITOR", statusColor: "text-amber-400 border-amber-400/30 bg-amber-400/5" },
-    { name: "Operations & HR", score: 39, status: "BUILD REQUIRED", statusColor: "text-[#1f77ff] border-[#1f77ff]/30 bg-[#1f77ff]/5" }
+    { name: "Operations & HR", score: 39, status: "BUILD REQUIRED", statusColor: "text-[#473BFD] border-[#473BFD]/30 bg-[#473BFD]/5" }
   ]);
 
   const [roiEstimate, setRoiEstimate] = useState("Rs. 3.2 Crore");
@@ -160,7 +160,7 @@ export function AIOpportunityCalculator() {
           return {
             ...dept,
             status: "BUILD REQUIRED",
-            statusColor: "text-[#1f77ff] border-[#1f77ff]/30 bg-[#1f77ff]/5"
+            statusColor: "text-[#473BFD] border-[#473BFD]/30 bg-[#473BFD]/5"
           };
         }
       });
@@ -201,12 +201,12 @@ export function AIOpportunityCalculator() {
           {/* Header */}
           <div className="px-6 py-5 border-b border-black/10 dark:border-white/10 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <div className="h-2 w-2 rounded-full bg-[#1f77ff] animate-pulse shadow-[0_0_8px_#1f77ff]" />
+              <div className="h-2 w-2 rounded-full bg-[#473BFD] animate-pulse shadow-[0_0_8px_#473BFD]" />
               <span className="font-mono text-[10px] text-slate-500 dark:text-muted-foreground uppercase tracking-widest">
                 AI Opportunity Index Preview
               </span>
             </div>
-            <span className="font-mono text-[9px] text-[#1f77ff] border border-[#1f77ff]/20 bg-[#1f77ff]/5 px-2 py-0.5 rounded-full uppercase tracking-wider">
+            <span className="font-mono text-[9px] text-[#473BFD] border border-[#473BFD]/20 bg-[#473BFD]/5 px-2 py-0.5 rounded-full uppercase tracking-wider">
               Simulation
             </span>
           </div>
@@ -243,7 +243,7 @@ export function AIOpportunityCalculator() {
                   ? "hsl(142, 71%, 45%)"
                   : dept.score >= 50
                     ? "hsl(43, 96%, 56%)"
-                    : "#1f77ff";
+                    : "#473BFD";
 
                 return (
                   <div key={idx} className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-4">
@@ -282,7 +282,7 @@ export function AIOpportunityCalculator() {
             <span className="font-mono text-[10px] text-slate-500 dark:text-muted-foreground">
               Estimated annual value unlocked through AI:
             </span>
-            <span className="font-mono text-sm font-bold text-[#1f77ff] dark:text-[#00f5ff] flex items-center gap-1.5 animate-pulse">
+            <span className="font-mono text-sm font-bold text-[#473BFD] dark:text-[#D3FDB1] flex items-center gap-1.5 animate-pulse">
               <TrendingUp className="h-4 w-4 shrink-0" />
               {roiEstimate}
             </span>
@@ -294,7 +294,7 @@ export function AIOpportunityCalculator() {
       {/* Right side: Interactive Audit Form */}
       <div className="lg:col-span-6">
         <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-card/20 p-6 md:p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden h-full flex flex-col justify-between">
-          <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-[#1f77ff]/5 blur-2xl pointer-events-none" />
+          <div className="absolute -top-12 -right-12 w-32 h-32 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
 
           {submitted ? (
             <div className="flex flex-col items-center justify-center text-center py-12 flex-1 gap-6">
@@ -312,7 +312,7 @@ export function AIOpportunityCalculator() {
               <button
                 type="button"
                 onClick={() => setSubmitted(false)}
-                className="mt-4 text-xs font-mono text-[#1f77ff] hover:underline flex items-center gap-1"
+                className="mt-4 text-xs font-mono text-[#473BFD] hover:underline flex items-center gap-1"
               >
                 Run another diagnosis
               </button>
@@ -320,7 +320,7 @@ export function AIOpportunityCalculator() {
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
-                <div className="flex items-center gap-2 text-[#1f77ff]">
+                <div className="flex items-center gap-2 text-[#473BFD]">
                   <Sparkles className="h-4 w-4" />
                   <span className="font-mono text-xs uppercase tracking-wider font-semibold">
                     Instant Assessment
@@ -351,7 +351,7 @@ export function AIOpportunityCalculator() {
                     placeholder="Work Email Address"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full bg-black/5 dark:bg-black/25 border border-black/10 dark:border-white/10 rounded-md px-3.5 py-2.5 text-xs text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-muted-foreground focus:outline-none focus:border-[#1f77ff] transition-colors"
+                    className="w-full bg-black/5 dark:bg-black/25 border border-black/10 dark:border-white/10 rounded-md px-3.5 py-2.5 text-xs text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-muted-foreground focus:outline-none focus:border-[#473BFD] transition-colors"
                   />
                   <input
                     type="url"
@@ -360,7 +360,7 @@ export function AIOpportunityCalculator() {
                     placeholder="Company Website URL"
                     value={formData.website}
                     onChange={handleInputChange}
-                    className="w-full bg-black/5 dark:bg-black/25 border border-black/10 dark:border-white/10 rounded-md px-3.5 py-2.5 text-xs text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-muted-foreground focus:outline-none focus:border-[#1f77ff] transition-colors"
+                    className="w-full bg-black/5 dark:bg-black/25 border border-black/10 dark:border-white/10 rounded-md px-3.5 py-2.5 text-xs text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-muted-foreground focus:outline-none focus:border-[#473BFD] transition-colors"
                   />
                 </div>
 
@@ -371,7 +371,7 @@ export function AIOpportunityCalculator() {
                     required
                     value={formData.role}
                     onChange={handleInputChange}
-                    className="w-full bg-black/5 dark:bg-black/25 border border-black/10 dark:border-white/10 rounded-md px-3.5 py-2.5 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-[#1f77ff] transition-colors appearance-none cursor-pointer"
+                    className="w-full bg-black/5 dark:bg-black/25 border border-black/10 dark:border-white/10 rounded-md px-3.5 py-2.5 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-[#473BFD] transition-colors appearance-none cursor-pointer"
                   >
                     <option value="" disabled className="dark:bg-slate-900">Your Role</option>
                     <option value="Founder/CEO" className="dark:bg-slate-900 text-slate-800 dark:text-white">Founder/CEO</option>
@@ -386,7 +386,7 @@ export function AIOpportunityCalculator() {
                     required
                     value={formData.companySize}
                     onChange={handleInputChange}
-                    className="w-full bg-black/5 dark:bg-black/25 border border-black/10 dark:border-white/10 rounded-md px-3.5 py-2.5 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-[#1f77ff] transition-colors appearance-none cursor-pointer"
+                    className="w-full bg-black/5 dark:bg-black/25 border border-black/10 dark:border-white/10 rounded-md px-3.5 py-2.5 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-[#473BFD] transition-colors appearance-none cursor-pointer"
                   >
                     <option value="" disabled className="dark:bg-slate-900">Company Size</option>
                     <option value="1-99" className="dark:bg-slate-900 text-slate-800 dark:text-white">1-99 employees</option>
@@ -401,7 +401,7 @@ export function AIOpportunityCalculator() {
                   required
                   value={formData.timeline}
                   onChange={handleInputChange}
-                  className="w-full bg-black/5 dark:bg-black/25 border border-black/10 dark:border-white/10 rounded-md px-3.5 py-2.5 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-[#1f77ff] transition-colors appearance-none cursor-pointer"
+                  className="w-full bg-black/5 dark:bg-black/25 border border-black/10 dark:border-white/10 rounded-md px-3.5 py-2.5 text-xs text-slate-800 dark:text-white focus:outline-none focus:border-[#473BFD] transition-colors appearance-none cursor-pointer"
                 >
                   <option value="" disabled className="dark:bg-slate-900">Automation Timeline</option>
                   <option value="Immediately (0–30 days)" className="dark:bg-slate-900 text-slate-800 dark:text-white">Immediately (0–30 days)</option>
@@ -431,7 +431,7 @@ export function AIOpportunityCalculator() {
                           className={cn(
                             "w-full text-left px-3.5 py-2.5 rounded-lg border text-[11px] leading-relaxed transition-all flex items-center justify-between gap-3 bg-black/5 dark:bg-[#05121b]/40 border-black/10 dark:border-white/5",
                             isSelected
-                              ? "border-[#1f77ff] text-[#1f77ff] bg-[#1f77ff]/5 font-semibold"
+                              ? "border-[#473BFD] text-[#473BFD] bg-[#473BFD]/5 font-semibold"
                               : "text-slate-700 dark:text-slate-300 hover:border-black/20 dark:hover:border-white/10"
                           )}
                         >
@@ -439,7 +439,7 @@ export function AIOpportunityCalculator() {
                           <span className={cn(
                             "w-4 h-4 shrink-0 rounded border flex items-center justify-center transition-colors duration-150",
                             isSelected
-                              ? "border-[#1f77ff] bg-[#1f77ff] text-white"
+                              ? "border-[#473BFD] bg-[#473BFD] text-white"
                               : "border-black/20 dark:border-white/20"
                           )}>
                             {isSelected && <Check className="w-2.5 h-2.5" />}
@@ -455,7 +455,7 @@ export function AIOpportunityCalculator() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-[#1f77ff] hover:bg-[#146df7] dark:hover:brightness-110 text-white font-semibold px-4 py-3 rounded-full transition-all text-xs flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(31,119,255,0.25)]"
+                className="w-full bg-[#473BFD] hover:bg-[#756CFE] dark:hover:brightness-110 text-white font-semibold px-4 py-3 rounded-full transition-all text-xs flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(31,119,255,0.25)]"
               >
                 {loading ? (
                   <>

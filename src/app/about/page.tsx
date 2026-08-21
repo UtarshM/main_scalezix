@@ -29,7 +29,7 @@ export default function AboutPage() {
       {/* Grid Row 1: Story & Founder */}
       <section className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="mesh-card rounded-[1.8rem] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#1f77ff]/5 blur-2xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
           <div>
             <h2 className="text-2xl font-medium text-slate-900 dark:text-white">Our Story</h2>
             <p className="mt-4 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
@@ -45,7 +45,7 @@ export default function AboutPage() {
         </div>
 
         <div className="metal-panel rounded-[1.8rem] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#1f77ff]/5 blur-2xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
           <div>
             <h2 className="text-2xl font-medium text-slate-900 dark:text-white">Founder</h2>
             <p className="mt-4 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
@@ -64,8 +64,8 @@ export default function AboutPage() {
       {/* Grid Row 2: Vision & Technical Principles (ADDED CONTENT) */}
       <section className="mt-6 grid gap-6 lg:grid-cols-2">
         <div className="metal-panel rounded-[1.8rem] p-6 md:p-8 flex flex-col gap-4 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#1f77ff]/5 blur-2xl pointer-events-none" />
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#1f77ff]/10 text-[#1f77ff]">
+          <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#473BFD]/10 text-[#473BFD]">
             <Sparkles className="h-5 w-5" />
           </div>
           <h2 className="text-xl font-medium text-slate-900 dark:text-white">Our Mission</h2>
@@ -75,8 +75,8 @@ export default function AboutPage() {
         </div>
 
         <div className="mesh-card rounded-[1.8rem] p-6 md:p-8 flex flex-col gap-4 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#1f77ff]/5 blur-2xl pointer-events-none" />
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#1f77ff]/10 text-[#1f77ff]">
+          <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#473BFD]/10 text-[#473BFD]">
             <ShieldCheck className="h-5 w-5" />
           </div>
           <h2 className="text-xl font-medium text-slate-900 dark:text-white">Secure Guardrails</h2>
@@ -92,21 +92,21 @@ export default function AboutPage() {
           <h2 className="text-2xl font-medium text-slate-900 dark:text-white mb-4">Values</h2>
           <ul className="space-y-4 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
             <li className="flex gap-2">
-              <Zap className="h-4 w-4 text-[#1f77ff] shrink-0 mt-0.5" />
+              <Zap className="h-4 w-4 text-[#473BFD] shrink-0 mt-0.5" />
               <div>
                 <strong className="text-slate-800 dark:text-white block">Speed first</strong>
                 We build in sprints, shipping active integrations in weeks.
               </div>
             </li>
             <li className="flex gap-2">
-              <ShieldCheck className="h-4 w-4 text-[#1f77ff] shrink-0 mt-0.5" />
+              <ShieldCheck className="h-4 w-4 text-[#473BFD] shrink-0 mt-0.5" />
               <div>
                 <strong className="text-slate-800 dark:text-white block">Privacy isolated</strong>
                 Your databases remain secure and proprietary.
               </div>
             </li>
             <li className="flex gap-2">
-              <Users className="h-4 w-4 text-[#1f77ff] shrink-0 mt-0.5" />
+              <Users className="h-4 w-4 text-[#473BFD] shrink-0 mt-0.5" />
               <div>
                 <strong className="text-slate-800 dark:text-white block">Team enablement</strong>
                 We upskill your staff to ensure long-term ROI.

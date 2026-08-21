@@ -59,7 +59,7 @@ export default function CanadaPage() {
             <Link
               key={city.slug}
               href={`/ca/${city.slug}`}
-              className="mesh-card rounded-[1.8rem] p-6 transition hover:border-[#00f5ff]/20 hover:bg-black/[0.02] dark:hover:bg-white/[0.04]"
+              className="mesh-card rounded-[1.8rem] p-6 transition hover:border-[#D3FDB1]/20 hover:bg-black/[0.02] dark:hover:bg-white/[0.04]"
             >
               <p className="text-xs uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">{city.province}</p>
               <h3 className="mt-3 text-2xl font-medium text-slate-900 dark:text-white">{city.name}</h3>
@@ -80,9 +80,9 @@ export default function CanadaPage() {
             <Link
               key={service.slug}
               href={`/services/${service.slug}`}
-              className="metal-panel rounded-[1.8rem] p-6 transition hover:border-[#00f5ff]/20 hover:bg-black/[0.02] dark:hover:bg-white/[0.04]"
+              className="metal-panel rounded-[1.8rem] p-6 transition hover:border-[#D3FDB1]/20 hover:bg-black/[0.02] dark:hover:bg-white/[0.04]"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-100 dark:border-[#4a84ff]/20 bg-[#1f77ff]/5 dark:bg-[#17356e]/16 text-[#1f77ff] dark:text-[#a6c0ff]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-100 dark:border-[#756CFE]/20 bg-[#473BFD]/5 dark:bg-[#17356e]/16 text-[#473BFD] dark:text-[#a6c0ff]">
                 <ServiceIcon icon={service.icon} />
               </div>
               <h3 className="mt-5 text-2xl font-medium text-slate-900 dark:text-white">{service.name}</h3>

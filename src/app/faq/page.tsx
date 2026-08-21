@@ -66,7 +66,7 @@ export default function FaqPage() {
         {Object.entries(faqGroups).map(([group, faqs]) => (
           <section key={group} className="mesh-card rounded-[1.8rem] p-6 flex flex-col justify-between h-fit">
             <div>
-              <div className="flex items-center gap-2 text-[#1f77ff] mb-4">
+              <div className="flex items-center gap-2 text-[#473BFD] mb-4">
                 <Sparkles className="h-4.5 w-4.5" />
                 <h2 className="text-xl font-medium capitalize text-slate-900 dark:text-white">{group}</h2>
               </div>
@@ -80,10 +80,10 @@ export default function FaqPage() {
                       <button
                         type="button"
                         onClick={() => toggleFaq(faq)}
-                        className="w-full flex items-center justify-between text-left p-4 text-xs font-semibold text-slate-800 dark:text-white hover:text-[#1f77ff] dark:hover:text-[#00f5ff] transition-colors gap-3"
+                        className="w-full flex items-center justify-between text-left p-4 text-xs font-semibold text-slate-800 dark:text-white hover:text-[#473BFD] dark:hover:text-[#D3FDB1] transition-colors gap-3"
                       >
                         <span>{faq}</span>
-                        <ChevronDown className={cn("h-3.5 w-3.5 shrink-0 transition-transform duration-300 text-slate-400", isOpen ? "rotate-180 text-[#1f77ff] dark:text-[#00f5ff]" : "")} />
+                        <ChevronDown className={cn("h-3.5 w-3.5 shrink-0 transition-transform duration-300 text-slate-400", isOpen ? "rotate-180 text-[#473BFD] dark:text-[#D3FDB1]" : "")} />
                       </button>
                       
                       <div className={cn("grid transition-all duration-300 ease-in-out overflow-hidden text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed", isOpen ? "grid-rows-[1fr] px-4 pb-4 opacity-100" : "grid-rows-[0fr] opacity-0")}>

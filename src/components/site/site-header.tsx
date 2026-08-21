@@ -80,7 +80,7 @@ export function SiteHeader() {
                 <button
                   type="button"
                   onClick={() => setProductsOpen((value) => !value)}
-                  className="flex items-center gap-1 rounded-lg px-2.5 py-1 text-[14px] font-normal leading-6 tracking-[-0.14px] transition-colors hover:text-[#1f77ff] dark:hover:text-white text-[#0a1c2e] dark:text-[#f7f7f7]"
+                  className="flex items-center gap-1 rounded-lg px-2.5 py-1 text-[14px] font-normal leading-6 tracking-[-0.14px] transition-colors hover:text-[#473BFD] dark:hover:text-white text-[#0a1c2e] dark:text-[#f7f7f7]"
                 >
                   Products
                   <ChevronDown
@@ -111,7 +111,7 @@ export function SiteHeader() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="rounded-lg px-2.5 py-1 text-[14px] font-normal leading-6 tracking-[-0.14px] transition-colors hover:text-[#1f77ff] dark:hover:text-white text-[#0a1c2e] dark:text-[#f7f7f7]"
+                    className="rounded-lg px-2.5 py-1 text-[14px] font-normal leading-6 tracking-[-0.14px] transition-colors hover:text-[#473BFD] dark:hover:text-white text-[#0a1c2e] dark:text-[#f7f7f7]"
                   >
                     {item.label}
                   </Link>
@@ -123,7 +123,7 @@ export function SiteHeader() {
               <ThemeToggle />
               <Link
                 href="/contact"
-                className="relative isolate inline-flex items-center justify-center overflow-hidden rounded-full border border-black/20 dark:border-white/70 bg-[#1f77ff] px-6 py-2 text-[14px] font-medium leading-6 tracking-[-0.16px] text-[#05121b] hover:text-white transition-[color,border-color] duration-300 ease-in-out before:absolute before:inset-0 before:-z-[1] before:rounded-[inherit] before:bg-[linear-gradient(180deg,#ffffff_0%,#93bdff_100%)] before:transition-opacity before:duration-300 before:ease-in-out before:content-[''] hover:border-[#1f77ff] hover:before:opacity-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="inline-flex items-center justify-center rounded-full bg-[#D3FDB1] border border-[#D3FDB1] px-5 py-1.5 text-[14px] font-semibold text-[#0C0D0F] hover:bg-[#c3fca0] hover:border-[#c3fca0] transition-colors duration-300"
               >
                 Talk to Us
               </Link>
@@ -151,7 +151,7 @@ export function SiteHeader() {
             <button
               type="button"
               onClick={() => setMobileProductsOpen((value) => !value)}
-              className="flex w-full items-center justify-between rounded-2xl border border-transparent px-4 py-3 text-sm text-[#0a1c2e] dark:text-[#f7f7f7] transition hover:border-black/5 dark:hover:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 hover:text-[#1f77ff] dark:hover:text-white"
+              className="flex w-full items-center justify-between rounded-2xl border border-transparent px-4 py-3 text-sm text-[#0a1c2e] dark:text-[#f7f7f7] transition hover:border-black/5 dark:hover:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 hover:text-[#473BFD] dark:hover:text-white"
             >
               Products
               <ChevronDown
@@ -165,7 +165,7 @@ export function SiteHeader() {
                     key={product.slug}
                     href={`/products/${product.slug}`}
                     onClick={() => setMobileOpen(false)}
-                    className="block rounded-2xl border border-transparent px-4 py-3 text-sm text-[#83909a] transition hover:border-black/5 dark:hover:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 hover:text-[#1f77ff] dark:hover:text-white"
+                    className="block rounded-2xl border border-transparent px-4 py-3 text-sm text-[#83909a] transition hover:border-black/5 dark:hover:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 hover:text-[#473BFD] dark:hover:text-white"
                   >
                     {product.name}
                   </Link>
@@ -177,7 +177,7 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
-                className="block rounded-2xl border border-transparent px-4 py-3 text-sm text-[#0a1c2e] dark:text-[#f7f7f7] transition hover:border-black/5 dark:hover:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 hover:text-[#1f77ff] dark:hover:text-white"
+                className="block rounded-2xl border border-transparent px-4 py-3 text-sm text-[#0a1c2e] dark:text-[#f7f7f7] transition hover:border-black/5 dark:hover:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 hover:text-[#473BFD] dark:hover:text-white"
               >
                 {item.label}
               </Link>
@@ -186,7 +186,7 @@ export function SiteHeader() {
           <Link
             href="/contact"
             onClick={() => setMobileOpen(false)}
-            className="mt-4 flex w-full items-center justify-center rounded-full bg-[#1f77ff] py-3 text-sm font-medium text-white dark:text-[#05121b]"
+            className="mt-4 flex w-full items-center justify-center rounded-full bg-[#D3FDB1] py-3 text-sm font-semibold text-[#0C0D0F] hover:bg-[#c3fca0] transition-colors duration-300"
           >
             Talk to Us
           </Link>
