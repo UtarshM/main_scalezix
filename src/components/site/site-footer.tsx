@@ -5,7 +5,7 @@ import { company, contactInfo, footerLinks, navLinks } from "@/content/site";
 export function SiteFooter() {
   return (
     <footer className="relative isolate overflow-hidden bg-transparent">
-      <div className="relative overflow-hidden bg-[#10222f] px-6 pb-16 pt-16 sm:px-10 lg:px-[76px] lg:pt-[80px] rounded-t-[48px] text-white">
+      <div className="relative overflow-hidden bg-[#0C0D0F] px-6 pb-16 pt-16 sm:px-10 lg:px-[76px] lg:pt-[80px] rounded-t-[48px] text-white">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-wrap items-center justify-between gap-5 border-b border-white/10 pb-8">
             <Link href="/" className="flex items-center gap-3 font-heading text-3xl font-semibold tracking-tight text-white">

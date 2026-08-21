@@ -165,32 +165,32 @@ export default function HomePage() {
       </section>
 
       {/* 3. THE GAP COMPARISON GRID */}
-      <section className="relative py-24 z-10 bg-slate-50 dark:bg-background">
+      <section className="relative py-24 z-10 bg-white">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <ComparisonGrid />
         </div>
       </section>
 
       {/* 4. THREE CAPABILITIES (HOW WE WORK) */}
-      <section id="process" className="relative py-24 bg-slate-50 dark:bg-background overflow-hidden">
+      <section id="process" className="relative py-24 bg-[#0C0D0F] text-white overflow-hidden">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <div className="section-rule mb-16" />
+          <div className="h-px w-full bg-white/10 mb-16" />
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
             {/* Left Column Sticky Header */}
             <div className="lg:col-span-4 lg:sticky lg:top-28">
               <span className="eyebrow mb-5">Capabilities</span>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white leading-tight">
                 How AI Transformation Works
               </h2>
-              <p className="text-sm text-slate-500 dark:text-muted-foreground mt-4 leading-relaxed">
+              <p className="text-sm text-slate-400 mt-4 leading-relaxed">
                 We work side-by-side with your operators to audit, upskill, and deploy custom infrastructure. We ensure AI becomes a permanent corporate utility.
               </p>
               <div className="mt-8">
                 <a
                   href="#calculator"
-                  className="inline-flex items-center gap-2 rounded-full font-semibold bg-[#473BFD] hover:bg-[#756CFE] dark:hover:brightness-110 text-white px-6 py-3 text-xs transition shadow-md"
+                  className="inline-flex items-center gap-2 rounded-full font-semibold bg-[#473BFD] hover:bg-[#756CFE] text-white px-6 py-3 text-xs transition shadow-md"
                 >
                   Start with a Diagnosis
                   <ChevronRight className="h-4 w-4" />
@@ -202,20 +202,20 @@ export default function HomePage() {
             <div className="lg:col-span-8 flex flex-col gap-6">
               
               {/* Bento Card 1 */}
-              <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-card/20 p-6 md:p-8 backdrop-blur-sm relative overflow-hidden group hover:border-[#473BFD]/30 dark:hover:border-[#473BFD]/40 transition-all duration-300">
+              <div className="rounded-2xl border border-white/10 bg-[#1C1C1E] p-6 md:p-8 relative overflow-hidden group hover:border-[#D3FDB1]/20 transition-all duration-300">
                 <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
                 <div className="flex flex-col md:flex-row gap-6">
-                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center text-[#473BFD]">
+                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center text-[#D3FDB1]">
                     <BarChart3 className="h-6 w-6" />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <span className="font-mono text-[9px] text-[#473BFD] uppercase tracking-wider font-semibold">
+                    <span className="font-mono text-[9px] text-[#D3FDB1] uppercase tracking-wider font-semibold">
                       Phase 01 &bull; Audit & ROI Blueprint
                     </span>
-                    <h4 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">
+                    <h4 className="text-lg font-bold text-white leading-tight">
                       We measure before we build.
                     </h4>
-                    <p className="text-xs leading-relaxed text-slate-500 dark:text-slate-400 mt-1">
+                    <p className="text-xs leading-relaxed text-slate-400 mt-1">
                       We perform a deep audit on your current operational workflows and tools. We map data exchanges, detect bottlenecks, and benchmark where custom AI agents or workflow automation will deliver the highest bottom-line value.
                     </p>
                   </div>
@@ -223,20 +223,20 @@ export default function HomePage() {
               </div>
 
               {/* Bento Card 2 */}
-              <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-card/20 p-6 md:p-8 backdrop-blur-sm relative overflow-hidden group hover:border-[#473BFD]/30 dark:hover:border-[#473BFD]/40 transition-all duration-300">
+              <div className="rounded-2xl border border-white/10 bg-[#1C1C1E] p-6 md:p-8 relative overflow-hidden group hover:border-[#D3FDB1]/20 transition-all duration-300">
                 <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
                 <div className="flex flex-col md:flex-row gap-6">
-                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center text-[#473BFD]">
+                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center text-[#D3FDB1]">
                     <Users className="h-6 w-6" />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <span className="font-mono text-[9px] text-[#473BFD] uppercase tracking-wider font-semibold">
+                    <span className="font-mono text-[9px] text-[#D3FDB1] uppercase tracking-wider font-semibold">
                       Phase 02 &bull; Workforce Enablement
                     </span>
-                    <h4 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">
+                    <h4 className="text-lg font-bold text-white leading-tight">
                       We activate teams before we automate systems.
                     </h4>
-                    <p className="text-xs leading-relaxed text-slate-500 dark:text-slate-400 mt-1">
+                    <p className="text-xs leading-relaxed text-slate-400 mt-1">
                       AI is a human system. We build custom manuals, workflow templates, and lead active hands-on workshops. We train your operators to leverage tools (ChatGPT, Claude, and custom dashboards) inside their daily roles to compound productivity.
                     </p>
                   </div>
@@ -244,20 +244,20 @@ export default function HomePage() {
               </div>
 
               {/* Bento Card 3 */}
-              <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-card/20 p-6 md:p-8 backdrop-blur-sm relative overflow-hidden group hover:border-[#473BFD]/30 dark:hover:border-[#473BFD]/40 transition-all duration-300">
+              <div className="rounded-2xl border border-white/10 bg-[#1C1C1E] p-6 md:p-8 relative overflow-hidden group hover:border-[#D3FDB1]/20 transition-all duration-300">
                 <div className="absolute top-0 right-0 w-32 h-32 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
                 <div className="flex flex-col md:flex-row gap-6">
-                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center text-[#473BFD]">
+                  <div className="h-12 w-12 shrink-0 rounded-2xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center text-[#D3FDB1]">
                     <Bot className="h-6 w-6" />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <span className="font-mono text-[9px] text-[#473BFD] uppercase tracking-wider font-semibold">
+                    <span className="font-mono text-[9px] text-[#D3FDB1] uppercase tracking-wider font-semibold">
                       Phase 03 &bull; AI Infrastructure
                     </span>
-                    <h4 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">
+                    <h4 className="text-lg font-bold text-white leading-tight">
                       Deploy custom AI systems.
                     </h4>
-                    <p className="text-xs leading-relaxed text-slate-500 dark:text-slate-400 mt-1">
+                    <p className="text-xs leading-relaxed text-slate-400 mt-1">
                       We write code, integrate APIs, deploy custom agents, and connect LLM models securely into your business pipelines. We build custom middleware, dashboards, and automated flows that act 24/7 without manual supervision.
                     </p>
                   </div>
@@ -272,22 +272,22 @@ export default function HomePage() {
       </section>
 
       {/* 5. INTERACTIVE CALCULATOR SECTION */}
-      <section id="calculator" className="relative py-24 bg-slate-50 dark:bg-background overflow-hidden">
+      <section id="calculator" className="relative py-24 bg-[#0C0D0F] text-white overflow-hidden">
         <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-[60vh] accent-glow opacity-60 pointer-events-none z-0" />
         <div className="mx-auto max-w-6xl px-5 sm:px-8 relative z-10">
-          <div className="section-rule mb-16" />
+          <div className="h-px w-full bg-white/10 mb-16" />
           <AIOpportunityCalculator />
         </div>
       </section>
 
       {/* 6. SERVICES OVERVIEW BENTO GRID */}
-      <section id="services" className="relative py-24 bg-slate-50 dark:bg-background overflow-hidden">
+      <section id="services" className="relative py-24 bg-white text-slate-900 overflow-hidden">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <div className="section-rule mb-16" />
+          <div className="h-px w-full bg-slate-200 mb-16" />
           
           <div className="flex flex-col items-center gap-4 text-center mb-16">
             <span className="eyebrow">Our Solutions</span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight max-w-2xl">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 leading-tight max-w-2xl">
               From Strategy to Custom Deployment, We Handle It All.
             </h2>
           </div>
@@ -296,23 +296,23 @@ export default function HomePage() {
             {products.map((product) => (
               <div
                 key={product.slug}
-                className="flex flex-col justify-between overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-card/20 p-6 backdrop-blur-sm group hover:border-[#473BFD]/30 dark:hover:border-[#473BFD]/40 transition-all duration-300"
+                className="flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-6 group hover:border-[#473BFD]/30 transition-all duration-300"
               >
                 <div className="flex flex-col gap-4">
                   <div className="h-10 w-10 rounded-xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center">
                     {getServiceIcon(product.slug)}
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">
+                  <h3 className="text-lg font-bold text-slate-900 leading-tight">
                     {product.name}
                   </h3>
-                  <p className="text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+                  <p className="text-xs leading-relaxed text-slate-600">
                     {product.description}
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-black/5 dark:border-white/5 flex items-center justify-between">
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
                   <Link
                     href={`/products/${product.slug}`}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#473BFD] dark:text-[#D3FDB1] hover:underline"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-[#473BFD] hover:underline"
                   >
                     View system specs
                     <ChevronRight className="h-3 w-3" />
@@ -326,13 +326,13 @@ export default function HomePage() {
       </section>
 
       {/* 7. CASE STUDIES SECTION */}
-      <section id="results" className="relative py-24 bg-slate-50 dark:bg-background overflow-hidden">
+      <section id="results" className="relative py-24 bg-white text-slate-900 overflow-hidden">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <div className="section-rule mb-16" />
+          <div className="h-px w-full bg-slate-200 mb-16" />
           
           <div className="flex flex-col items-center gap-4 text-center mb-16">
             <span className="eyebrow">Measurable ROI</span>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
               Case Studies with Measurable Outcomes
             </h2>
           </div>
@@ -341,26 +341,26 @@ export default function HomePage() {
             {caseStudies.map((study) => (
               <div
                 key={study.slug}
-                className="flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-white/40 dark:bg-card/20 p-6 backdrop-blur-sm hover:border-[#473BFD]/30 dark:hover:border-[#473BFD]/40 transition-all duration-300"
+                className="flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-6 group hover:border-[#473BFD]/30 transition-all duration-300"
               >
                 <div className="flex flex-col gap-3">
-                  <span className="text-[9px] font-mono uppercase tracking-wider text-slate-400 dark:text-muted-foreground">
+                  <span className="text-[9px] font-mono uppercase tracking-wider text-slate-400">
                     {study.industry}
                   </span>
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight leading-snug mt-1">
+                  <h3 className="text-lg font-bold text-slate-900 tracking-tight leading-snug mt-1">
                     {study.title}
                   </h3>
-                  <p className="text-xs leading-relaxed text-slate-500 dark:text-slate-400 mt-2">
+                  <p className="text-xs leading-relaxed text-slate-600 mt-2">
                     {study.challenge}
                   </p>
                 </div>
-                <div className="mt-6 border-t border-black/5 dark:border-white/5 pt-4">
-                  <p className="text-[11px] text-slate-800 dark:text-slate-200 font-medium italic">
+                <div className="mt-6 border-t border-slate-100 pt-4">
+                  <p className="text-[11px] text-slate-800 font-medium italic">
                     Solution: {study.solution}
                   </p>
                   <Link
                     href={`/case-studies/${study.slug}`}
-                    className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#473BFD] dark:text-[#D3FDB1] hover:underline"
+                    className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-[#473BFD] hover:underline"
                   >
                     Read case study
                     <ChevronRight className="h-3.5 w-3.5" />
@@ -374,18 +374,18 @@ export default function HomePage() {
       </section>
 
       {/* 8. QUOTE BLOCK */}
-      <section className="relative py-16 bg-slate-50 dark:bg-background overflow-hidden">
+      <section className="relative py-16 bg-[#0C0D0F] text-white overflow-hidden">
         <div className="mx-auto max-w-4xl px-5 sm:px-8">
-          <figure className="relative flex flex-col items-center text-center rounded-3xl border border-black/10 dark:border-white/10 bg-white/30 dark:bg-card/20 p-8 md:p-12 backdrop-blur-sm z-10 shadow-lg">
+          <figure className="relative flex flex-col items-center text-center rounded-3xl border border-white/10 bg-[#1C1C1E] p-8 md:p-12 z-10 shadow-lg">
             <div className="absolute top-0 left-0 w-24 h-24 rounded-full bg-[#473BFD]/5 blur-2xl pointer-events-none" />
-            <blockquote className="text-lg md:text-xl font-medium leading-relaxed text-slate-800 dark:text-white tracking-tight">
+            <blockquote className="text-lg md:text-xl font-medium leading-relaxed text-white tracking-tight">
               &ldquo;Most companies do not fail at AI because the models are weak. They fail because the workflows are unclear, disconnected, or unmanaged. Scalezix focuses on operational leverage first.&rdquo;
             </blockquote>
             <figcaption className="mt-6 flex flex-col items-center">
-              <span className="font-semibold text-xs text-slate-900 dark:text-white">
+              <span className="font-semibold text-xs text-white">
                 Scalezix Operations & Systems Team
               </span>
-              <span className="text-[10px] font-mono text-slate-500 dark:text-muted-foreground uppercase tracking-wider mt-1">
+              <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider mt-1">
                 Applied AI Engineers
               </span>
             </figcaption>
@@ -394,23 +394,23 @@ export default function HomePage() {
       </section>
 
       {/* 9. STRATEGIC FAQS SECTION */}
-      <section id="faq" className="relative py-24 bg-slate-50 dark:bg-background overflow-hidden">
+      <section id="faq" className="relative py-24 bg-white text-slate-900 overflow-hidden">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <div className="section-rule mb-16" />
+          <div className="h-px w-full bg-slate-200 mb-16" />
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
             {/* Left column sticky header */}
             <div className="lg:col-span-4 lg:sticky lg:top-28">
               <span className="eyebrow mb-5">FAQ</span>
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900 leading-tight">
                 Questions Every Leader Asks
               </h2>
-              <p className="text-xs text-slate-500 dark:text-muted-foreground mt-4 leading-relaxed">
+              <p className="text-xs text-slate-500 mt-4 leading-relaxed">
                 Understand how we audit your systems, calculate automation value, and secure your proprietary data.
               </p>
               <div className="mt-6 flex flex-col gap-2">
-                <span className="text-xs text-slate-600 dark:text-slate-300">
+                <span className="text-xs text-slate-600">
                   Prefer email?
                 </span>
                 <a
@@ -423,21 +423,21 @@ export default function HomePage() {
             </div>
 
             {/* Right column Accordions */}
-            <div className="lg:col-span-8 flex flex-col border-t border-black/10 dark:border-white/10">
+            <div className="lg:col-span-8 flex flex-col border-t border-slate-200">
               {faqs.map((faq, idx) => {
                 const isOpen = activeFaq === idx;
                 return (
-                  <div key={idx} className="border-b border-black/10 dark:border-white/10">
+                  <div key={idx} className="border-b border-slate-200">
                     <button
                       onClick={() => toggleFaq(idx)}
-                      className="w-full flex items-center justify-between text-left py-5 font-semibold text-sm text-slate-800 dark:text-white hover:text-[#473BFD] dark:hover:text-[#D3FDB1] transition-colors gap-4"
+                      className="w-full flex items-center justify-between text-left py-5 font-semibold text-sm text-slate-800 hover:text-[#473BFD] transition-colors gap-4"
                     >
                       <span>{faq.q}</span>
-                      <ChevronDown className={cn("h-4 w-4 shrink-0 transition-transform duration-300 text-slate-400", isOpen ? "rotate-180 text-[#473BFD] dark:text-[#D3FDB1]" : "")} />
+                      <ChevronDown className={cn("h-4 w-4 shrink-0 transition-transform duration-300 text-slate-400", isOpen ? "rotate-180 text-[#473BFD]" : "")} />
                     </button>
                     
                     {/* Collapsible Panel */}
-                    <div className={cn("grid transition-all duration-300 ease-in-out overflow-hidden text-xs text-slate-500 dark:text-slate-400 leading-relaxed", isOpen ? "grid-rows-[1fr] pb-5 opacity-100" : "grid-rows-[0fr] opacity-0")}>
+                    <div className={cn("grid transition-all duration-300 ease-in-out overflow-hidden text-xs text-slate-500 leading-relaxed", isOpen ? "grid-rows-[1fr] pb-5 opacity-100" : "grid-rows-[0fr] opacity-0")}>
                       <div className="overflow-hidden">
                         <p>{faq.a}</p>
                       </div>
@@ -453,21 +453,21 @@ export default function HomePage() {
       </section>
 
       {/* 10. ACTION CTA SECTION */}
-      <section className="relative py-24 bg-slate-50 dark:bg-background overflow-hidden">
+      <section className="relative py-24 bg-[#0C0D0F] text-white overflow-hidden">
         <div className="mx-auto max-w-[1140px] px-5 sm:px-8 z-10 relative">
-          <div className="section-rule mb-16" />
-          <div className="relative overflow-hidden rounded-[32px] bg-[#10222f] dark:bg-card/40 border border-white/5 px-6 py-12 md:py-16 md:px-16 text-white shadow-2xl">
+          <div className="h-px w-full bg-white/10 mb-16" />
+          <div className="relative overflow-hidden rounded-[32px] bg-[#1C1C1E] border border-white/10 px-6 py-12 md:py-16 md:px-16 text-white shadow-2xl">
             <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-[#473BFD]/10 blur-[80px] pointer-events-none" />
             
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10">
               <div className="flex flex-col gap-4">
-                <span className="inline-flex w-fit items-center justify-center rounded-full bg-white/10 border border-white/20 px-3.5 py-1 text-[11px] uppercase font-bold tracking-wider leading-none text-[#473BFD] dark:text-[#D3FDB1]">
+                <span className="inline-flex w-fit items-center justify-center rounded-full bg-[#D3FDB1]/10 border border-[#D3FDB1]/20 px-3.5 py-1 text-[11px] uppercase font-bold tracking-wider leading-none text-[#D3FDB1]">
                   Get Started
                 </span>
                 <h2 className="mt-2 font-semibold text-white text-[34px] leading-[1.08] tracking-[-0.5px] sm:text-[42px] lg:text-[48px]">
                   Book a free 30-minute<br />strategy call.
                 </h2>
-                <p className="max-w-[480px] text-sm leading-relaxed text-white/70 mt-2">
+                <p className="max-w-[480px] text-sm leading-relaxed text-slate-300 mt-2">
                   We'll map your top three automation opportunities and show where the highest ROI sits first.
                 </p>
               </div>
@@ -475,14 +475,14 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4 shrink-0">
                 <Link
                   href={companyInfo.calendlyHref}
-                  className="inline-flex items-center justify-center gap-2 rounded-full font-semibold bg-white text-[#10222f] hover:bg-[#473BFD] hover:text-white transition px-8 py-3.5 text-sm"
+                  className="button-primary"
                 >
                   Book a Free Call
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
                 <Link
                   href={companyInfo.whatsappHref}
-                  className="inline-flex items-center justify-center gap-2 rounded-full font-semibold border border-white/30 text-white hover:bg-white/10 transition px-8 py-3.5 text-sm"
+                  className="button-secondary border-white/20 text-white hover:border-white/40 hover:bg-white/5"
                 >
                   Chat on WhatsApp
                 </Link>
@@ -499,12 +499,12 @@ export default function HomePage() {
 function StatsCard({ value, label }: { value: string; label: string }) {
   return (
     <li>
-      <div className="relative flex h-[120px] flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl p-4 text-center sm:h-[140px] lg:h-[160px] border border-black/10 dark:border-white/10 bg-white/50 dark:bg-card/30 backdrop-blur-xl shadow-sm hover:border-[#473BFD]/30 dark:hover:border-[#473BFD]/40 transition-all duration-300">
+      <div className="relative flex h-[120px] flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl p-4 text-center sm:h-[140px] lg:h-[160px] border border-white/10 bg-[#1C1C1E] backdrop-blur-xl shadow-sm hover:border-[#D3FDB1]/20 transition-all duration-300">
         <div className="relative flex flex-col items-center gap-2">
-          <span className="font-bold leading-none tracking-tight text-slate-900 dark:text-white text-[32px] sm:text-[42px] lg:text-[48px]">
+          <span className="font-bold leading-none tracking-tight text-white text-[32px] sm:text-[42px] lg:text-[48px]">
             {value}
           </span>
-          <span className="text-[11px] font-mono text-slate-500 dark:text-muted-foreground uppercase tracking-wider">
+          <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">
             {label}
           </span>
         </div>
