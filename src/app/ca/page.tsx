@@ -3,10 +3,11 @@ import Link from "next/link";
 
 import { JsonLd } from "@/components/seo/json-ld";
 import { ServiceIcon } from "@/components/site/service-icon";
-import { getCanadaCitiesList, getCanadaServicesList } from "@/content/canada";
+import { getCanadaServicesList } from "@/content/canada";
+import { getSeoCities } from "@/lib/seo-location-pages";
 import { breadcrumbSchema, buildMetadata } from "@/lib/seo";
 
-const cities = getCanadaCitiesList();
+const cities = getSeoCities();
 const services = getCanadaServicesList();
 
 export const metadata: Metadata = buildMetadata({

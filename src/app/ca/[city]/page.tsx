@@ -3,20 +3,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { JsonLd } from "@/components/seo/json-ld";
-import { ServiceIcon } from "@/components/site/service-icon";
-import {
-  buildCanadaCityPath,
-  buildCanadaServicePath,
-  canadaCitySlugs,
-  getCanadaCity,
-  getCanadaServicesList,
-} from "@/content/canada";
+import { buildCanadaCityPath, canadaCitySlugs } from "@/content/canada";
+import { getSeoCity, getSeoCities, getSeoServicesForCity } from "@/lib/seo-location-pages";
 import { breadcrumbSchema, buildMetadata, professionalServiceSchema } from "@/lib/seo";
 
-const services = getCanadaServicesList();
-
 export function generateStaticParams() {
-  return canadaCitySlugs.map((city) => ({ city }));
+  const seoCitySlugs = getSeoCities().map((c) => c.slug);
+  const combined = Array.from(new Set([...canadaCitySlugs, ...seoCitySlugs]));
+  return combined.map((city) => ({ city }));
 }
 
 export async function generateMetadata({
@@ -25,7 +19,7 @@ export async function generateMetadata({
   params: Promise<{ city: string }>;
 }): Promise<Metadata> {
   const { city: citySlug } = await params;
-  const city = getCanadaCity(citySlug);
+  const city = getSeoCity(citySlug);
 
   if (!city) {
     return {};
@@ -45,11 +39,13 @@ export default async function CanadaCityPage({
   params: Promise<{ city: string }>;
 }) {
   const { city: citySlug } = await params;
-  const city = getCanadaCity(citySlug);
+  const city = getSeoCity(citySlug);
 
   if (!city) {
     notFound();
   }
+
+  const categorizedServices = getSeoServicesForCity(city.slug);
 
   return (
     <main className="section-shell py-20 md:py-24">
@@ -106,31 +102,55 @@ export default async function CanadaCityPage({
               </div>
             ))}
           </div>
-          <p className="mt-6 text-sm leading-7 text-slate-500 dark:text-slate-400">
-            Nearby areas we can support: {city.nearbyAreas.join(", ")}.
-          </p>
+          {city.nearbyAreas.length > 0 && (
+            <p className="mt-6 text-sm leading-7 text-slate-500 dark:text-slate-400">
+              Nearby areas we can support: {city.nearbyAreas.join(", ")}.
+            </p>
+          )}
         </div>
       </section>
 
-      <section className="mt-10">
-        <p className="section-kicker w-fit">Service pages</p>
+      <section className="mt-14">
+        <p className="section-kicker w-fit">Services Directory</p>
         <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-slate-900 dark:text-white md:text-4xl">
-          Explore services in {city.name}
+          Explore AI & Software services in {city.name}
         </h2>
-        <div className="mt-8 grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
-          {services.map((service) => (
-            <Link
-              key={service.slug}
-              href={buildCanadaServicePath(city.slug, service.slug)}
-              className="mesh-card rounded-[1.8rem] p-6 transition hover:border-[#00f5ff]/20 hover:bg-black/[0.02] dark:hover:bg-white/[0.04]"
+        <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">
+          Select a category below to explore our targeted local solutions in {city.name}.
+        </p>
+
+        <div className="mt-8 space-y-4">
+          {categorizedServices.map((cat, catIdx) => (
+            <details
+              key={catIdx}
+              className="group border border-black/5 dark:border-white/8 rounded-[1.8rem] bg-black/[0.01] dark:bg-white/[0.015] overflow-hidden"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-100 dark:border-[#4a84ff]/20 bg-[#1f77ff]/5 dark:bg-[#17356e]/16 text-[#1f77ff] dark:text-[#a6c0ff]">
-                <ServiceIcon icon={service.icon} />
+              <summary className="flex items-center justify-between p-6 cursor-pointer list-none select-none font-medium text-xl text-slate-900 dark:text-white hover:bg-black/[0.02] dark:hover:bg-white/[0.03]">
+                <span>{cat.category}</span>
+                <span className="text-xs px-3 py-1 font-mono border border-black/10 dark:border-white/10 rounded-full text-slate-500 dark:text-slate-400">
+                  {cat.services.length} services
+                </span>
+              </summary>
+              <div className="p-6 pt-0 border-t border-black/5 dark:border-white/5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 bg-black/[0.01] dark:bg-white/[0.005]">
+                {cat.services.map((svc, svcIdx) => (
+                  <Link
+                    key={svcIdx}
+                    href={`/${svc.slug}`}
+                    className="flex flex-col justify-between p-5 rounded-2xl border border-black/5 dark:border-white/8 bg-white/50 dark:bg-slate-900/50 hover:border-[#00f5ff]/20 hover:bg-black/[0.02] dark:hover:bg-white/[0.04] transition"
+                  >
+                    <div>
+                      <h4 className="font-semibold text-base text-slate-900 dark:text-white">{svc.name}</h4>
+                      <p className="mt-2 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+                        {svc.description}
+                      </p>
+                    </div>
+                    <span className="mt-4 flex items-center text-xs font-semibold text-[#1f77ff] dark:text-[#00f5ff]">
+                      View Page &rarr;
+                    </span>
+                  </Link>
+                ))}
               </div>
-              <h3 className="mt-5 text-2xl font-medium text-slate-900 dark:text-white">{service.name}</h3>
-              <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300">{service.short}</p>
-              <p className="mt-5 text-sm text-slate-500 dark:text-slate-400">{service.category}</p>
-            </Link>
+            </details>
           ))}
         </div>
       </section>

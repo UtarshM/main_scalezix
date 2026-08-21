@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { canadaCitySlugs, canadaServiceCityPages } from "@/content/canada";
 import { blogPosts, caseStudies, products, serviceCards } from "@/content/prd-site";
+import { getSeoLocationSlugs } from "@/lib/seo-location-pages";
 
 const siteUrl = "https://scalezix.com";
 
@@ -65,6 +66,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }));
 
+  const seoLocationRoutes = getSeoLocationSlugs().map((slug) => ({
+    url: `${siteUrl}/${slug}`,
+    lastModified: new Date(),
+  }));
+
   return [
     ...staticRoutes,
     ...serviceRoutes,
@@ -72,5 +78,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...caseStudyRoutes,
     ...blogRoutes,
     ...canadaRoutes,
+    ...seoLocationRoutes,
   ];
 }
