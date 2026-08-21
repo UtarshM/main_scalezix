@@ -22,42 +22,55 @@ export const metadata: Metadata = buildMetadata({
 
 export default function ServicesPage() {
   return (
-    <main className="section-shell py-20 md:py-24">
-      <div className="max-w-4xl">
-        <p className="section-kicker w-fit">Services</p>
-        <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-slate-900 dark:text-white md:text-6xl">
-          AI systems and growth services built for commercial execution
-        </h1>
-        <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">
-          We combine automation, software, CRM execution, conversational systems, and search-led
-          growth into one operating layer for ambitious teams.
-        </p>
-      </div>
-
-      <div className="mt-12 grid gap-5 lg:grid-cols-2">
-        {services.map((service) => (
-          <div key={service.slug} className="mesh-card rounded-[1.8rem] p-6">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-100 dark:border-[#756CFE]/20 bg-[#473BFD]/5 dark:bg-[#17356e]/16 text-[#473BFD] dark:text-[#a6c0ff]">
-              <ServiceIcon icon={service.icon} />
-            </div>
-            <h2 className="mt-5 text-2xl font-medium text-slate-900 dark:text-white">{service.name}</h2>
-            <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{service.short}</p>
-            <ul className="mt-5 space-y-2 text-sm text-slate-600 dark:text-slate-300">
-              {service.deliverables.map((bullet) => (
-                <li key={bullet}>• {bullet}</li>
-              ))}
-            </ul>
-            <p className="mt-5 text-sm text-slate-500 dark:text-slate-400">
-              Who it&apos;s for: {service.audience.slice(0, 2).join(", ")}
+    <main className="w-full bg-[#0C0D0F]">
+      
+      {/* Hero Section */}
+      <section className="w-full bg-[#0C0D0F] text-white pt-32 pb-20 md:pt-40 md:pb-24">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 xl:px-8">
+          <div className="max-w-4xl">
+            <span className="eyebrow mb-5">Services</span>
+            <h1 className="text-4xl font-semibold tracking-[-0.05em] text-white md:text-6xl leading-[1.1]">
+              AI systems and growth services built for commercial execution
+            </h1>
+            <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-300">
+              We combine automation, software, CRM execution, conversational systems, and search-led growth into one operating layer for ambitious teams.
             </p>
-            <div className="mt-6">
-              <Link href={`/services/${service.slug}`} className="button-secondary">
-                Learn more
-              </Link>
-            </div>
           </div>
-        ))}
-      </div>
+        </div>
+      </section>
+
+      {/* Content Grid Section */}
+      <section className="w-full bg-white text-slate-900 py-20 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 xl:px-8">
+          <div className="grid gap-6 lg:grid-cols-2">
+            {services.map((service) => (
+              <div key={service.slug} className="rounded-[1.8rem] border border-slate-200 bg-slate-50 p-6 flex flex-col justify-between">
+                <div>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#473BFD]/5 text-[#473BFD]">
+                    <ServiceIcon icon={service.icon} />
+                  </div>
+                  <h2 className="mt-5 text-2xl font-bold text-slate-900">{service.name}</h2>
+                  <p className="mt-3 text-xs leading-relaxed text-slate-600">{service.short}</p>
+                  <ul className="mt-5 space-y-2 text-xs text-slate-600">
+                    {service.deliverables.map((bullet) => (
+                      <li key={bullet}>• {bullet}</li>
+                    ))}
+                  </ul>
+                  <p className="mt-5 text-xs text-slate-400">
+                    Who it&apos;s for: {service.audience.slice(0, 2).join(", ")}
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-slate-100">
+                  <Link href={`/services/${service.slug}`} className="button-secondary border-slate-200 text-slate-800 hover:border-slate-300 hover:bg-slate-50">
+                    Learn more
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }

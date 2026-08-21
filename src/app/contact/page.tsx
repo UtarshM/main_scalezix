@@ -15,7 +15,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function ContactPage() {
   return (
-    <main className="section-shell py-20 md:py-24">
+    <main className="w-full bg-[#0C0D0F]">
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -24,55 +24,74 @@ export default function ContactPage() {
           url: `${companyInfo.website}/contact`,
         }}
       />
-      <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
-        <div>
-          <p className="section-kicker w-fit">Contact</p>
-          <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-slate-900 dark:text-white md:text-6xl">
-            Let&apos;s Build Something Together
-          </h1>
-          <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">
-            Tell us about your business and we’ll map your fastest path to AI-powered growth.
-          </p>
- 
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link href={companyInfo.calendlyHref} className="button-primary">
-              Book a Free Call
-            </Link>
-            <Link href={companyInfo.whatsappHref} className="button-secondary">
-              Chat on WhatsApp
-            </Link>
+      
+      {/* Hero Section */}
+      <section className="w-full bg-[#0C0D0F] text-white pt-32 pb-20 md:pt-40 md:pb-24">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 xl:px-8">
+          <div className="max-w-4xl">
+            <span className="eyebrow mb-5">Contact</span>
+            <h1 className="text-4xl font-semibold tracking-[-0.05em] text-white md:text-6xl">
+              Let&apos;s Build Something Together
+            </h1>
+            <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-300">
+              Tell us about your business and we’ll map your fastest path to AI-powered growth.
+            </p>
           </div>
- 
-          <div className="mt-10 space-y-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
+        </div>
+      </section>
+
+      {/* Content & Form Section */}
+      <section className="w-full bg-white text-slate-900 py-20 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 xl:px-8">
+          <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
             <div>
-              <p className="font-semibold text-slate-900 dark:text-white">Ahmedabad Office</p>
-              <p>{companyInfo.address}</p>
+              <h2 className="text-2xl font-bold text-slate-900">Get in Touch</h2>
+              <p className="mt-3 text-xs leading-relaxed text-slate-600">
+                Book a strategy call directly, chat with our operations team on WhatsApp, or visit us at our offices in Gujarat.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link href={companyInfo.calendlyHref} className="button-primary">
+                  Book a Free Call
+                </Link>
+                <Link href={companyInfo.whatsappHref} className="button-secondary border-slate-200 text-slate-800 hover:border-slate-300 hover:bg-slate-50">
+                  Chat on WhatsApp
+                </Link>
+              </div>
+     
+              <div className="mt-10 space-y-4 text-xs leading-relaxed text-slate-600">
+                <div>
+                  <strong className="text-slate-800 text-sm mb-1 block">Ahmedabad Office</strong>
+                  <p>{companyInfo.address}</p>
+                </div>
+                <div>
+                  <strong className="text-slate-800 text-sm mb-1 block">Gandhinagar Office</strong>
+                  <p>{companyInfo.address2}</p>
+                </div>
+                <div className="space-y-1 pt-2 font-mono text-[10px]">
+                  <p>Phone: {companyInfo.phone}</p>
+                  <p>Email: {companyInfo.email}</p>
+                </div>
+              </div>
             </div>
-            <div>
-              <p className="font-semibold text-slate-900 dark:text-white">Gandhinagar Office</p>
-              <p>{companyInfo.address2}</p>
-            </div>
-            <div className="space-y-1 pt-2">
-              <p>{companyInfo.phone}</p>
-              <p>{companyInfo.email}</p>
+     
+            <div className="rounded-[2rem] border border-slate-200 bg-slate-50 p-6">
+              <h2 className="text-2xl font-bold text-slate-900">Project inquiry form</h2>
+              <div className="mt-6 grid gap-4">
+                <input className="contact-input bg-white" placeholder="Name" />
+                <input className="contact-input bg-white" placeholder="Email" />
+                <input className="contact-input bg-white" placeholder="Phone (WhatsApp preferred)" />
+                <input className="contact-input bg-white" placeholder="Company name" />
+                <input className="contact-input bg-white" placeholder="Industry" />
+                <input className="contact-input bg-white" placeholder="What do you need?" />
+                <textarea className="contact-input bg-white min-h-32 py-3" placeholder="Message" />
+                <button className="button-primary w-fit">Submit inquiry</button>
+              </div>
             </div>
           </div>
         </div>
- 
-        <div className="metal-panel rounded-[2rem] p-6">
-          <h2 className="text-2xl font-medium text-slate-900 dark:text-white">Project inquiry form</h2>
-          <div className="mt-6 grid gap-4">
-            <input className="contact-input" placeholder="Name" />
-            <input className="contact-input" placeholder="Email" />
-            <input className="contact-input" placeholder="Phone (WhatsApp preferred)" />
-            <input className="contact-input" placeholder="Company name" />
-            <input className="contact-input" placeholder="Industry" />
-            <input className="contact-input" placeholder="What do you need?" />
-            <textarea className="contact-input min-h-32 py-3" placeholder="Message" />
-            <button className="button-primary w-fit">Submit inquiry</button>
-          </div>
-        </div>
-      </div>
+      </section>
+
     </main>
   );
 }

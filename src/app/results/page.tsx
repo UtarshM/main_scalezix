@@ -11,26 +11,42 @@ export const metadata: Metadata = {
 
 export default function ResultsPage() {
   return (
-    <main className="pb-24 pt-32 md:pt-40 section-shell">
-      <section className="mt-8">
-        <p className="section-kicker">Results</p>
-        <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-tight md:text-7xl">
-          Outcome-focused automation built to create real business movement.
-        </h1>
-        <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">
-          We focus on measurable impact: response speed, throughput, reporting quality, and business confidence.
-        </p>
-
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
-          {caseStudies.map((study) => (
-            <article key={study.title} className="panel h-full p-6">
-              <p className="text-sm font-medium text-primary">{study.outcome}</p>
-              <h2 className="mt-3 text-2xl font-semibold">{study.title}</h2>
-              <p className="mt-4 text-sm leading-7 text-muted-foreground">{study.description}</p>
-            </article>
-          ))}
+    <main className="w-full bg-[#0C0D0F]">
+      
+      {/* Hero Section */}
+      <section className="w-full bg-[#0C0D0F] text-white pt-32 pb-20 md:pt-40 md:pb-24">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 xl:px-8">
+          <div className="max-w-4xl">
+            <span className="eyebrow mb-5">Results</span>
+            <h1 className="text-4xl font-semibold tracking-[-0.05em] text-white md:text-6xl leading-[1.1]">
+              Outcome-focused automation built to create real business movement.
+            </h1>
+            <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-300">
+              We focus on measurable impact: response speed, throughput, reporting quality, and business confidence.
+            </p>
+          </div>
         </div>
       </section>
+
+      {/* Content Grid Section */}
+      <section className="w-full bg-white text-slate-900 py-20 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 xl:px-8">
+          <div className="grid gap-6 lg:grid-cols-3">
+            {caseStudies.map((study) => (
+              <article key={study.title} className="rounded-[1.8rem] border border-slate-200 bg-slate-50 p-6 flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-[#473BFD]">
+                    {study.outcome}
+                  </span>
+                  <h2 className="mt-3 text-xl font-bold text-slate-900">{study.title}</h2>
+                  <p className="mt-4 text-xs leading-relaxed text-slate-600">{study.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }
