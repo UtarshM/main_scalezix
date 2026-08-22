@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { CursorOrb } from "@/components/site/cursor-orb";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
+import { FloatingWhatsAppWidget } from "@/components/site/FloatingWhatsAppWidget";
 import { ThemeProvider } from "@/components/site/theme-provider";
 import { companyInfo } from "@/content/prd-site";
 import { absoluteUrl, buildMetadata, siteName } from "@/lib/seo";
@@ -83,6 +84,7 @@ export default function RootLayout({
             <SiteHeader />
             {children}
             <SiteFooter />
+            <FloatingWhatsAppWidget />
           </div>
         </ThemeProvider>
       </body>
