@@ -132,12 +132,14 @@ export default async function BlogPostPage({ params }: PageProps) {
                 Want to automate your business?
               </h2>
               <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300">
-                Book a free strategy call and we&apos;ll map your highest-ROI automation,
-                software, or growth opportunities.
+                Deploy modular <Link href="/products/whatsapp-ai" className="text-[#473BFD] dark:text-[#D3FDB1] font-semibold underline">WhatsApp AI starting at ₹3,000/mo</Link> or book a strategy call to map your custom CRM and agent automations.
               </p>
-              <div className="mt-6">
-                <Link href="/contact" className="button-primary">
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link href="/contact" className="button-primary text-xs">
                   Book a free call
+                </Link>
+                <Link href="/pricing" className="button-secondary text-xs">
+                  View Transparent Pricing Plans
                 </Link>
               </div>
             </section>
@@ -151,6 +153,46 @@ export default async function BlogPostPage({ params }: PageProps) {
                   <li key={section.heading}>{section.heading}</li>
                 ))}
               </ul>
+            </div>
+
+            {/* AI Products Widget */}
+            <div className="metal-panel rounded-[2rem] p-6">
+              <h2 className="text-base font-bold text-slate-900 dark:text-white">
+                Featured AI Products
+              </h2>
+              <div className="mt-4 space-y-3">
+                <Link
+                  href="/products/whatsapp-ai"
+                  className="block p-3 rounded-xl border border-slate-200 dark:border-white/10 hover:border-[#473BFD]/30 dark:hover:border-[#D3FDB1]/30 transition"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-slate-900 dark:text-white">WhatsApp AI</span>
+                    <span className="px-1.5 py-0.5 rounded text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                      ₹3k/mo
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">
+                    Cart recovery, broadcasts & AI voice callers.
+                  </p>
+                </Link>
+
+                <Link
+                  href="/products/scalezix-crm"
+                  className="block p-3 rounded-xl border border-slate-200 dark:border-white/10 hover:border-[#473BFD]/30 dark:hover:border-[#D3FDB1]/30 transition"
+                >
+                  <span className="text-xs font-bold text-slate-900 dark:text-white">Scalezix CRM</span>
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">
+                    Automated pipelines and lead qualification.
+                  </p>
+                </Link>
+
+                <Link
+                  href="/pricing"
+                  className="block text-center py-2 px-3 rounded-xl bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 text-xs font-semibold text-[#473BFD] dark:text-[#D3FDB1] transition"
+                >
+                  Explore All Pricing Tiers &rarr;
+                </Link>
+              </div>
             </div>
 
             <div className="mesh-card rounded-[2rem] p-6">

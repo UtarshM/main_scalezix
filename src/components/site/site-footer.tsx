@@ -134,13 +134,19 @@ export function SiteFooter() {
               </h4>
               <ul className="flex flex-col gap-2 text-slate-600 dark:text-[#8E939D]">
                 <li>
-                  <Link href="/products/scalezix-crm" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-                    Scalezix CRM
+                  <Link href="/products/whatsapp-ai" className="hover:text-slate-900 dark:hover:text-white transition-colors flex items-center justify-between">
+                    <span>WhatsApp AI Suite</span>
+                    <span className="text-[9px] font-mono font-bold text-emerald-500">₹3k/mo</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products/whatsapp-ai" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-                    WhatsApp AI Suite
+                  <Link href="/pricing" className="hover:text-slate-900 dark:hover:text-white transition-colors font-semibold text-[#473BFD] dark:text-[#D3FDB1]">
+                    Pricing Plans & Add-ons &rarr;
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/products/scalezix-crm" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                    Scalezix CRM
                   </Link>
                 </li>
                 <li>

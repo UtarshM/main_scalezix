@@ -212,6 +212,71 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Related AI Products & Pricing */}
+      <section className="mt-10 rounded-[2rem] border border-slate-200 dark:border-white/10 bg-white dark:bg-[#121316] p-6 md:p-8">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100 dark:border-white/5">
+          <div>
+            <p className="font-mono text-[11px] uppercase tracking-wider text-[#473BFD] dark:text-[#D3FDB1] font-bold">
+              Productized AI Engines
+            </p>
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mt-1">
+              Deploy Ready-to-Use Platforms
+            </h2>
+          </div>
+          <Link href="/pricing" className="button-primary text-xs shrink-0 flex items-center gap-1">
+            <span>View All Pricing Plans</span>
+            <ChevronRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <Link
+            href="/products/whatsapp-ai"
+            className="p-4 rounded-2xl border border-slate-100 dark:border-white/5 hover:border-[#473BFD]/30 dark:hover:border-[#D3FDB1]/30 hover:bg-slate-50 dark:hover:bg-white/[0.02] transition block"
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-bold text-slate-900 dark:text-white">WhatsApp AI</span>
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                ₹3k/mo
+              </span>
+            </div>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+              Broadcasts, abandoned cart recovery, AI voice calls & team inbox.
+            </p>
+          </Link>
+
+          <Link
+            href="/products/scalezix-crm"
+            className="p-4 rounded-2xl border border-slate-100 dark:border-white/5 hover:border-[#473BFD]/30 dark:hover:border-[#D3FDB1]/30 hover:bg-slate-50 dark:hover:bg-white/[0.02] transition block"
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-bold text-slate-900 dark:text-white">Scalezix CRM</span>
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#473BFD]/10 text-[#473BFD] dark:bg-[#D3FDB1]/20 dark:text-[#D3FDB1]">
+                Pipeline AI
+              </span>
+            </div>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+              AI-ready CRM to centralize leads and orchestrate sales follow-ups.
+            </p>
+          </Link>
+
+          <Link
+            href="/products/custom-ai-agents"
+            className="p-4 rounded-2xl border border-slate-100 dark:border-white/5 hover:border-[#473BFD]/30 dark:hover:border-[#D3FDB1]/30 hover:bg-slate-50 dark:hover:bg-white/[0.02] transition block"
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-bold text-slate-900 dark:text-white">Custom AI Agents</span>
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#473BFD]/10 text-[#473BFD] dark:bg-[#D3FDB1]/20 dark:text-[#D3FDB1]">
+                Bespoke
+              </span>
+            </div>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">
+              Purpose-built agents connecting internal databases & workflows.
+            </p>
+          </Link>
+        </div>
+      </section>
+
       <section className="mt-10">
         <p className="section-kicker w-fit">Canada rollout</p>
         <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-slate-900 dark:text-white md:text-4xl">

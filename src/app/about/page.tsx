@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { companyInfo } from "@/content/prd-site";
 import { buildMetadata } from "@/lib/seo";
 import { ShieldCheck, Sparkles, Zap, Users } from "lucide-react";
@@ -137,6 +138,29 @@ export default function AboutPage() {
                 <span>Phone: {companyInfo.phone}</span>
                 <span>Email: {companyInfo.email}</span>
               </div>
+            </div>
+          </div>
+
+          {/* Connected Links Banner */}
+          <div className="mt-12 rounded-[2.5rem] border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#121316] p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <span className="font-mono text-xs uppercase tracking-widest text-[#473BFD] dark:text-[#D3FDB1] font-bold">
+                Work With Scalezix
+              </span>
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-1">
+                Ready to transform your operations?
+              </h3>
+              <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                Explore our modular WhatsApp AI (from ₹3,000/mo), custom CRM, or schedule a direct consultation.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3 shrink-0">
+              <Link href="/pricing" className="button-primary text-xs">
+                View Pricing Plans
+              </Link>
+              <Link href="/contact" className="button-secondary text-xs">
+                Contact Operations Team
+              </Link>
             </div>
           </div>
         </div>

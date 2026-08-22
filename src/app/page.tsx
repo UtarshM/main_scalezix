@@ -120,10 +120,16 @@ export default function HomePage() {
               <ArrowRight className="h-4 w-4" />
             </a>
             <Link
-              href={companyInfo.calendlyHref}
+              href="/pricing"
               className="inline-flex items-center justify-center gap-2 rounded-full font-semibold border border-slate-300 dark:border-white/15 bg-white/70 dark:bg-card/25 hover:bg-white dark:hover:bg-card/50 text-slate-900 dark:text-white px-8 py-3.5 text-sm transition shadow-sm"
             >
-              Book a Strategy Call
+              View Pricing (from ₹3k/mo)
+            </Link>
+            <Link
+              href={companyInfo.calendlyHref}
+              className="inline-flex items-center justify-center gap-2 rounded-full font-semibold border border-transparent hover:border-slate-300 dark:hover:border-white/15 text-slate-700 dark:text-slate-300 px-6 py-3.5 text-sm transition"
+            >
+              Book Strategy Call
             </Link>
           </div>
 
@@ -360,8 +366,19 @@ export default function HomePage() {
                 className="flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#141518] p-6 group hover:border-[#473BFD]/30 transition-all duration-300 shadow-sm"
               >
                 <div className="flex flex-col gap-4">
-                  <div className="h-10 w-10 rounded-xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center">
-                    {getServiceIcon(product.slug)}
+                  <div className="flex items-center justify-between">
+                    <div className="h-10 w-10 rounded-xl bg-[#473BFD]/10 border border-[#473BFD]/20 flex items-center justify-center">
+                      {getServiceIcon(product.slug)}
+                    </div>
+                    {product.slug === "whatsapp-ai" ? (
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                        From ₹3k/mo
+                      </span>
+                    ) : (
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#473BFD]/10 text-[#473BFD] dark:bg-[#D3FDB1]/20 dark:text-[#D3FDB1]">
+                        {product.tag}
+                      </span>
+                    )}
                   </div>
                   <h3 className="text-lg font-bold text-slate-900 dark:text-white leading-tight">
                     {product.name}
@@ -378,9 +395,24 @@ export default function HomePage() {
                     View system specs
                     <ChevronRight className="h-3 w-3" />
                   </Link>
+                  <Link
+                    href={product.slug === "whatsapp-ai" ? "/products/whatsapp-ai#pricing" : "/pricing"}
+                    className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 hover:text-[#473BFD] dark:hover:text-[#D3FDB1] transition"
+                  >
+                    Pricing &rarr;
+                  </Link>
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              href="/pricing"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-[#473BFD] dark:text-[#D3FDB1] hover:underline"
+            >
+              Explore all modular plans & transparent Meta API pricing &rarr;
+            </Link>
           </div>
 
         </div>

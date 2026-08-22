@@ -35,6 +35,14 @@ export default function ServicesPage() {
             <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-300">
               We combine automation, software, CRM execution, conversational systems, and search-led growth into one operating layer for ambitious teams.
             </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/pricing" className="button-primary text-xs">
+                View Pricing Plans (from ₹3k/mo)
+              </Link>
+              <Link href="/products/whatsapp-ai" className="button-secondary text-xs text-white border-white/20 hover:bg-white/10">
+                WhatsApp AI Platform
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -60,13 +68,42 @@ export default function ServicesPage() {
                     Who it&apos;s for: {service.audience.slice(0, 2).join(", ")}
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-slate-200 dark:border-white/10">
-                  <Link href={`/services/${service.slug}`} className="button-secondary border-slate-200 dark:border-white/15 text-slate-800 dark:text-slate-200 hover:border-slate-300 dark:hover:border-white/30 hover:bg-slate-100 dark:hover:bg-white/5">
-                    Learn more
+                <div className="mt-6 pt-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between">
+                  <Link href={`/services/${service.slug}`} className="button-secondary border-slate-200 dark:border-white/15 text-slate-800 dark:text-slate-200 hover:border-slate-300 dark:hover:border-white/30 hover:bg-slate-100 dark:hover:bg-white/5 text-xs">
+                    Learn more &rarr;
                   </Link>
+                  {service.slug === "ai-chatbots" && (
+                    <Link href="/products/whatsapp-ai" className="text-xs font-semibold text-[#473BFD] dark:text-[#D3FDB1] hover:underline">
+                      WhatsApp AI Engine (₹3k) &rarr;
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Connected Products & Pricing CTA */}
+          <div className="mt-16 rounded-[2.5rem] border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#121316] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="max-w-xl">
+              <span className="font-mono text-xs uppercase tracking-widest text-[#473BFD] dark:text-[#D3FDB1] font-bold">
+                Productized Platforms
+              </span>
+              <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mt-1">
+                Prefer Ready-to-Deploy AI Software?
+              </h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                Explore our modular WhatsApp AI starting at <strong>₹3,000/mo</strong>, Scalezix CRM,
+                or custom enterprise autonomous agents.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3 shrink-0">
+              <Link href="/pricing" className="button-primary text-xs">
+                View All Pricing Plans
+              </Link>
+              <Link href="/products" className="button-secondary text-xs">
+                Browse Products
+              </Link>
+            </div>
           </div>
         </div>
       </section>

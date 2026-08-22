@@ -74,11 +74,70 @@ export default async function CaseStudyDetailPage({ params }: PageProps) {
         </section>
       </div>
 
-      <div className="mt-8">
+      <div className="mt-8 flex flex-wrap gap-4">
         <Link href="/contact" className="button-primary">
           Build something similar
         </Link>
+        <Link href="/pricing" className="button-secondary border-slate-300 dark:border-white/20 hover:bg-slate-100 dark:hover:bg-white/5">
+          View Deployment Pricing
+        </Link>
+        <Link href="/case-studies" className="button-secondary border-slate-300 dark:border-white/20 hover:bg-slate-100 dark:hover:bg-white/5">
+          All Case Studies
+        </Link>
       </div>
+
+      {/* Connected Products */}
+      <section className="mt-16 pt-12 border-t border-slate-200 dark:border-white/10">
+        <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-6">
+          Core AI Engines Used in Deployments
+        </h2>
+        <div className="grid gap-4 md:grid-cols-3">
+          <Link
+            href="/products/whatsapp-ai"
+            className="p-5 rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#121316] hover:border-[#473BFD]/30 dark:hover:border-[#D3FDB1]/30 transition block"
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-bold text-slate-900 dark:text-white">WhatsApp AI</span>
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                From ₹3k/mo
+              </span>
+            </div>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+              Autonomous chat, cart recovery & multilingual AI voice calling.
+            </p>
+          </Link>
+
+          <Link
+            href="/products/scalezix-crm"
+            className="p-5 rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#121316] hover:border-[#473BFD]/30 dark:hover:border-[#D3FDB1]/30 transition block"
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-bold text-slate-900 dark:text-white">Scalezix CRM</span>
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#473BFD]/10 text-[#473BFD] dark:bg-[#D3FDB1]/20 dark:text-[#D3FDB1]">
+                Sales AI
+              </span>
+            </div>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+              Automated pipeline routing, lead scoring & real-time sync.
+            </p>
+          </Link>
+
+          <Link
+            href="/products/custom-ai-agents"
+            className="p-5 rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#121316] hover:border-[#473BFD]/30 dark:hover:border-[#D3FDB1]/30 transition block"
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-bold text-slate-900 dark:text-white">Custom AI Agents</span>
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#473BFD]/10 text-[#473BFD] dark:bg-[#D3FDB1]/20 dark:text-[#D3FDB1]">
+                Enterprise
+              </span>
+            </div>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+              Custom agentic middleware trained around internal operations.
+            </p>
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }

@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, Users, MessageSquare } from "lucide-react";
 
 const navLinks = [
-  { label: "Services", href: "/#services" },
+  { label: "Services", href: "/services" },
+  { label: "Pricing", href: "/pricing" },
   { label: "How It Works", href: "/#how-it-works" },
   { label: "Features", href: "/#features" },
   { label: "Testimonials", href: "/#testimonials" },
@@ -12,16 +13,16 @@ const navLinks = [
 
 const products = [
   {
+    name: "WhatsApp AI",
+    desc: "Smart WhatsApp CRM — broadcasts, cart recovery & AI voice calling from ₹3k/mo.",
+    icon: MessageSquare,
+    href: "/products/whatsapp-ai",
+  },
+  {
     name: "Scalezix CRM",
     desc: "AI-powered CRM for lead management & sales automation.",
     icon: Users,
-    href: "/products/crm",
-  },
-  {
-    name: "WhatsApp AI",
-    desc: "Smart WhatsApp CRM — broadcasts, chatbots & campaigns.",
-    icon: MessageSquare,
-    href: "/products/whatsapp-ai",
+    href: "/products/scalezix-crm",
   },
 ];
 

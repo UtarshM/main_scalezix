@@ -1,42 +1,60 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, Sparkles } from "lucide-react";
+import Link from "next/link";
+import { ChevronDown, Sparkles, ArrowRight } from "lucide-react";
 import { JsonLd } from "@/components/seo/json-ld";
 import { faqGroups, companyInfo } from "@/content/prd-site";
 import { cn } from "@/lib/utils";
 
 const faqAnswers: Record<string, string> = {
-  "What is Scalezix?": "Scalezix is an applied AI and workflow automation agency based in Ahmedabad. We build custom AI software, deploy intelligent agents, and connect your business systems to drive efficiency and operational scale.",
-  "Where is Scalezix located?": "We are headquartered in Ahmedabad, Gujarat, India, with offices located at i-Hub (KCG Campus) and Gandhinagar.",
-  "What industries do you serve?": "We work with D2C brands, real estate teams, logistics providers, healthcare agencies, and fast-growing SMEs in India and North America.",
-  "How do I get started?": "You can start by booking a free strategy call or submitting our instant Opportunity Audit on the homepage. We will analyze your tools and map your highest-ROI opportunities.",
-  "What is AI automation?": "AI automation combines artificial intelligence (LLMs like OpenAI or Gemini) with automated workflow pipelines (using Make, Zapier, or APIs) to automatically perform repetitive manual workflows (qualifying leads, syncing data, generating content).",
-  "How long does it take to deploy AI automation?": "Our initial automation setups and CRM integrations are typically deployed, tested, and active in under 6 weeks.",
-  "How much does AI automation cost?": "Costs scale with workflow complexity. Basic integrations are cost-effective, while custom agentic systems are priced based on the architecture. We provide flat-rate project estimates after our audit.",
-  "Do I need technical knowledge to use AI automation?": "No. We handle all backend integrations, API configurations, and prompt engineering. We build simple custom dashboards and upskill your team during onboarding.",
-  "What tech stack do you use?": "We build with Next.js, React, Tailwind CSS for frontend interfaces; Node.js, Python, and FastAPI for backends; and AWS / Google Cloud for secure infrastructure.",
-  "How long does a software project take?": "Custom web apps and internal CRMs usually require 6 to 12 weeks for design, building, testing, and deployment.",
-  "Do you provide post-launch support?": "Yes. We offer monthly SLA support packages to monitor API integrations, adjust prompts, update workflows, and optimize server resources as you scale.",
-  "What digital marketing services do you offer?": "We specialize in performance marketing, Meta & Google Ads management, Conversion Rate Optimization (CRO), and advanced Search Engine Optimization (SEO / AEO) funnels.",
-  "How long before I see SEO results?": "Technical SEO updates show impact in 4–8 weeks, while full ranking growth and lead compounds typically mature over 3–6 months.",
-  "Do you run paid ads?": "Yes. We build high-converting landing pages, set up attribution pipelines, and run targeted paid search and social campaigns optimized for customer acquisition cost (CAC).",
-  "What is Scalezix CRM?": "Scalezix CRM is our custom CRM shell tailored for D2C and real estate operations, pre-integrated with WhatsApp, lead qualification agents, and live analytics dashboards.",
-  "What is WhatsApp AI?": "WhatsApp AI is an intelligent agent system connected directly to your official WhatsApp Business API. It qualifies incoming leads, answers customer FAQs, routes queries, and triggers follow-up CRM actions 24/7.",
-  "Is there a free trial?": "While custom integrations do not have trials, we provide interactive mockups and strategy roadmaps for you to review before making any contract commitments."
+  "What is Scalezix?":
+    "Scalezix is an applied AI and workflow automation agency based in Ahmedabad. We build custom AI software, deploy intelligent agents, and connect your business systems to drive efficiency and operational scale.",
+  "Where is Scalezix located?":
+    "We are headquartered in Ahmedabad, Gujarat, India, with offices located at i-Hub (KCG Campus) and Gandhinagar.",
+  "What industries do you serve?":
+    "We work with D2C brands, real estate teams, logistics providers, healthcare agencies, and fast-growing SMEs in India and North America.",
+  "How do I get started?":
+    "You can start by booking a free strategy call or submitting our instant Opportunity Audit on the homepage. We will analyze your tools and map your highest-ROI opportunities.",
+  "What is AI automation?":
+    "AI automation combines artificial intelligence (LLMs like OpenAI or Gemini) with automated workflow pipelines (using APIs, Make, or custom microservices) to automatically perform repetitive manual workflows (qualifying leads, syncing data, generating content, recovering carts).",
+  "How long does it take to deploy AI automation?":
+    "Our initial automation setups and WhatsApp CRM integrations are typically deployed, tested, and active in under 6 weeks (and WhatsApp AI base pilots in under 24 hours).",
+  "How much does AI automation cost?":
+    "We offer transparent modular pricing: WhatsApp AI Platform starts at ₹3,000/mo (with plug-and-play AI add-ons), alongside Starter ($1.5k), Growth ($4k), and Enterprise Custom plans. You can view all options on our Pricing page.",
+  "Do I need technical knowledge to use AI automation?":
+    "No. We handle all backend integrations, API configurations, and prompt engineering. We build simple custom dashboards and upskill your team during onboarding.",
+  "What tech stack do you use?":
+    "We build with Next.js, React, Tailwind CSS for frontend interfaces; Node.js, Python, and FastAPI for backends; and AWS / Google Cloud for secure infrastructure.",
+  "How long does a software project take?":
+    "Custom web apps and internal CRMs usually require 6 to 12 weeks for design, building, testing, and deployment.",
+  "Do you provide post-launch support?":
+    "Yes. We offer monthly SLA support packages to monitor API integrations, adjust prompts, update workflows, and optimize server resources as you scale.",
+  "What digital marketing services do you offer?":
+    "We specialize in performance marketing, Meta & Google Ads management, Conversion Rate Optimization (CRO), and advanced Search Engine Optimization (SEO / AEO) funnels.",
+  "How long before I see SEO results?":
+    "Technical SEO updates show impact in 4–8 weeks, while full ranking growth and lead compounds typically mature over 3–6 months.",
+  "Do you run paid ads?":
+    "Yes. We build high-converting landing pages, set up attribution pipelines, and run targeted paid search and social campaigns optimized for customer acquisition cost (CAC).",
+  "What is Scalezix CRM?":
+    "Scalezix CRM is our custom CRM shell tailored for D2C and real estate operations, pre-integrated with WhatsApp, lead qualification agents, and live analytics dashboards.",
+  "What is WhatsApp AI?":
+    "WhatsApp AI is an intelligent conversational platform connected directly to the official WhatsApp Business API. Starting at ₹3,000/month (with zero contact caps), it recovers abandoned carts, automates COD confirmation & prepaid conversion with AI voice callers, broadcasts marketing campaigns, and provides a multi-agent shared inbox.",
+  "Is there a free trial?":
+    "Yes! We provide a 14-day risk-free pilot for our WhatsApp AI Platform, and free interactive discovery audits for custom engineering projects.",
 };
 
 export default function FaqPage() {
   const [openFaq, setOpenFaq] = useState<string | null>(null);
 
   const toggleFaq = (question: string) => {
-    setOpenFaq(prev => (prev === question ? null : question));
+    setOpenFaq((prev) => (prev === question ? null : question));
   };
 
   const faqEntries = Object.values(faqGroups).flat();
 
   return (
-    <main className="section-shell">
+    <main className="section-shell py-20 md:py-24">
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -46,47 +64,79 @@ export default function FaqPage() {
             name: faq,
             acceptedAnswer: {
               "@type": "Answer",
-              text: faqAnswers[faq] || `Talk to Scalezix for a detailed answer to ${faq.toLowerCase()}.`,
+              text:
+                faqAnswers[faq] ||
+                `Talk to Scalezix for a detailed answer to ${faq.toLowerCase()}.`,
             },
           })),
         }}
       />
-      
+
       <div className="max-w-4xl">
         <p className="section-kicker w-fit">FAQ</p>
         <h1 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-slate-900 dark:text-white md:text-6xl">
           Frequently Asked Questions
         </h1>
         <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-300">
-          Have questions about security, deployment timelines, pricing, or custom integrations? Browse our detailed answers below.
+          Have questions about security, deployment timelines, pricing, or custom integrations?
+          Browse our detailed answers below.
         </p>
+
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link href="/pricing" className="button-primary text-xs">
+            View Pricing Plans (from ₹3k/mo)
+          </Link>
+          <Link href="/products/whatsapp-ai" className="button-secondary text-xs">
+            WhatsApp AI Suite
+          </Link>
+        </div>
       </div>
 
       <div className="mt-12 grid gap-6 lg:grid-cols-2">
         {Object.entries(faqGroups).map(([group, faqs]) => (
-          <section key={group} className="mesh-card rounded-[1.8rem] p-6 flex flex-col justify-between h-fit">
+          <section
+            key={group}
+            className="mesh-card rounded-[1.8rem] p-6 flex flex-col justify-between h-fit"
+          >
             <div>
-              <div className="flex items-center gap-2 text-[#473BFD] mb-4">
+              <div className="flex items-center gap-2 text-[#473BFD] dark:text-[#D3FDB1] mb-4">
                 <Sparkles className="h-4.5 w-4.5" />
-                <h2 className="text-xl font-medium capitalize text-slate-900 dark:text-white">{group}</h2>
+                <h2 className="text-xl font-medium capitalize text-slate-900 dark:text-white">
+                  {group}
+                </h2>
               </div>
               <div className="space-y-3">
                 {faqs.map((faq) => {
                   const isOpen = openFaq === faq;
-                  const answerText = faqAnswers[faq] || "Our team can provide detailed custom blueprints and metrics for this capability. Book a short strategy call to discuss further.";
-                  
+                  const answerText =
+                    faqAnswers[faq] ||
+                    "Our team can provide detailed custom blueprints and metrics for this capability. Book a short strategy call to discuss further.";
+
                   return (
-                    <div key={faq} className="rounded-xl border border-black/5 dark:border-white/10 bg-black/[0.015] dark:bg-white/[0.02] overflow-hidden transition-all duration-300">
+                    <div
+                      key={faq}
+                      className="rounded-xl border border-black/5 dark:border-white/10 bg-black/[0.015] dark:bg-white/[0.02] overflow-hidden transition-all duration-300"
+                    >
                       <button
                         type="button"
                         onClick={() => toggleFaq(faq)}
                         className="w-full flex items-center justify-between text-left p-4 text-xs font-semibold text-slate-800 dark:text-white hover:text-[#473BFD] dark:hover:text-[#D3FDB1] transition-colors gap-3"
                       >
                         <span>{faq}</span>
-                        <ChevronDown className={cn("h-3.5 w-3.5 shrink-0 transition-transform duration-300 text-slate-400", isOpen ? "rotate-180 text-[#473BFD] dark:text-[#D3FDB1]" : "")} />
+                        <ChevronDown
+                          className={cn(
+                            "h-3.5 w-3.5 shrink-0 transition-transform duration-300 text-slate-400",
+                            isOpen ? "rotate-180 text-[#473BFD] dark:text-[#D3FDB1]" : ""
+                          )}
+                        />
                       </button>
-                      
-                      <div className={cn("grid transition-all duration-300 ease-in-out overflow-hidden text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed", isOpen ? "grid-rows-[1fr] px-4 pb-4 opacity-100" : "grid-rows-[0fr] opacity-0")}>
+
+                      <div
+                        className={cn(
+                          "grid transition-all duration-300 ease-in-out overflow-hidden text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed",
+                          isOpen ? "grid-rows-[1fr] px-4 pb-4 opacity-100" : "grid-rows-[0fr] opacity-0"
+                        )}
+                      >
                         <div className="overflow-hidden">
                           <p className="pt-1">{answerText}</p>
                         </div>
@@ -99,6 +149,30 @@ export default function FaqPage() {
           </section>
         ))}
       </div>
+
+      {/* Pricing & Contact Banner */}
+      <section className="mt-16 rounded-[2.5rem] border border-slate-200 dark:border-white/10 bg-white dark:bg-[#121316] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="max-w-xl">
+          <span className="font-mono text-xs uppercase tracking-widest text-[#473BFD] dark:text-[#D3FDB1] font-bold">
+            Still Have Questions?
+          </span>
+          <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mt-1">
+            Talk Directly with Our Operations Engineers
+          </h3>
+          <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+            We will map your highest-ROI automation use case and give you clear pricing within 24 hours.
+          </p>
+        </div>
+
+        <div className="flex flex-wrap gap-3 shrink-0">
+          <Link href="/pricing" className="button-primary text-xs">
+            Explore All Pricing Plans
+          </Link>
+          <Link href="/contact" className="button-secondary text-xs">
+            Contact Operations Team
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }
