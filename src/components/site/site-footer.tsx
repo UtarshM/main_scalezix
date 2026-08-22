@@ -143,13 +143,18 @@ export function SiteFooter() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/pricing" className="hover:text-slate-900 dark:hover:text-white transition-colors font-semibold text-[#473BFD] dark:text-[#D3FDB1]">
-                    Pricing Plans (from ₹3k) &rarr;
+                  <Link href="/pricing/whatsapp-ai" className="hover:text-slate-900 dark:hover:text-white transition-colors text-[11px] text-[#473BFD] dark:text-[#D3FDB1] font-semibold">
+                    • WhatsApp AI Pricing (from ₹3k)
                   </Link>
                 </li>
                 <li>
                   <Link href="/products/scalezix-crm" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-                    Scalezix CRM
+                    Scalezix CRM Platform
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/pricing/scalezix-crm" className="hover:text-slate-900 dark:hover:text-white transition-colors text-[11px] text-[#473BFD] dark:text-[#D3FDB1] font-semibold">
+                    • CRM Pricing (from ₹4,999)
                   </Link>
                 </li>
                 <li>
@@ -158,13 +163,13 @@ export function SiteFooter() {
                   </Link>
                 </li>
                 <li>
-                  <a href="/#calculator" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-                    AI Opportunity Calculator
-                  </a>
+                  <Link href="/pricing/custom-ai-agents" className="hover:text-slate-900 dark:hover:text-white transition-colors text-[11px] text-[#473BFD] dark:text-[#D3FDB1] font-semibold">
+                    • Agents Pricing (from ₹7,999)
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/process" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-                    Transformation Process
+                  <Link href="/pricing" className="hover:text-slate-900 dark:hover:text-white transition-colors font-bold text-slate-900 dark:text-white">
+                    Master Pricing Hub &rarr;
                   </Link>
                 </li>
               </ul>

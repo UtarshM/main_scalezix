@@ -15,6 +15,8 @@ import {
 
 import { JsonLd } from "@/components/seo/json-ld";
 import { WhatsAppPricing } from "@/components/pricing/WhatsAppPricing";
+import { CRMPricing } from "@/components/pricing/CRMPricing";
+import { AgentsPricing } from "@/components/pricing/AgentsPricing";
 import { products, pricingPlans, services, caseStudies, blogPosts } from "@/content/site";
 import { breadcrumbSchema, buildMetadata } from "@/lib/seo";
 
@@ -177,10 +179,14 @@ export default async function ProductDetailPage({ params }: PageProps) {
             </div>
           </div>
 
-          {/* Pricing Section: Specialized for WhatsApp AI vs Generic AI */}
+          {/* Pricing Section: Dedicated Modular Pricing per Product */}
           <div id="pricing" className="mt-20 pt-16 border-t border-slate-200 dark:border-white/10">
             {isWhatsAppAi ? (
               <WhatsAppPricing showTitle={true} />
+            ) : product.slug === "scalezix-crm" ? (
+              <CRMPricing showTitle={true} />
+            ) : product.slug === "custom-ai-agents" ? (
+              <AgentsPricing showTitle={true} />
             ) : (
               <div>
                 <div className="text-center max-w-xl mx-auto mb-12">

@@ -3,10 +3,10 @@ import Image from "next/image";
 
 const links = {
   Products: [
-    { label: "WhatsApp AI (from ₹3k)", href: "/products/whatsapp-ai" },
-    { label: "Scalezix CRM", href: "/products/scalezix-crm" },
-    { label: "Custom AI Agents", href: "/products/custom-ai-agents" },
-    { label: "Pricing Plans", href: "/pricing" },
+    { label: "WhatsApp AI (from ₹3k/mo)", href: "/pricing/whatsapp-ai" },
+    { label: "Scalezix CRM (from ₹4,999/mo)", href: "/pricing/scalezix-crm" },
+    { label: "Custom AI Agents (from ₹7,999/mo)", href: "/pricing/custom-ai-agents" },
+    { label: "Master Pricing Hub", href: "/pricing" },
   ],
   Services: [
     { label: "AI Automation", href: "/services/ai-automation" },

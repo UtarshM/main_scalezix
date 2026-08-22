@@ -491,6 +491,358 @@ export const whatsappFeatureComparison = [
   },
 ];
 
+export const crmPricingPlans = [
+  {
+    id: "crm-starter",
+    name: "Starter Sales Hub",
+    badge: "Core Pipeline",
+    tagline: "Centralize your leads and eliminate manual spreadsheets.",
+    price: "₹4,999",
+    monthlyPriceNum: 4999,
+    period: "/month",
+    description: "Perfect for growing sales teams looking for fast lead capture and basic stage routing.",
+    includedInBase: [
+      "Up to 5 Custom Pipeline Stages",
+      "Instant Lead Routing & Auto-Assignment",
+      "WhatsApp & Email 2-Way Activity Sync",
+      "Unified Lead Profile & Interaction Timeline",
+      "Basic Deal Value & Pipeline Forecasting",
+      "Up to 5 Sales Rep Seats Included",
+      "Standard Webhook & Lead Form Integrations",
+    ],
+    cta: "Start with Starter Sales Hub",
+    featured: false,
+  },
+  {
+    id: "crm-growth",
+    name: "Growth Engine CRM",
+    badge: "Most Popular",
+    tagline: "Automate follow-ups, lead scoring, and multi-channel outreach.",
+    price: "₹9,999",
+    monthlyPriceNum: 9999,
+    period: "/month",
+    description: "Built for scaling teams requiring automated workflows, AI qualification, and omnichannel tracking.",
+    includedInBase: [
+      "Everything in Starter Sales Hub",
+      "Unlimited Custom Pipelines & Stages",
+      "Automated Multi-Channel Drip Sequences (WhatsApp, Email, SMS)",
+      "AI Smart Lead Scoring & Intent Qualification",
+      "1-Click Direct WhatsApp Broadcaster & Click-to-Call",
+      "Bi-Directional Sync with Custom ERPs, Shopify & Meta Ads",
+      "Unlimited Team Seats & Granular Role Permissions",
+      "Advanced Revenue Attribution & Team Velocity Reports",
+    ],
+    cta: "Deploy Growth Engine CRM",
+    featured: true,
+  },
+  {
+    id: "crm-enterprise",
+    name: "Enterprise Custom CRM",
+    badge: "Bespoke Power",
+    tagline: "A purpose-built CRM tailored exactly to your internal operating SOPs.",
+    price: "₹24,999",
+    monthlyPriceNum: 24999,
+    period: "/month",
+    description: "Full enterprise data isolation, custom database connectors, and bespoke AI copilot workflows.",
+    includedInBase: [
+      "Everything in Growth Engine CRM",
+      "Fully Dedicated Private Cloud / On-Premise Instance",
+      "Custom Workflow Automation Engine matching your exact SOPs",
+      "Direct Native Connectors for SAP, Oracle, Zoho, Tally & Postgres",
+      "Custom AI Deal Copilot trained on your internal sales transcripts",
+      "Dedicated Solutions Architect & 99.9% Uptime SLA",
+      "Enterprise SSO, Audit Logs & Data Residency Compliance",
+      "Custom API Rate Limits & White-Label Domain Branding",
+    ],
+    cta: "Consult Enterprise CRM",
+    featured: false,
+  },
+];
+
+export const crmAddOns = [
+  {
+    id: "ai-voice-notes",
+    name: "AI Auto-Dialer & Voice Summarizer",
+    badge: "High Efficiency",
+    price: "₹2,999",
+    monthlyPriceNum: 2999,
+    period: "/month",
+    description:
+      "Automatically summarizes rep sales calls, updates deal notes, extracts follow-up action items, and logs them into CRM without manual typing.",
+    features: [
+      "Speech-to-text call transcription & deal sentiment analysis",
+      "Auto-extracts agreed budgets, next steps, and objection logs",
+      "1-click outbound dialer with automated call logging",
+      "Supports English, Hindi, and Hinglish sales calls",
+    ],
+  },
+  {
+    id: "tally-erp-sync",
+    name: "Tally & ERP Auto-Invoice Sync",
+    badge: "Accounting Link",
+    price: "₹3,499",
+    monthlyPriceNum: 3499,
+    period: "/month",
+    description:
+      "Connects CRM closed-won deals directly to Tally Prime, Zoho Books, or custom ERP to generate GST invoices, credit notes, and payment receipts automatically.",
+    features: [
+      "Instant GST invoice generation upon stage win",
+      "Automated WhatsApp payment reminder links",
+      "Live payment reconciliation & overdue alerts",
+      "Eliminates duplicate manual data entry for accounts teams",
+    ],
+  },
+];
+
+export const crmPricingFaqs = [
+  {
+    question: "How does Scalezix CRM compare to generic CRMs like HubSpot or Zoho?",
+    answer:
+      "Unlike generic off-the-shelf CRMs that charge per user and require months of painful consultant setup, Scalezix CRM is pre-configured with native Indian communication rails (WhatsApp API, UPI payment links, India GST invoice sync) and AI automations that eliminate manual logging.",
+  },
+  {
+    question: "Can we migrate our existing contacts and deal history?",
+    answer:
+      "Yes! Our engineering team provides complimentary white-glove data migration from Excel, Google Sheets, HubSpot, Zoho, Leadsquared, or Salesforce with zero downtime.",
+  },
+  {
+    question: "Are there per-user seat limits on the Growth plan?",
+    answer:
+      "No. Growth Engine CRM (₹9,999/mo) and Enterprise Custom CRM include unlimited user seats with granular team permissions so your entire sales and support department can collaborate freely.",
+  },
+  {
+    question: "Can Scalezix CRM connect to our website forms and Meta Ad campaigns?",
+    answer:
+      "Yes! Scalezix CRM has instant native connectors for Meta Lead Ads, Google Ads, website forms, WhatsApp chats, and webhooks to route leads in less than 2 seconds.",
+  },
+];
+
+export const crmFeatureComparison = [
+  {
+    feature: "Custom Pipeline Stages",
+    starter: "Up to 5",
+    growth: "Unlimited",
+    enterprise: "Unlimited Bespoke",
+  },
+  {
+    feature: "Team User Seats",
+    starter: "5 Seats Included",
+    growth: "Unlimited",
+    enterprise: "Unlimited",
+  },
+  {
+    feature: "WhatsApp 2-Way Chat Sync",
+    starter: true,
+    growth: true,
+    enterprise: true,
+  },
+  {
+    feature: "Automated Multi-Channel Drip Sequences",
+    starter: false,
+    growth: true,
+    enterprise: true,
+  },
+  {
+    feature: "AI Smart Lead Scoring & Intent Tagging",
+    starter: false,
+    growth: true,
+    enterprise: true,
+  },
+  {
+    feature: "Custom ERP & Tally Prime Connectors",
+    starter: false,
+    growth: "Via Webhook",
+    enterprise: "Native Dedicated",
+  },
+  {
+    feature: "Private Cloud / VPC Data Isolation",
+    starter: false,
+    growth: false,
+    enterprise: true,
+  },
+  {
+    feature: "Dedicated Solutions Engineer & SLA",
+    starter: "Standard",
+    growth: "Priority",
+    enterprise: "24/7 Dedicated SLA",
+  },
+];
+
+export const agentPricingPlans = [
+  {
+    id: "agent-task",
+    name: "Single-Purpose Task Agent",
+    badge: "Quick Pilot",
+    tagline: "Automate a specific, repetitive operational or support bottleneck.",
+    price: "₹7,999",
+    monthlyPriceNum: 7999,
+    period: "/month",
+    description: "Deploy 1 dedicated autonomous agent trained on your internal SOPs to handle routine workflows 24/7.",
+    includedInBase: [
+      "1 Purpose-Built Autonomous Agent (e.g. Lead Qualifier, Ticket Resolver, Invoice Auditor)",
+      "Trained on Your Specific Company Knowledge Base & SOPs",
+      "Connected to Up to 3 Business Systems (WhatsApp, CRM, Sheets, Slack)",
+      "Human-in-the-Loop Approval & Review Gateways",
+      "Weekly Accuracy & Execution Optimization Reports",
+      "Zero Data Retention Model for Maximum Privacy",
+    ],
+    cta: "Deploy Task Agent",
+    featured: false,
+  },
+  {
+    id: "agent-pod",
+    name: "Multi-Agent Autonomous Pod",
+    badge: "Most Popular",
+    tagline: "An interconnected team of AI agents executing cross-department workflows.",
+    price: "₹19,999",
+    monthlyPriceNum: 19999,
+    period: "/month",
+    description: "Full agentic squad where specialized agents collaborate, reason over business context, and execute tasks.",
+    includedInBase: [
+      "Everything in Single-Purpose Task Agent",
+      "3-5 Interconnected Specialized AI Agents (Research, Inbound Qualification, Ops Dispatch, Meeting Prep)",
+      "Dynamic Vector Memory & Long-Term Context Retention",
+      "Deep API Execution Across Internal Databases & Third-Party SaaS",
+      "Multi-LLM Smart Router (Claude 3.5 Sonnet, GPT-4o, Gemini Pro) for Peak Accuracy & Low Latency",
+      "Dedicated AI Pod Engineer for Continuous Prompt & Workflow Tuning",
+      "Live Action Audit Trails & Hallucination Prevention Guardrails",
+    ],
+    cta: "Deploy Autonomous Pod",
+    featured: true,
+  },
+  {
+    id: "agent-enterprise",
+    name: "Enterprise Autonomous Workforce",
+    badge: "Complete Scale",
+    tagline: "End-to-end autonomous operating system built into your core enterprise stack.",
+    price: "₹49,999",
+    monthlyPriceNum: 49999,
+    period: "/month",
+    description: "Bespoke autonomous workforce architecture with custom private LLMs, high security, and full orchestration.",
+    includedInBase: [
+      "Everything in Multi-Agent Autonomous Pod",
+      "Custom End-to-End Autonomous Department Infrastructure",
+      "Self-Healing Workflows with Automated Error Recovery & Fallbacks",
+      "Dedicated Private VPC or On-Premises Local LLM Deployment (Llama 3, Mistral, Private Claude)",
+      "Custom Model Fine-Tuning on Proprietary Enterprise Datasets",
+      "Enterprise Data Isolation & Strict Zero-Training Guarantees",
+      "Dedicated Senior AI Architect & 24/7 Infrastructure Monitoring",
+      "Comprehensive Compliance & Security Certifications",
+    ],
+    cta: "Consult Enterprise Workforce",
+    featured: false,
+  },
+];
+
+export const agentAddOns = [
+  {
+    id: "agent-private-vpc",
+    name: "Private VPC / Local LLM Hosting",
+    badge: "Strict Privacy",
+    price: "₹9,999",
+    monthlyPriceNum: 9999,
+    period: "/month",
+    description:
+      "Host AI models inside your isolated private AWS/GCP VPC or local on-premise servers ensuring zero corporate data ever touches public APIs.",
+    features: [
+      "100% isolated enterprise compute environment",
+      "Custom open-source LLM deployments (Llama 3 70B, Mistral Large)",
+      "Meets strictest banking, healthcare, and enterprise security audits",
+      "Zero telemetry and zero external API logging",
+    ],
+  },
+  {
+    id: "agent-voice-synthesis",
+    name: "Real-Time Voice AI Telephony Node",
+    badge: "Voice Enabled",
+    price: "₹4,999",
+    monthlyPriceNum: 4999,
+    period: "/month",
+    description:
+      "Equip your autonomous agents with ultra-low-latency bidirectional conversational voice to answer inbound calls and execute phone workflows.",
+    features: [
+      "Ultra-low latency (< 650ms) conversational turn-taking",
+      "Natural multilingual speech in Hindi, English, and Indian dialects",
+      "Direct SIP trunk and cloud telephony interconnects",
+      "Automated phone call summarization and CRM action triggers",
+    ],
+  },
+];
+
+export const agentPricingFaqs = [
+  {
+    question: "What is the difference between a simple chatbot and a Custom AI Agent?",
+    answer:
+      "A chatbot simply responds to questions with pre-written text. A Custom AI Agent can think, reason over complex business rules, call external APIs, query your internal database, update your CRM, write documents, and take autonomous actions across your tools without human intervention.",
+  },
+  {
+    question: "How do you guarantee accuracy and prevent hallucinations?",
+    answer:
+      "We implement multi-layered deterministic guardrails, retrieval-augmented generation (RAG) tied strictly to your verified company SOPs, and automated validation gates. When an agent's confidence falls below the strict threshold, it automatically hands off to human staff with a detailed summary.",
+  },
+  {
+    question: "Will our company data be used to train external AI models?",
+    answer:
+      "Never. All Scalezix agent deployments use enterprise-grade API agreements and isolated private environments with strict Zero Data Retention (ZDR) guarantees. Your company data is never used for training foundation models.",
+  },
+  {
+    question: "How long does it take to deploy a custom AI agent pod?",
+    answer:
+      "A Single-Purpose Task Agent is typically live in under 7 business days. A Multi-Agent Autonomous Pod deploys in 2-3 weeks with complete testing and integration into your existing systems.",
+  },
+];
+
+export const agentFeatureComparison = [
+  {
+    feature: "Number of Active Agents",
+    task: "1 Dedicated Agent",
+    pod: "3-5 Agent Squad",
+    enterprise: "Unlimited Custom Pods",
+  },
+  {
+    feature: "Tool & API Integrations",
+    task: "Up to 3 Systems",
+    pod: "Unlimited Systems",
+    enterprise: "Unlimited Enterprise Stack",
+  },
+  {
+    feature: "Dynamic Memory & Context RAG",
+    task: "Standard SOP Knowledge",
+    pod: "Vector Database RAG",
+    enterprise: "Real-Time Enterprise Vector Mesh",
+  },
+  {
+    feature: "Multi-LLM Smart Routing",
+    task: "Single Model",
+    pod: "Multi-LLM Smart Router",
+    enterprise: "Private VPC / Local Models",
+  },
+  {
+    feature: "Human-in-the-Loop Gateway",
+    task: true,
+    pod: true,
+    enterprise: true,
+  },
+  {
+    feature: "Action Audit Trail & Logs",
+    task: "7 Days",
+    pod: "90 Days",
+    enterprise: "Unlimited Immutable Audit Logs",
+  },
+  {
+    feature: "Private Cloud / On-Premise VPC",
+    task: false,
+    pod: "Optional Add-on",
+    enterprise: "Included",
+  },
+  {
+    feature: "Dedicated AI Engineer Support",
+    task: "Email & Chat",
+    pod: "Dedicated Pod Engineer",
+    enterprise: "Dedicated Solutions Architect",
+  },
+];
+
 export const authorityPoints = [
   "Most companies do not fail at AI because the model is weak. They fail because the workflow is unclear, disconnected, or unmanaged.",
   "Scalezix focuses on operational leverage first: what should be automated, what needs human oversight, and where AI creates durable business advantage.",
