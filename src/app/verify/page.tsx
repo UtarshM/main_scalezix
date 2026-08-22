@@ -14,12 +14,13 @@ export const metadata: Metadata = buildMetadata({
   ],
 });
 
-export default function VerifyPage({
+export default async function VerifyPage({
   searchParams,
 }: {
-  searchParams?: { id?: string };
+  searchParams?: Promise<{ id?: string }>;
 }) {
-  const initialId = searchParams?.id || "";
+  const resolvedParams = searchParams ? await searchParams : undefined;
+  const initialId = resolvedParams?.id || "";
 
   return (
     <main className="section-shell py-16 md:py-24">

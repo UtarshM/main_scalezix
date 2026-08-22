@@ -271,32 +271,38 @@ export function SiteFooter() {
           </div>
 
           {/* 5. Official Scalezix Centerpiece Brand Showcase */}
-          <div className="relative mx-auto flex flex-col items-center justify-center py-12 lg:py-16 select-none overflow-hidden text-center">
+          <div className="relative mx-auto flex flex-col items-center justify-center py-10 lg:py-14 select-none overflow-hidden text-center">
             {/* Ambient Background Radial Glow */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="w-[320px] sm:w-[500px] h-[120px] rounded-full bg-[#473BFD]/10 dark:bg-[#473BFD]/15 blur-[60px]" />
+              <div className="w-[360px] sm:w-[600px] h-[140px] rounded-full bg-[#473BFD]/8 dark:bg-[#473BFD]/20 blur-[70px]" />
             </div>
 
-            <Link href="/" className="relative z-10 transition-transform duration-300 hover:scale-[1.02] inline-block">
-              {/* Light Mode Logo */}
+            <Link
+              href="/"
+              className="relative z-10 transition-transform duration-300 hover:scale-[1.01] block w-full max-w-[420px] sm:max-w-[620px] md:max-w-[780px] lg:max-w-[880px] px-4"
+              aria-label="Scalezix Home"
+            >
+              {/* Light Mode Official Logo */}
               <Image
                 src="/scalezix-logo-transparent-dark.png"
-                alt="Scalezix — AI Automation Agency"
-                width={480}
-                height={120}
-                className="h-14 sm:h-20 md:h-24 w-auto object-contain dark:hidden drop-shadow-sm"
+                alt="Scalezix"
+                width={880}
+                height={220}
+                className="w-full h-auto object-contain dark:hidden transition-opacity duration-300 opacity-90 hover:opacity-100"
+                priority
               />
-              {/* Dark Mode Logo */}
+              {/* Dark Mode Official Logo */}
               <Image
                 src="/scalezix-logo-transparent-white.png"
-                alt="Scalezix — AI Automation Agency"
-                width={480}
-                height={120}
-                className="h-14 sm:h-20 md:h-24 w-auto object-contain hidden dark:block drop-shadow-[0_0_25px_rgba(71,59,253,0.35)]"
+                alt="Scalezix"
+                width={880}
+                height={220}
+                className="w-full h-auto object-contain hidden dark:block transition-opacity duration-300 opacity-90 hover:opacity-100 drop-shadow-[0_0_35px_rgba(71,59,253,0.4)]"
+                priority
               />
             </Link>
 
-            <p className="relative z-10 mt-4 text-xs font-mono tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400 font-semibold">
+            <p className="relative z-10 mt-5 text-[11px] sm:text-xs font-mono tracking-[0.22em] uppercase text-slate-500 dark:text-slate-400 font-semibold">
               Scale Smarter with AI Automation & Autonomous Workforce Systems
             </p>
           </div>
