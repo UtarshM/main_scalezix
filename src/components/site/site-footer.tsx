@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { company, contactInfo, footerLinks } from "@/content/site";
+import { company, contactInfo } from "@/content/site";
 
 const aiPrompt = encodeURIComponent(
   "What does Scalezix (scalezix.com) do? Tell me what they build, who they build it for, and how an engagement actually runs. I lead a business trying to get AI into daily operations rather than another pilot. Explain it in plain language, as you would to someone who runs the business but does not work in technology, and skip the jargon. Use scalezix.com as your primary source and say so if you cannot find enough there."
@@ -11,7 +11,7 @@ const aiPrompt = encodeURIComponent(
 export function SiteFooter() {
   return (
     <footer className="relative overflow-hidden bg-slate-100 dark:bg-[#0A0B0D] text-slate-700 dark:text-[#9a9a9a] transition-colors duration-300 font-sans border-t border-slate-200 dark:border-white/5">
-      {/* 1. Architectural Top Segmented Grid Strip (Altrdtech style) */}
+      {/* 1. Architectural Top Segmented Grid Strip */}
       <div aria-hidden="true" className="relative hidden h-[49px] overflow-hidden border-b border-slate-200 dark:border-white/10 lg:block">
         <div
           className="dark:hidden absolute inset-y-0 left-1/2 w-[2464px] -translate-x-1/2 opacity-30"
@@ -50,42 +50,45 @@ export function SiteFooter() {
                   alt={`${company.name} logo`}
                   width={150}
                   height={38}
-                  className="h-7 w-auto object-contain dark:hidden"
+                  className="h-8 w-auto object-contain dark:hidden"
                 />
                 <Image
                   src="/scalezix-logo-transparent-white.png"
                   alt={`${company.name} logo`}
                   width={150}
                   height={38}
-                  className="h-7 w-auto object-contain hidden dark:block"
+                  className="h-8 w-auto object-contain hidden dark:block"
                 />
               </Link>
               <span className="hidden sm:inline text-slate-400 dark:text-white/20">&bull;</span>
-              <p className="text-[15px] sm:text-[16px] text-slate-800 dark:text-white font-medium leading-[1.35]">
-                partner in building an AI-native enterprise.
+              <p className="text-[14px] sm:text-[15px] text-slate-800 dark:text-white font-medium leading-[1.35]">
+                Your partner in building an AI-native enterprise.
               </p>
             </div>
 
             <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[12px] uppercase tracking-[0.14em] lg:gap-x-7 lg:text-[13px]">
-              <Link href="/" className="text-slate-600 dark:text-[#9a9a9a] transition-colors duration-150 hover:text-slate-900 dark:hover:text-white">
+              <Link href="/" className="text-slate-600 dark:text-[#9a9a9a] transition-colors duration-150 hover:text-[#473BFD] dark:hover:text-white">
                 Home
               </Link>
-              <Link href="/services" className="text-slate-600 dark:text-[#9a9a9a] transition-colors duration-150 hover:text-slate-900 dark:hover:text-white">
-                What We Do
+              <Link href="/services" className="text-slate-600 dark:text-[#9a9a9a] transition-colors duration-150 hover:text-[#473BFD] dark:hover:text-white">
+                Services
               </Link>
-              <Link href="/about" className="text-slate-600 dark:text-[#9a9a9a] transition-colors duration-150 hover:text-slate-900 dark:hover:text-white">
-                Who We Are
+              <Link href="/pricing" className="text-[#473BFD] dark:text-[#D3FDB1] font-semibold transition-colors duration-150 hover:underline">
+                Pricing
               </Link>
-              <Link href="/results" className="text-slate-600 dark:text-[#9a9a9a] transition-colors duration-150 hover:text-slate-900 dark:hover:text-white">
-                Customer
+              <Link href="/about" className="text-slate-600 dark:text-[#9a9a9a] transition-colors duration-150 hover:text-[#473BFD] dark:hover:text-white">
+                About
               </Link>
-              <Link href="/contact" className="text-slate-600 dark:text-[#9a9a9a] transition-colors duration-150 hover:text-slate-900 dark:hover:text-white">
+              <Link href="/case-studies" className="text-slate-600 dark:text-[#9a9a9a] transition-colors duration-150 hover:text-[#473BFD] dark:hover:text-white">
+                Case Studies
+              </Link>
+              <Link href="/contact" className="text-slate-600 dark:text-[#9a9a9a] transition-colors duration-150 hover:text-[#473BFD] dark:hover:text-white">
                 Contact
               </Link>
             </nav>
           </div>
 
-          {/* 4. Rich Internal Linking Hub for SEO & AEO */}
+          {/* 4. Rich Internal Linking Hub for SEO & User Exploration */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 py-12 border-b border-slate-200 dark:border-white/10 text-xs">
             
             {/* Column 1: Core AI Services */}
@@ -127,7 +130,7 @@ export function SiteFooter() {
               </ul>
             </div>
 
-            {/* Column 2: Products & Tools */}
+            {/* Column 2: Products & Platforms */}
             <div className="flex flex-col gap-3">
               <h4 className="font-mono text-[11px] uppercase tracking-wider text-slate-900 dark:text-white font-bold">
                 Products & Tools
@@ -141,7 +144,7 @@ export function SiteFooter() {
                 </li>
                 <li>
                   <Link href="/pricing" className="hover:text-slate-900 dark:hover:text-white transition-colors font-semibold text-[#473BFD] dark:text-[#D3FDB1]">
-                    Pricing Plans & Add-ons &rarr;
+                    Pricing Plans (from ₹3k) &rarr;
                   </Link>
                 </li>
                 <li>
@@ -194,8 +197,8 @@ export function SiteFooter() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/ai-readiness-assessment-mississauga" className="hover:text-slate-900 dark:hover:text-white transition-colors">
-                    Mississauga Readiness
+                  <Link href="/ca/mississauga" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                    Mississauga Hub
                   </Link>
                 </li>
                 <li>
@@ -267,40 +270,46 @@ export function SiteFooter() {
 
           </div>
 
-          {/* 5. Giant Centerpiece Typography Wordmark (Altrdtech style) */}
-          <div className="relative mx-auto block w-full max-w-[1050px] mt-12 lg:mt-[56px] select-none">
-            <svg
-              viewBox="0 0 1050 220"
-              className="w-full h-auto drop-shadow-sm"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-label="Scalezix"
-            >
-              <text
-                x="50%"
-                y="68%"
-                textAnchor="middle"
-                dominantBaseline="middle"
-                fontSize="175"
-                fontWeight="800"
-                fontFamily="system-ui, -apple-system, sans-serif"
-                letterSpacing="-0.04em"
-                className="fill-slate-300/80 dark:fill-[#24272D] transition-colors duration-300"
-              >
-                scalezix
-              </text>
-            </svg>
+          {/* 5. Official Scalezix Centerpiece Brand Showcase */}
+          <div className="relative mx-auto flex flex-col items-center justify-center py-12 lg:py-16 select-none overflow-hidden text-center">
+            {/* Ambient Background Radial Glow */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="w-[320px] sm:w-[500px] h-[120px] rounded-full bg-[#473BFD]/10 dark:bg-[#473BFD]/15 blur-[60px]" />
+            </div>
+
+            <Link href="/" className="relative z-10 transition-transform duration-300 hover:scale-[1.02] inline-block">
+              {/* Light Mode Logo */}
+              <Image
+                src="/scalezix-logo-transparent-dark.png"
+                alt="Scalezix — AI Automation Agency"
+                width={480}
+                height={120}
+                className="h-14 sm:h-20 md:h-24 w-auto object-contain dark:hidden drop-shadow-sm"
+              />
+              {/* Dark Mode Logo */}
+              <Image
+                src="/scalezix-logo-transparent-white.png"
+                alt="Scalezix — AI Automation Agency"
+                width={480}
+                height={120}
+                className="h-14 sm:h-20 md:h-24 w-auto object-contain hidden dark:block drop-shadow-[0_0_25px_rgba(71,59,253,0.35)]"
+              />
+            </Link>
+
+            <p className="relative z-10 mt-4 text-xs font-mono tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400 font-semibold">
+              Scale Smarter with AI Automation & Autonomous Workforce Systems
+            </p>
           </div>
 
         </div>
       </div>
 
       {/* 6. Divider Line */}
-      <div className="mt-8 lg:mt-[48px] h-px bg-slate-200 dark:bg-white/10" />
+      <div className="h-px bg-slate-200 dark:border-white/10" />
 
       {/* 7. Bottom Row: Ask AI, Socials & Legal */}
       <div className="mx-auto w-full max-w-[1232px] px-6 md:px-12 xl:px-0 relative z-10">
-        <div className="pt-8 lg:pt-[40px] pb-10 lg:pb-[32px] xl:px-16">
+        <div className="pt-8 lg:pt-[36px] pb-10 lg:pb-[32px] xl:px-16">
           
           <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-slate-500 dark:text-[#7A7F87] font-semibold">
             Ask AI about Scalezix
@@ -323,7 +332,7 @@ export function SiteFooter() {
                 </svg>
               </a>
 
-              {/* 2. Claude (Anthropic) */}
+              {/* 2. Claude */}
               <a
                 href={`https://claude.ai/new?q=${aiPrompt}`}
                 target="_blank"
@@ -372,7 +381,7 @@ export function SiteFooter() {
                 href="https://linkedin.com/company/scalezix"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition hover:text-slate-900 dark:hover:text-white"
+                className="transition hover:text-[#473BFD] dark:hover:text-white"
               >
                 LinkedIn
               </a>
@@ -380,20 +389,20 @@ export function SiteFooter() {
                 href="https://instagram.com/scalezix"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition hover:text-slate-900 dark:hover:text-white"
+                className="transition hover:text-[#473BFD] dark:hover:text-white"
               >
                 Instagram
               </a>
-              <Link href={contactInfo.whatsappHref} className="transition hover:text-slate-900 dark:hover:text-white">
+              <Link href={contactInfo.whatsappHref} className="transition hover:text-[#473BFD] dark:hover:text-white">
                 WhatsApp
               </Link>
-              <Link href="/sitemap.xml" className="transition hover:text-slate-900 dark:hover:text-white font-medium">
+              <Link href="/sitemap.xml" className="transition hover:text-[#473BFD] dark:hover:text-white font-medium">
                 Sitemap.xml
               </Link>
-              <Link href="/privacy" className="transition hover:text-slate-900 dark:hover:text-white">
+              <Link href="/privacy" className="transition hover:text-[#473BFD] dark:hover:text-white">
                 Privacy
               </Link>
-              <Link href="/terms" className="transition hover:text-slate-900 dark:hover:text-white">
+              <Link href="/terms" className="transition hover:text-[#473BFD] dark:hover:text-white">
                 Terms
               </Link>
             </div>

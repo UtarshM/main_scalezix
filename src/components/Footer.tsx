@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const links = {
   Products: [
@@ -33,7 +34,22 @@ const Footer = () => (
     <div className="container mx-auto px-6">
       <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
         <div className="col-span-2 md:col-span-1">
-          <span className="font-heading text-lg font-bold text-foreground">Scalezix</span>
+          <Link href="/" className="inline-block">
+            <Image
+              src="/scalezix-logo-transparent-dark.png"
+              alt="Scalezix logo"
+              width={140}
+              height={36}
+              className="h-7 w-auto object-contain dark:hidden"
+            />
+            <Image
+              src="/scalezix-logo-transparent-white.png"
+              alt="Scalezix logo"
+              width={140}
+              height={36}
+              className="h-7 w-auto object-contain hidden dark:block"
+            />
+          </Link>
           <p className="text-xs text-muted-foreground mt-3 leading-relaxed max-w-xs">
             Scale smarter with modular AI automation & WhatsApp systems.
           </p>
