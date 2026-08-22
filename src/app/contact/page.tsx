@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { JsonLd } from "@/components/seo/json-ld";
+import { ContactForm } from "@/components/contact/ContactForm";
 import { companyInfo } from "@/content/prd-site";
 import { buildMetadata } from "@/lib/seo";
 
@@ -75,18 +76,8 @@ export default function ContactPage() {
               </div>
             </div>
      
-            <div className="rounded-[2rem] border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-card/40 p-6">
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Project inquiry form</h2>
-              <div className="mt-6 grid gap-4">
-                <input className="contact-input bg-white dark:bg-black/40 border-black/10 dark:border-white/10 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500" placeholder="Name" />
-                <input className="contact-input bg-white dark:bg-black/40 border-black/10 dark:border-white/10 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500" placeholder="Email" />
-                <input className="contact-input bg-white dark:bg-black/40 border-black/10 dark:border-white/10 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500" placeholder="Phone (WhatsApp preferred)" />
-                <input className="contact-input bg-white dark:bg-black/40 border-black/10 dark:border-white/10 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500" placeholder="Company name" />
-                <input className="contact-input bg-white dark:bg-black/40 border-black/10 dark:border-white/10 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500" placeholder="Industry" />
-                <input className="contact-input bg-white dark:bg-black/40 border-black/10 dark:border-white/10 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500" placeholder="What do you need?" />
-                <textarea className="contact-input bg-white dark:bg-black/40 border-black/10 dark:border-white/10 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 min-h-32 py-3" placeholder="Message" />
-                <button className="button-primary w-fit">Submit inquiry</button>
-              </div>
+            <div>
+              <ContactForm />
             </div>
           </div>
         </div>

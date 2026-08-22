@@ -12,12 +12,13 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { certificateId: string };
-}): Metadata {
-  const certificate = getCertificateById(params.certificateId);
+  params: Promise<{ certificateId: string }>;
+}): Promise<Metadata> {
+  const resolvedParams = await params;
+  const certificate = getCertificateById(resolvedParams.certificateId);
 
   if (!certificate) {
     return {
@@ -43,12 +44,13 @@ export function generateMetadata({
   };
 }
 
-export default function DirectCertificateVerificationPage({
+export default async function DirectCertificateVerificationPage({
   params,
 }: {
-  params: { certificateId: string };
+  params: Promise<{ certificateId: string }>;
 }) {
-  const certificate = getCertificateById(params.certificateId);
+  const resolvedParams = await params;
+  const certificate = getCertificateById(resolvedParams.certificateId);
 
   return (
     <main className="section-shell py-16 md:py-24">
@@ -77,7 +79,7 @@ export default function DirectCertificateVerificationPage({
           ]}
         />
       )}
-      <CertificateVerificationView initialCertificateId={params.certificateId} />
+      <CertificateVerificationView initialCertificateId={resolvedParams.certificateId} />
     </main>
   );
 }
